@@ -1,74 +1,42 @@
-\chapter{Making Tables}
+\chapter{Literature Review}
 \label{chp:chapter2}
 \graphicspath{{figures/}{figures/chapter2/}}
 
-\section{Making a Table}
-An example \LaTeX\ table is shown below in Table~\ref{tab:comparison}.
-You make a table by starting a table environment with a caption
-and label.  You can specify the text that shows up in the Table of
-Contents using the optional parameter box, [], that's at the
-beginning of the $\backslash$caption command. You tell the table how
-many columns in the beginning of the tabular environment using a
-command like this: $|$ l $|$ c $|$ r $|$. That would create a table with 3 columns
-that are left-aligned, centered and right-aligned, in that order. The $|$'s tell \LaTeX\ that
-you want bars separating the columns. Of course, you can also make tables without the $|$ characters, in which case no lines will be added between the fields, which often looks better. You can also add horizontal
-lines using the $\backslash$hline command. This example is also centered in the page using the
-$\backslash$centering command.
-%
-\begin{table}[b]
-\centering
-\savebox{\tempbox}{
-%
-\begin{tabular}{|l|c|c|r|}
-\hline
+\section{Overview}
 
-Table Name  & Column 2 & Column 3   & Column 4 \\
-\hline
-First Row   & 4780286  & 72.941376  & A \\
-Second Row  & 4069335  & 62.093124  & B \\
-Third Row   & 4074900  & 62.178040  & C \\
-\hline
-Fourth Row  & 4000000  & 60.000000  & Z \\
-\hline
+The resilience and connectivity of transport networks are a long-studied topic within
+transportation engineering in both theoretical and practical contexts. Within this long history
+however, there is variability in how scholars define resiliency. There are three basic
+definitions that researchers have used:
 
-\end{tabular}}
-% set width
-\ifdim\wd\tempbox<\TPTminimum\relax \tempwidth=\TPTminimum\relax
-\else\tempwidth=\wd\tempbox
-\fi
-% format
-\begin{minipage}{\tempwidth}\centering
-\caption[Example table]{Description of the table, where the caption is long enough to go onto more than one line. The table caption should not extend beyond the edges of the table, and should make an ``inverted pyramid.''}
-\label{tab:comparison}
-\usebox{\tempbox}
-%\end{threeparttable}
-\end{minipage}
-\end{table}
-%
+\begin{itemize}
+	\item Resilience through Resistance: Resilient transportation networks have few and manageable vulnerabilities. This is typically addressed through robust facility-level engineering and risk management (e.g., Bradley, 2007).
+	\item Resilience through Recovery: Resilient transportation networks are able to be repaired and returned to normal service without inordinate delay. This is accomplished through effective resource allocation and incident management (e.g., Zhang and Wang, 2016).
+	\item Resilience through Operability in Crisis: Resilient transport networks are able to operate effectively with damaged or unusable links. It is this definition that is most relevant in the context of this study. 
+\end{itemize}
 
-Landscape tables can also be inserted, if desired, using the \verb-sidewaystable- environment, which is defined in the \verb!rotating! package. An example is found on the next page, in Table~\ref{tab:landscape}. Note that landscape tables and figures should be the exception rather than the rule, since they are more awkward to read. However, if you have an especially wide table or figure that cannot be reduced in size without losing required resolution, placing it in landscape may be a good idea.
-\begin{sidewaystable}
-\centering
-\savebox{\tempbox}{
-\setlength{\tabcolsep}{6mm}
-\begin{tabular}{lcccc}
-Year & Method of CVD Deposition & Thickness ($\mu$m) & Hardness (MPa) & Resistivity ($\Omega\cdot$m)\\ 
-\hline\\[-11pt]
-1999 & LPCVD & 5.1 & 175 & 2.3$\times10^{-5}$\\
-2000 & PECVD & 17.2 & 101& 1.5$\times10^{-5}$\\
-2002 & PECVD & 4.3 & 55 & 3.4$\times10^{-5}$\\
-2004 & LPCVD & 1.1 & 225 & 5.1$\times10^{-5}$\\
-\hline
-\end{tabular}}
-% set width
-\ifdim\wd\tempbox<\TPTminimum\relax \tempwidth=\TPTminimum\relax
-\else\tempwidth=\wd\tempbox
-\fi
-% format
-\begin{minipage}{\tempwidth}\centering
-\caption{A landscape table}\vspace*{6pt}
-\label{tab:landscape}
-\usebox{\tempbox}
-%\end{threeparttable}
-\end{minipage}
-\end{sidewaystable}
+These definitions are not entirely mutually exclusive, and many researchers apply more than one
+definition in their work. For example, knowing where systemically critical or vulnerable links
+are will help in allocating maintenance resources. At the same time, the approach to identifying
+critical facilities implied by one of these definitions is not always compatible with the other
+definitions, and making distinctions between them is important (Rogers et al, 2012). A bridge
+highly vulnerable to failure may be located on a little-traveled and systemically unimportant
+side street. The motivation of this research is to identify systemically critical facilities, and
+therefore we primarily consider literature using the third definition.
+
+Professionals have adopted use of the Four R’s as a means to predict some form of resilience on a
+highway network. The Four R’s include: rapidity, redundancy, robustness, and resourcefulness.
+Here, rapidity is inversely related to the closure time and is used to measure how quickly a road
+can recover from a setback. Redundancy can be measured by the additional time or distance a user
+has to travel when a route is broken. Greater amounts of time or distance lower the overall
+redundancy. Robustness is the inverse of risk and represents the overall strength of the system
+as a whole. Resourcefulness, the last of the Four R’s, is the ability to find quick solutions in
+a network. An attempt will be made to identify the first time that these terms surface in the
+reviewed literature.
+
+We begin this review first by examining the study conducted by AEM on behalf of UDOT to identify
+vulnerable sections on the I-15 corridor. We then consider observations learned from systemic 
+changes to networks and populations under real-life crisis events. We then consider previous
+attempts in the academic literature to evaluate real and fabricated transportation networks. 
+
+\section{Identifying Critical Links on I-15}
