@@ -3,48 +3,56 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /Users/maxbarnes/Documents/GitHub/resiliency_thesis/BYU_ME_Thesis_Template 2/.texpadtmp/master.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
-The style file: ../asmems4.bst
+A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: chapter5.aux
+The style file: apalike2.bst
 A level-1 auxiliary file: appendixa.aux
 A level-1 auxiliary file: appendixb.aux
 Database file #1: ../refs.bib
-You've used 1 entry,
-            2020 wiz_defined-function locations,
-            503 strings with 3946 characters,
-and the built_in function-call counts, 370 in all, are:
-= -- 33
-> -- 12
-< -- 0
-+ -- 4
-- -- 3
-* -- 23
-:= -- 59
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 1
-chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 20
-empty$ -- 36
-format.name$ -- 3
-if$ -- 84
-int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 3
-pop$ -- 6
+Warning--empty publisher in agarwal2011
+Warning--empty institution in hamedi2018
+Warning--can't use both volume and number fields in rogers2012
+Warning--empty journal in levinson2010
+You've used 30 entries,
+            2229 wiz_defined-function locations,
+            691 strings with 9430 characters,
+and the built_in function-call counts, 12335 in all, are:
+= -- 1182
+> -- 539
+< -- 22
++ -- 195
+- -- 182
+* -- 1070
+:= -- 2138
+add.period$ -- 83
+call.type$ -- 30
+change.case$ -- 238
+chr.to.int$ -- 29
+cite$ -- 34
+duplicate$ -- 457
+empty$ -- 839
+format.name$ -- 226
+if$ -- 2432
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 25
+newline$ -- 146
+num.names$ -- 92
+pop$ -- 201
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 239
 quote$ -- 0
-skip$ -- 12
+skip$ -- 363
 stack$ -- 0
-substring$ -- 27
-swap$ -- 8
-text.length$ -- 0
+substring$ -- 847
+swap$ -- 71
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 5
-width$ -- 2
-write$ -- 15
+type$ -- 178
+warning$ -- 4
+while$ -- 89
+width$ -- 0
+write$ -- 375
+(There were 4 warnings)

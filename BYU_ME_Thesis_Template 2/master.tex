@@ -17,10 +17,10 @@
     %
     % Definitions of names needed in thesis/dissertation
     deptname          = Department of Civil and Construction Engineering,
-    committeechairman = Gregory Macfarlane, Chair,
+    committeechairman = Gregory Macfarlane,
     committeemembera  = Grant G. Schultz,
     committeememberb  = Dan Ames,
-    %graddate = December 2021,  		% Final approval month (NOT graduation month!        	
+    %graddate = December 2021,  		% Final approval month (NOT graduation month!
      %
     %Uncomment to shorten for proofreading purposes
     %noabstract = true,         % Don't show the abstract page
@@ -44,14 +44,16 @@
 
 %\usepackage[normalmargins]{savetrees} 	% prints smaller to save trees (draft only)
 \usepackage{amsmath}										%	allows for mathematical symbols
-\usepackage{amssymb}										%	defines symbol names for all the math symbols
+\usepackage{amssymb}										%	defines symbol names for all the
+%math symbols
 \usepackage{graphicx}        						% for .pdf graphics inclusion
 %\usepackage{subfigure}									%	allows for subfigures
 \usepackage{caption}
 \usepackage[calcwidth = \columnwidth]{caption}
 \usepackage{booktabs,threeparttable}
-\usepackage{subcaption}	
-\usepackage{setspace}										%	change the spacing inside a document
+\usepackage{subcaption}
+\usepackage{setspace}										%	change the spacing inside a
+%document
 \usepackage{epstopdf}										%	converts a .eps to a .pdf
 \usepackage{cite}												%	allows for citations
 \usepackage{mathptmx}
@@ -138,15 +140,15 @@
 	     0.2\linewidth 0.60\linewidth
 	     0.225\linewidth 0.55\linewidth
                 \strut
-	} 
+	}
 \renewcommand{\TPTminimum}{3in}
-\captionsetup[table]{justification=InvertedPyramid} 
+\captionsetup[table]{justification=InvertedPyramid}
 
 \newsavebox{\tempbox}
 \newlength{\tempwidth}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% To only print a few chapters without changing the reference numbers, 
+% To only print a few chapters without changing the reference numbers,
 %		uncomment the chapters you want
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\includeonly{chapter1}
@@ -166,6 +168,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+
 % Define Title & Author
 % For a title of more than one line, use the \\ to break up the lines so they appear in an inverse pyramid shape.
 %Also, make sure you use title case (upper case for most of the first letters of words)
@@ -177,19 +180,28 @@
 % 	acknowledgements.tex that will be included in the header
 \showBYUHeader
 
-% Include chapters of the thesis here: (Note that you should open the files chapter1.tex and chapter2.tex to
+
+% Include chapters of the thesis here: (Note that you should open the
+%files chapter1.tex and chapter2.tex to
 % see some of the important notes about how to do your thesis!)
 \include{chapter1}
 \include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+
 
 %%%%%%%%%%%%% begin Bibliography %%%%%%%%%%%%%%%%%
 \cleardoublepage
-\bibliographystyle{asmems4}%Change this to use a different bibliography style, such as ieeetran.
-\bibliography{refs}% Change this to use a different bibliography database file.
+\bibliographystyle{apalike2}%Change this to use a different bibliography
+%style, such as ieeetran.
+\bibliography{refs}% Change this to use a different bibliography database
+%file.
 
-% Include appendix sections here: (or comment these lines out to have no appendices)
-\appendix
-\include{appendixa}
-\include{appendixb}
+% Include appendix sections here: (or comment these lines out to have no
+%appendices)
+%\appendix
+%\include{appendixa}
+%\include{appendixb}
 
 \end{document}

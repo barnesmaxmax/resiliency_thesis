@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: master.aux
+A level-1 auxiliary file: chapter1.aux
+A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: chapter5.aux
+The style file: apalike2.bst
+Database file #1: refs.bib
+Warning--empty publisher in agarwal2011
+Warning--there's a number but no volume in Berdica2007
+Warning--empty institution in hamedi2018
+Warning--empty booktitle in koppelman2006
+Warning--can't use both volume and number fields in rogers2012
+Warning--empty journal in UtahDepartmentofTransportation2020
+Warning--there's a number but no volume in UtahDepartmentofTransportation2020
+Warning--empty journal in levinson2010
+You've used 39 entries,
+            2229 wiz_defined-function locations,
+            739 strings with 10759 characters,
+and the built_in function-call counts, 15553 in all, are:
+= -- 1496
+> -- 654
+< -- 28
++ -- 235
+- -- 220
+* -- 1355
+:= -- 2709
+add.period$ -- 108
+call.type$ -- 39
+change.case$ -- 303
+chr.to.int$ -- 38
+cite$ -- 47
+duplicate$ -- 571
+empty$ -- 1073
+format.name$ -- 279
+if$ -- 3038
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 33
+newline$ -- 189
+num.names$ -- 117
+pop$ -- 250
+preamble$ -- 1
+purify$ -- 304
+quote$ -- 0
+skip$ -- 444
+stack$ -- 0
+substring$ -- 1106
+swap$ -- 70
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 232
+warning$ -- 8
+while$ -- 116
+width$ -- 0
+write$ -- 483
+(There were 8 warnings)

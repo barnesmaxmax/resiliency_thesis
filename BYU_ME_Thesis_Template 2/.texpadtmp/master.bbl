@@ -1,9 +1,179 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{aeyels86local}
-Aeyels, D., 1986.
-\newblock ``Local and global stabilizability for nonlinear systems.''
-\newblock In {\em Theory and Applications of Nonlinear Control Systems}, C.~I.
-  Byrnes and A.~Lindquist, eds., Elsevier Science Publishers, pp.~93--105.
+\bibitem[Abdel-Rahim et~al., 2007]{abdel2007}
+Abdel-Rahim, A., Oman, P., Johnson, B., \& Sadiq, R. (2007).
+\newblock Assessing surface transportation network component criticality: A
+  multi-layer graph-based approach.
+\newblock In {\em 2007 IEEE Intelligent Transportation Systems Conference}
+  (pp.\ 1000--1003).
+
+\bibitem[AEM, 2017]{aem2017}
+AEM (2017).
+\newblock I-15 corridor risk and resilience pilot final report.
+
+\bibitem[Aeyels, 1986]{aeyels86local}
+Aeyels, D. (1986).
+\newblock Local and global stabilizability for nonlinear systems.
+\newblock In C.~I. Byrnes \& A. Lindquist (Eds.), {\em Theory and Applications
+  of Nonlinear Control Systems}  (pp.\ 93--105).  North-Holland: Elsevier
+  Science Publishers.
+
+\bibitem[Agarwal et~al., 2011]{agarwal2011}
+Agarwal, J., Liu, M., \& Blockley, D. (2011).
+\newblock {\em A Systems Approach to Vulnerability Assessment}, (pp.\
+  230--237).
+
+\bibitem[Berdica, 2002]{berdica2002}
+Berdica, K. (2002).
+\newblock An introduction to road vulnerability: what has been done, is done
+  and should be done.
+\newblock {\em Transport Policy}, 9(2), 117--127.
+
+\bibitem[Bradley, 2007]{bradley2007}
+Bradley, J. (2007).
+\newblock Time period and risk measures in the general risk equation.
+\newblock {\em Journal of Risk Research}, 10(3), 355--369.
+
+\bibitem[Dong et~al., 2006]{dong2006}
+Dong, X., Ben-Akiva, M.~E., Bowman, J.~L., \& Walker, J.~L. (2006).
+\newblock Moving from trip-based to activity-based measures of accessibility.
+\newblock {\em Transportation Research Part A: Policy and Practice}, 40(2),
+  163--180.
+
+\bibitem[GDOT, 2017]{GDOT2017}
+GDOT (2017).
+\newblock I-85 bridge collapse and rebuild.
+
+\bibitem[Geurs \& {van Wee}, 2004]{geurs2004}
+Geurs, K.~T. \& {van Wee}, B. (2004).
+\newblock Accessibility evaluation of land-use and transport strategies: review
+  and research directions.
+\newblock {\em Journal of Transport Geography}, 12(2), 127--140.
+
+\bibitem[Guze, 2014]{guze2014}
+Guze, S. (2014).
+\newblock Graph theory approach to transportation systems design and
+  optimization.
+\newblock {\em TransNav, the International Journal on Marine Navigation and
+  Safety of Sea Transportation}, 8(4), 571--578.
+
+\bibitem[Hackl \& Adey, 2019]{hackl2019}
+Hackl, J. \& Adey, B.~T. (2019).
+\newblock Estimation of traffic flow changes using networks in networks
+  approaches.
+\newblock {\em Applied Network Science}, 4(1).
+
+\bibitem[Hamedi et~al., 2018]{hamedi2018}
+Hamedi, M., Eshragh, S., Franz, M., \& Sekula, P.~M. (2018).
+\newblock {\em Analyzing Impact of I-85 Bridge Collapse on Regional Travel in
+  Atlanta}.
+\newblock Technical report.
+
+\bibitem[Handy \& Niemeier, 1997]{handy1997}
+Handy, S.~L. \& Niemeier, D.~A. (1997).
+\newblock Measuring accessibility: An exploration of issues and alternatives.
+\newblock {\em Environment and Planning A: Economy and Space}, 29(7),
+  1175--1194.
+
+\bibitem[Ibrahim et~al., 2011]{ibrahim2011}
+Ibrahim, S., Ammar, R., Rajasekaran, S., Lownes, N., Wang, Q., \& Sharma, D.
+  (2011).
+\newblock An efficient heuristic for estimating transportation network
+  vulnerability.
+\newblock In {\em 2011 IEEE Symposium on Computers and Communications (ISCC)}
+  (pp.\ 1092--1098).
+
+\bibitem[Ip \& Wang, 2011]{ip2011}
+Ip, W.~H. \& Wang, D. (2011).
+\newblock Resilience and friability of transportation networks: Evaluation,
+  analysis and optimization.
+\newblock {\em IEEE Systems Journal}, 5(2), 189--198.
+
+\bibitem[Jaller et~al., 2015]{jaller2015}
+Jaller, M., Calderón, C. A.~G., Yushimito, W.~F., \& Díaz, I. D.~S. (2015).
+\newblock An investigation of the effects of critical infrastructure on urban
+  mobility in the city of medellín.
+\newblock {\em International Journal of Critical Infrastructures}, 11(3), 213.
+
+\bibitem[MARTA, 2017]{marta2017}
+MARTA (2017).
+\newblock Popular annual financial report.
+
+\bibitem[MARTA, 2018]{marta2018}
+MARTA (2018).
+\newblock 2018 sustainability report.
+
+\bibitem[Omer et~al., 2013]{omer2013}
+Omer, M., Mostashari, A., \& Nilchiani, R. (2013).
+\newblock Assessing resilience in a regional road-based transportation network.
+\newblock {\em International Journal of Industrial and Systems Engineering},
+  13(4), 389–408.
+
+\bibitem[Osei-Asamoah \& Lownes, 2014]{osei2014}
+Osei-Asamoah, A. \& Lownes, N.~E. (2014).
+\newblock Complex network method of evaluating resilience in surface
+  transportation networks.
+\newblock {\em Transportation Research Record}, 2467(1), 120--128.
+
+\bibitem[Peeta et~al., 2010]{peeta2010}
+Peeta, S., {Sibel Salman}, F., Gunnec, D., \& Viswanath, K. (2010).
+\newblock Pre-disaster investment decisions for strengthening a highway
+  network.
+\newblock {\em Computers \& Operations Research}, 37(10), 1708--1719.
+
+\bibitem[Rogers et~al., 2012]{rogers2012}
+Rogers, C.~D., Bouch, C.~J., Williams, S., Barber, A.~R., Baker, C.~J., Bryson,
+  J.~R., Chapman, D.~N., Chapman, L., Coaffee, J., Jefferson, I., et~al.
+  (2012).
+\newblock Resistance and resilience--paradigms for critical local
+  infrastructure.
+\newblock In {\em Proceedings of the Institution of Civil Engineers-Municipal
+  Engineer}, volume 165  (pp.\ 73--83).: Thomas Telford Ltd.
+
+\bibitem[Schaper, 2017]{schaper2017}
+Schaper, D. (2017).
+\newblock 10 years after bridge collapse, america is still crumbling.
+
+\bibitem[Serulle et~al., 2011]{serulle2011}
+Serulle, N.~U., Heaslip, K., Brady, B., Louisell, W.~C., \& Collura, J. (2011).
+\newblock Resiliency of transportation network of santo domingo, dominican
+  republic: Case study.
+\newblock {\em Transportation Research Record}, 2234(1), 22--30.
+
+\bibitem[Vodák et~al., 2019]{vodak2019}
+Vodák, R., Bíl, M., Svoboda, T., Křivánková, Z., Kubeček, J., Rebok, T.,
+  \& Hliněný, P. (2019).
+\newblock A deterministic approach for rapid identification of the critical
+  links in networks.
+\newblock {\em Plos One}, 14(7).
+
+\bibitem[Xie \& Levinson, 2011]{xie2011}
+Xie, F. \& Levinson, D. (2011).
+\newblock Evaluating the effects of the i-35w bridge collapse on road-users in
+  the twin cities metropolitan region.
+\newblock {\em Transportation Planning and Technology}, 34(7), 691--703.
+
+\bibitem[Zhang \& Wang, 2016]{zhang2016}
+Zhang, W. \& Wang, N. (2016).
+\newblock Resilience-based risk mitigation for road networks.
+\newblock {\em Structural Safety}, 62, 57--65.
+
+\bibitem[Zhang et~al., 2015]{zhang2015.2}
+Zhang, X., Miller-Hooks, E., \& Denny, K. (2015).
+\newblock Assessing the role of network topology in transportation network
+  resilience.
+\newblock {\em Journal of Transport Geography}, 46, 35--45.
+
+\bibitem[Zhu et~al., 2010a]{levinson2010}
+Zhu, S., Levinson, D., Liu, H., Harder, K., \& Dancyzk, A. (2010a).
+\newblock Traffic flow and road user impacts of the collapse of the i-35w
+  bridge over the mississippi river.
+
+\bibitem[Zhu et~al., 2010b]{zhu2010}
+Zhu, S., Levinson, D., Liu, H.~X., \& Harder, K. (2010b).
+\newblock The traffic and behavioral effects of the i-35w mississippi river
+  bridge collapse.
+\newblock {\em Transportation Research Part A: Policy and Practice}, 44(10),
+  771--784.
 
 \end{thebibliography}

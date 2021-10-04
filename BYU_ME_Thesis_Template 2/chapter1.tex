@@ -1,26 +1,23 @@
 \chapter{Introduction}
 \label{chp:chapter1}
 \graphicspath{{figures/}{figures/chapter1/}}
-This is an example of the introduction. It's pretty simple and shows off
-some of the basic commands.
 
 \section{Problem Statement}
-The Utah Department of Transportation (UDOT) is responsible for maintaining a transportation
- system to promote public welfare and economic activity throughout the state. UDOT is also
+The Utah Department of Transportation (UDOT)  is responsible for maintaining a transportation
+ system to promote public welfare and economic activity throughout the state of Utah. UDOT is also
  responsible to maintain key components of the national highway transportation system. Given the
- importance of this system, UDOT has sought in the last several years to identify which 
- facilities
- are most critical to the smooth operations of this system.
- 
-In 2017, AEM (2017) completed a risk and resilience analysis for the I-15 corridor on behalf of
+ importance of this system, UDOT has sought a way to identify those facilities
+ which are crticial to smooth operation fo the system.
+
+In 2017, \cite{aem2017} completed a risk and resilience analysis report for the I-15 corridor on behalf of
 UDOT. This analysis quantified risk as the probability of threats (earthquakes, floods, fires,
-etc.) multiplied by the criticality of the asset to the overall system were such threats to
-materialize. The AEM analysis has two primary limitations. First, the methods are proprietary to
+etc.) multiplied by the criticality of the asset to the overall system. The AEM
+analysis has two primary limitations. First, the methods are proprietary to
 AEM and UDOT cannot now apply the methods to study the criticality of other transportation
-corridors with regional and national significance (e.g. U.S. Route 6, Interstate 70). But more
+corridors with regional and national significance (e.g. U.S. Route 6, Interstate 70, Interstate 80). But more
 importantly, the current index treats each UDOT asset – each bridge, highway segment, etc. – as an
-independent unit when in fact UDOT operates a system of transportation facilities. The criticality
-of a single bridge to the overall system is not determined by the volume of traffic it supports 
+independent unit when in fact UDOT operates a system of interrelated transportation facilities. The criticality
+of a single bridge to the overall system is not determined by the volume of traffic it supports
 directly, but by how inconvenient it would be for that traffic to find another path or destination
 were the bridge to fail. Resiliency must therefore be considered a function of network
 alternatives, or redundancy.
@@ -30,7 +27,7 @@ The primary objective of this research is to develop a methodology and tool to e
 network redundancy of critical UDOT assets across the state. We base this tool on data collected
 for the Utah Statewide Travel Model (USTM), with certain improvements and additional model
 features to more accurately capture the economic costs associated with an impaired state highway
-network. In particular, we develop a method that explicitly considers the availability of 
+network. In particular, we develop a method that explicitly considers the availability of
 alternative destinations, modes, and routes to individuals traveling on the impaired network. A
 secondary objective of this research is to apply the model to evaluate the criticality of
 specific
@@ -45,21 +42,16 @@ shortest path finding in a network. The specific choice utility equations in the
 a plausible utility outcome, but the focus of this research has not been on developing robust
 utility equations or calibrated volume-delay functions. This model is therefore not designed to
 forecast traffic volumes or designed for any purpose other than providing a comparative estimate
-of the effects of link loss by man-made or natural causes. 
+of the effects of link loss by man-made or natural causes.
 
 \section{Outline of Report}
 
-This report is organized as follows: 
+This report is organized as follows:
 
 \begin{itemize}
 	\item Chapter 1.	This introductory chapter.
 	\item Chapter 2.	A Literature Review, summarizing previous attempts to model network resiliency using the choices and accessibility of individuals on the impacted network.
 	\item Chapter 3.	This chapter presents a proposed model design and implementation of the model within the CUBE transportation planning software application. This chapter also describes model calibration efforts.
-	\item Chapter 4.	This chapter presents a method for identifying vulnerable and potentially critical highway links by considering the location-based elevated risk issues. This chapter summarizes a previous study conducted by BIO-WEST. 	\item Chapter 5.	A Model Application, describing and comparing the results of the model developed in Chapter 3 to the highway links identified in Chapter 4.
+	\item Chapter 4.	This chapter presents a method for identifying vulnerable and potentially critical highway links by considering the location-based elevated risk issues. This chapter summarizes a previous study conducted by BIO-WEST.	\item Chapter 5.	A Model Application, describing and comparing the results of the model developed in Chapter 3 to the highway links identified in Chapter 4.
 	\item Chapter 6.	A Conclusions chapter summarizing the findings and providing additional recommendations to UDOT.
 \end{itemize}
-
-
-
-
-\include{chapter3}

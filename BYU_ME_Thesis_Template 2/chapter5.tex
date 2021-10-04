@@ -1,0 +1,107 @@
+\chapter{Conclusions and Recommendations}
+\label{chp:chapter5}
+\graphicspath{{figures/}{figures/chapter5/}}
+
+%TODO update all references
+%TODO import figures
+%TODO figure out how to use TARGETS on tables
+\section{Overview}
+
+This chapter summarizes the recommendations resulting from the resiliency
+model application and contains information about obtaining the model and
+outlines next steps.
+
+\section{Recommendations}
+
+The USTM model is a gravity-based travel demand model, while the resiliency
+model is logit-based. The logit-based nature of the resiliency model allows
+for greater sensitivity in user mode and destination choice, which causes
+the estimated costs associated with link closure to be lower yet more
+accurate for estimations made using the resiliency model. The resiliency
+models incorporation of both the logsum for HBW, HBO, and NHB purposes, as
+well as the travel time calculation for the other purposes included in USTM
+provide important functionality towards estimating the true costs
+associated with long term highway closure.
+
+The recommendations resulting from the adaptation of a logit-based model on
+the USTM network are that logit-based modeling returns more sensitive
+estimations of the value of a link in the network. This is a highly
+important outcome because more accurate and efficient estimation allows
+UDOT to better understand the monetary importance of highway links
+throughout Utah. Additionally, the model’s design allows for further
+analysis of additional link closure, eased identification of critical
+points on Utah's highway network, and even multi-link closure in the
+future.
+
+\section{Obtaining the Model and it's Documentation}
+
+The model is hosted in an online GitHub repository which is maintained by
+the BYU Transportation Lab. The repository can be found here:
+
+https\://github.com/byu\-transpolab/ustm\_resiliency
+
+\section{Limitations and Next Steps}
+
+Overall implementation of a logit-based travel demand model that more
+accurately captures demand on the USTM network is a highly important tool
+for continued development. Updating USTM to include a logit-based travel
+demand model instead of a gravity-based model would increase the accuracy
+of travel demand estimates moving forward. This, in turn, would allow for
+better travel estimates between TAZ across the state, and would likely
+cause more accurate estimations of traffic volumes on the road network to
+be estimated, and therefore future development and maintenance activities
+could be adjusted to accomodate future travel needs in Utah.  Updating USTM
+to have a logit-based model would increase overall highway network capacity
+to accurately estimate travel demand on Utah’s road network.
+
+The non-motorized (NMOT) distance threshold was originally set at 50 miles
+because we believed that this would cap the most extreme trips but still
+allow the possibility of longer NMOT trips. NMOT trips are heavily
+penalized per each additional mile, but NMOT trips have improved access to
+short- and medium-range destinations, which clearly creates a problem when
+trips become longer and can be assigned NMOT as a mode. Setting the
+threshold at 50 miles was a mistake; the 90th percentile walk and cycling
+trips in the Utah Household Travel Survey (UHTS) are less than 2 and 5
+miles respectively. In order to better represent NMOT trips, an upper
+threshold of 2.5 miles was assigned. Additionally, the NMOT skim was held
+constant throughout each iteration. This was done because pedestrians and
+cyclists typically have better access to side streets, or are more likely
+to find shorter routes not represented on the USTM network when presented
+with a closed link.
+
+Adding a congestion feedback loop to the resiliency model would allow more
+accurate cost estimations to be made. A feedback loop would cause the
+travel time and logsum information to be fed back into the beginning of the
+model and rerun continuously until the specifications of a convergence
+parameter were met. The loop allows for better estimates of the true change
+in travel time due to both route change and increased congestion. The loop
+also allows for more accurate route choice, mode choice, and destination
+choice to be made when the true effects of congestions are accounted for.
+In June 2020, the TAC decided to not include a feedback loop to save time
+on model development for Phase 1. A feedback loop and sensitivity analysis
+will be included as part of Phase 2.
+
+It is not unreasonable to assume that in the event of an earthquake or
+similar widespread disaster event, that multiple links could become
+damaged. The ability to analyze the results of simultaneous multiple link
+loss will be included as a part of Phase 2 as well. This will allow for
+greater understanding of the effects that adverse events can have on Utah’s
+highway network, and help UDOT to better prepare for the development and
+maintenance needs of the future.
+
+\section{Summary}
+
+The development of a logit-based travel demand model can improve the
+ability of UDOT to accurately estimate the costs per day of link loss that
+Utahn’s would experience. The resiliency model provides sensitive
+estimates that more accurately represent the costs associated with link
+closure than a travel time increase methodology by itself would be able to
+capture. Using the logsum, estimations sensitive to user choice were
+found, which can help professionals to better evaluate risk to Utah’s
+infrastructure. User choice is highly important in modern modeling
+practices because user choice allows a model to estimate information more
+precisely and accurately. The information provided by the resiliency model
+should be used to prioritize link importance to the functionality of
+Utah’s highway network. The resiliency model more accurately estimates
+costs experienced by Utahn’s due to link loss than traditional methods for
+determining costs.
