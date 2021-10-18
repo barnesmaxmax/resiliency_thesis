@@ -16,45 +16,45 @@ Warning--can't use both volume and number fields in rogers2012
 Warning--empty journal in UtahDepartmentofTransportation2020
 Warning--there's a number but no volume in UtahDepartmentofTransportation2020
 Warning--empty journal in levinson2010
-You've used 39 entries,
+You've used 40 entries,
             2229 wiz_defined-function locations,
-            739 strings with 10759 characters,
-and the built_in function-call counts, 15553 in all, are:
-= -- 1496
-> -- 654
-< -- 28
-+ -- 235
-- -- 220
-* -- 1355
-:= -- 2709
-add.period$ -- 108
-call.type$ -- 39
-change.case$ -- 303
-chr.to.int$ -- 38
-cite$ -- 47
-duplicate$ -- 571
-empty$ -- 1073
-format.name$ -- 279
-if$ -- 3038
+            741 strings with 10777 characters,
+and the built_in function-call counts, 15789 in all, are:
+= -- 1520
+> -- 661
+< -- 29
++ -- 237
+- -- 222
+* -- 1370
+:= -- 2756
+add.period$ -- 110
+call.type$ -- 40
+change.case$ -- 309
+chr.to.int$ -- 39
+cite$ -- 48
+duplicate$ -- 581
+empty$ -- 1088
+format.name$ -- 282
+if$ -- 3081
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 33
-newline$ -- 189
-num.names$ -- 117
-pop$ -- 250
+newline$ -- 193
+num.names$ -- 120
+pop$ -- 254
 preamble$ -- 1
-purify$ -- 304
+purify$ -- 310
 quote$ -- 0
-skip$ -- 444
+skip$ -- 453
 stack$ -- 0
-substring$ -- 1106
+substring$ -- 1118
 swap$ -- 70
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 232
+type$ -- 238
 warning$ -- 8
-while$ -- 116
+while$ -- 118
 width$ -- 0
-write$ -- 483
+write$ -- 493
 (There were 8 warnings)

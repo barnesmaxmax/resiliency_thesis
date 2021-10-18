@@ -1,12 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1632269258 "chapter1.tex" "chapter1.pdf" "chapter1" 1632269259
-  "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+["pdflatex"] 1634403818 "chapter1.tex" "chapter1.pdf" "chapter1" 1634403820
   "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1583102494 39451 60d7debd9ef8ece44cbe965493576c2d ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1586288259 2432462 fd0fa20e9a3cb5f8169fd0ba1c955158 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "chapter1.aux" 1632268876 863 bf6d07a29e1a3c07df148453712e4e2f "pdflatex"
-  "chapter1.tex" 1632269257 4249 07759c2b98eb8a366fe5ea5b167d4b17 ""
+  "chapter1.aux" 1634401259 1709 d6abe7b4914bdcf60fe6c7d03630af3c ""
+  "chapter1.tex" 1634403818 4707 8284f4cfe90a36415e17807fe9d58970 ""
   (generated)
   "chapter1.pdf"
   "chapter1.log"

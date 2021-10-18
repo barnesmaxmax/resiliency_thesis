@@ -3,81 +3,88 @@
 \graphicspath{{figures/}{figures/chapter4/}}
 
 \section{Overview}
-In this chapter, we summarize the methodology used to identify vulnerable
-links on Utah’s highway network. We also apply the model to scenarios
-where critical highway links are removed from the model network. This
-includes first a detailed analysis of a single scenario, where I-80
-between Salt Lake and Tooele Counties is severed. We compare the model
+In this chapter, we apply the Resiliency Model to evaluate the effects of link
+loss or degradation on the USTM network. We do this by applying the model to scenarios
+where critical highway links have been removed from the USTM network. This
+chapter includes first, a detailed analysis of a single scenario, where I-80
+between Salt Lake and Tooele Counties is severed. We then compare the model
 output to an alternative method that measures only the change in travel
 time and does not allow for mode or destination choice. The model was then
-applied to 41 individual link closure scenarios throughout the state.
+applied to 41 individual scenarios, with 40 of those scenarios involving link
+closure scenarios throughout the state.
 
 \section{Vulnerable Link Identification}
-
 Two methodologies were developed to identify vulnerable network links in
 Utah. The first method resembles the process used by AEM to determine
-threat categories, and threat proximity thresholds to highway links. This
-methodology was ultimately not used in the resiliency model due to its
-complicated nature which involved identifying multiple risk factors. The
-second method uses an online Risk Priority Analysis map created by UDOT
-combined with familiar knowledge of Utah’s road system. Using this second
+threat categories and threat proximity thresholds to highway links. The
+second method uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on exisiting risk analysis data. Additional
+points of interest were identified by the research team or by UDOT officials, who have a familiar working knowledge of the USTM network. Using this second
 method, links were identified due to their location in relation to
-populations or geography. Many were suspected choke points or were points
-of interest to the BYU team or UDOT officials.
+population centers, remote geographic location, proximitiy to other highway facilities, were known to be at risk due to geologic or geographic features, or
+because they were suspected choke points in the network.
 
-\section{Single Scenario Analysis}
+After identifying locations of interest, we now apply the model to compare the results of 40 scenarios. In each scenario, an individual highway
+facility is removed from the model highway network. Each of these scenario locations is shown in Figure \ref{fig:linksmap}, and is identified in a report by
+\cite{aem2017} or the research team using the methodology described. A detailed analysis of the results of a single scenario will be done, followed by a
+more general analysis for all 40 scenarios considered in the Resiliency Model.
 
-This section outlines an in-depth analysis that was conducted to ensure
-the resiliency model was accurately capturing trips with OD pairs in the
-targeted area around a closed link (in an urban area, most trips would be
-generated or terminate in areas directly adjacent to the broken link).
-This analysis was done on a link between Tooele and Salt Lake City, Utah.
+\section{Localized Scenario Analysis}
 
-Scenario 50, located along I-80 between Tooele and Salt Lake Counties, was
-examined to ensure the resiliency model was capturing trips in the
-vicinity of a broken link. Analyzing the model outputs at a localized
-level was necessary to ensure that the model was appropriately estimating
-trips and capturing them in the areas that were expected. In scenario 50,
-if many effected trips had not been originated or terminated in Tooele and
-Salt Lake counties, that would have signaled that a problem was present in
-the model. This localized analysis shows that a broken link mainly effects
-the area surrounding that link, and the key takeaway here is that the
-model functions as intended.
+This section outlines an in-depth, localized analysis that was conducted to ensure
+the Resiliency Model was accurately describing trips with OD pairs in the
+targeted area around a severed link. This analysis was done on a link between
+Tooele and Salt Lake City, Utah. This detailed analysis is useful because it
+provides a closer look at the way the Resiliency Model works, capturing trips
+between two population centers.
 
-Another method we used to estimate trip costs is the travel time method,
+Scenario 50, which is located along I-80 between Tooele and Salt Lake Counties
+was examined here. The localized analysis shows that the majority of trips
+affected by damage to this link either originate or terminate in one of the
+two counties, as expected. These results can be seen in Table
+\ref{tab:tooeletable}. Another method we used to compare results against is
+the travel time method,
 which serves to capture trips that have fixed OD pairs such as freight and
 recreational trips. This localized analysis also looks at this method.
 
-Table \ref{tab:tooeletable} compares the overall costs between the logsum and travel
-time methods, the specific cost for trips originating in Tooele and ending in Salt
-Lake and includes a trip comparison as well. From Table \ref{tab:tooeletable}, we can
-see that the logsum method captures about \$53,897 in experienced expense due to the
-closure of the link. Specifically, between Tooele and SLC, the logsum based
-resiliency model captures \$20,746 of expense, which is approximately 51.89\% of the
-total expense as seen in Table \ref{tab:tooeletable2}. This shows that the resiliency
-model is effectively capturing trips in the correct areas based on the percent
-comparison capture rate in Table \ref{tab:tooeletable2}. When we look at the travel
-time method of analysis, we can see that the costs at both the local and statewide
-levels are much greater with \$437,401 and \$406,899 respectively estimated as the
-costs due to just the increase in travel time, not using the logit-based model.
+Table \ref{tab:tooeletable} compares trips and the overall costs between the
+logsum and travel time methods, the specific cost for trips originating in
+Tooele County and ending in Salt Lake County. We can see that the logsum
+method captures about
+\$54,000 of expenses experienced by road users due to the closure of the
+link. Specifically, between Tooele and Salt Lake Counties, the logsum based analysis using the Resiliency
+Model captures \$21,000 of
+expense, which is approximately 38\% of the total expense experienced
+statewide. A further breakdown of expenses experienced at the local level
+between Tooele and Salt Lake Counties
+can be seen Table \ref{tab:tooeletable2}.
+
+The data supports the conclusion that the Resiliency Model is effectively
+capturing trips between Tooele and Salt Lake Counties based on the percent capture
+rates in Table \ref{tab:tooeletable2}. Additionally, when we look at the
+travel time method of analysis, we can see that the costs at both the local and
+statewide levels are much greater with about \$437,000 and \$407,000
+respectively estimated as the costs due to just the increase in travel time, not using
+the logit-based model.
 
 \begin{table}
+\caption{\label{tab:tooeletable}Localized Analysis Results}
 
-\caption{\label{tab:tooeletable}Tooele Table}
 \centering
-\begin{tabular}[t]{lllllll}
+%\begin{adjustbox}{width=0.9\textwidth}
+\begin{tabular}[t]{lrrrrrr}
 \toprule
-...1 & Total Overall Costs & ...3 & Tooele - SLC Cost & ...5 & Base Trips
-& ...7\\
+Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele - SLC Cost \\(Dollars per Day)}} & \multicolumn{2}{c}{Base Trips}\\
 \midrule
-Purpose & Logsum & Travel Time & Logsum & Travel Time & Tooele - SLC &
-Whole Network\\
+ & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method} & \makecell{ Tooele - \\ SLC } &
+\makecell{Whole\\Network} \\
+\midrule
 HBW & \$15397.06 & \$244275.72 & \$12143.11 & \$233373.56 & 7980 & 1684141\\
 HBO & \$12882.89 & \$108412.94 & \$3577.62 & \$98163.53 & 6665.86 & 4593248\\
 NHB & \$25635.92 & \$84712.36 & \$5025.24 & \$75361.98 & 1025
 & 2611185\\
-REC & \$398.72 & \$398.72 & \$40.73 & \$40.73 & 3 & 2385\\
+\midrule
 \addlinespace
+REC & \$398.72 & \$398.72 & \$40.73 & \$40.73 & 3 & 2385\\
 XXP & \$3690.26 & \$55870.17 & \$55870.17 & \- & 0 & 22350\\
 Freight & \$911254.89 & \$10883835.01 & \$111772.5 & \$111772.5 & 515811 &
 875183\\
@@ -86,212 +93,142 @@ Total Logsum & \$53897.87 & \$437401.02 & \$20745.97 & \$406899.06 &
 Total & \$969241.74 & \$437401.02 & \$132559.20 & \$406899.06 & 531486 & 9788493\\
 \bottomrule
 \end{tabular}
+%\end{adjustbox}
 \end{table}
 
 \begin{table}
 
-\caption{\label{tab:tooeletable2}Tooele Table Again}
+\caption{\label{tab:tooeletable2}Localized Analysis Cost Capture Rates}
 \centering
-\begin{tabular}[t]{llrr}
+\begin{tabular}[t]{ccc}
 \toprule
-Logsum / Base & ...2 & Logsum / Tooele - SLC Logsum & Travel Time / Tooele
-- SLC Travel Time\\
+ & Logsum & Travel Time\\
 \midrule
- &  &  & \\
-All Trips & Tooele - SLC &  & \\
-0.0630 & 0.0342 & 0.5189 & 0.9554\\
-0.1188 & 0.0679 & 0.5174 & 0.9055\\
-0.3026 & 0.0136 & 0.0400 & 0.8896\\
+HBW & 0.7896 & 0.9554 \\
+HBO & 0.2777 & 0.9055 \\
+NHB & 0.1960 & 0.8896 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 The logsum and travel time methods can be broken down into the overall costs and the
 comparable costs. The comparable costs are made up of those purposes which are
-included in both the resileincy model and in the travel time method for determining
+included in both the Resiliency Model and in the travel time method for determining
 cost. HBW, HBO, and NHB trip purposes can be compared because all three trip purposes
 are represented by each method of cost estimation.
 
-The travel time method measures the difference in travel time between the base
-scenario and any other scenario caused by link closure, and then multiplies that
+The travel time method measures the difference in travel time between the base scenario and any other scenario caused by link closure, and then multiplies that
 difference by the VOT for each trip purpose and the number of trips estimated for
 each trip purpose. For external trips, freight trips, and REC trips, these were all
 extracted directly from USTM. Attempting to include a calculation of the costs
 associated with increased travel time for freight trips, external trips, and REC
 trips allows a better estimation of the true cost experienced by all road users, not
-just those who areincluded in the resiliency model.
+just those who are included in the Resiliency Model.
 
-The HBW, HBO, and NHB purposes are also estimated using the logsum model. Calculating
-the costs associated with the change in logsum provides a more precise and accurate
-estimate of the costs experienced by these users due to link loss. Ultimately, the
-logit-based model is more sensitive to changes in the network for those purposes
-which are included in the resiliency model, but a way to account for all purposes
-must be developed as well. Thus, by combining elements from the travel time method
-and the resileincy model, an estimate can be made that represents all traffic on the
-USTM network.
-
-\section{Comparative Scenario Results}
-
-We now apply the model to compare 40 additional scenarios where individual highway
-facilities are removed from the model highway network. These scenario locations are
-shown in Figure \ref{fig:linksmap}, and were identified in a report by \cite{aem2017} and the research team. AEM approached
-the idea of systemic resiliency by attempting to classify various types of threats
-toward specific infrastructure types. This method, while valid, was difficult to
-implement statewide. Some facilities have obvious natural threats such as earthquake,
-flood, or landslide, or are natural choke points on the USTM network. Because of the difficulty
-associated with identifying links in a similar method to AEM, the BYU team identified links using UDOTs risk analysis tool.
+The HBW, HBO, and NHB purposes are estimated using the logsum portion of the
+Resiliency Model. Calculating the costs associated with the change in logsum
+provides estimations of the costs experienced by road users due to link loss
+that account for user choice of mode and destination. The logit-based model
+employed in the Resiliency Model ultimately provides lower estimates of the
+total disbenefit, and therefore cost, experienced by road users due to link
+degradation or loss for the purposes included for analysis. However, the
+logsum calculation is only used for three purposes in the USTM model. A way to
+account for freight trips, REC trips, and trips that occur between external
+nodes must also be found. These trip purposes typically have fixed origins
+nd destinations. As such, a way to account for all purposes must be developed.
+Thus, by combining elements from the travel time method and the Resiliency Model, an estimate can be made that represents all traffic on the USTM network.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.75\linewidth]{figures/chapter4/resiliency_links_map.pdf}
+{\centering \includegraphics[width=0.95\linewidth]{figures/chapter4/resiliency_links_map.pdf}}
 
-}
-
-\caption{Links Identified for Analysis.}\label{fig:linksmap}
+\caption{Links Identified for Analysis.}
+\label{fig:linksmap}
 \end{figure}
 
-The following sections will present the results of the 41 scenarios analyzed. First,
-Table \ref{tab:linktable} shows each of the scenarios we examined, labeled “road10”
-for scenario 10, and “road11” for scenario 11. Other identifying information such as
-route numbers or street names, and geographic or other identifying descriptions about
-the locations where the link was cut are also provided.
+The following sections will present the results of the 40 scenarios analyzed.
+First, Table \ref{tab:linkresults} shows each of the scenarios we examined,
+labeled simply as ``10'' for scenario 10, and ``11'' for scenario 11, along with the
+change in accessibility, $\Delta$ Logsum, and the Cost Value in dollars per day
+associated with link closure. Other identifying information, such as route
+numbers or street names and geographic or other identifying descriptions about
+the locations where the link was cut, are also provided.
 
-\begin{table}
-
-\caption{\label{tab:linktable}Link Table}
-\centering
-\begin{tabular}[t]{lll}
-\toprule
-LINK\_ID & ROUTE & LOCATION\\
-\midrule
-road10 & SR-95 & near Hite\\
-road11 & US-6 & near King Top\\
-road12 & I-15 & in Bountiful\\
-road13 & I-70 & at Dragon Point (W of Green River)\\
-road14 & I-15 & in Orem between Univ. Ave \& Center St\\
-\addlinespace
-road15 & SR-199 & near Rush Valley\\
-road16 & SR-153 & between Beaver \& Junction\\
-road17 & SR-18 & just North of St. George\\
-road18 & I-15 & near Rocky Ridge (between Payson \& Nephi)\\
-road19 & I-15 & near I-70 \& Filmore\\
-\addlinespace
-road20 & I-15 & near New Harmony\\
-road21 & US-40 & East of Strawberry Reservoir\\
-road22 & US-6 & in Carbon County North of Helper\\
-road23 & Legacy Parkway & near West Bountiful\\
-road24 & UT-35 & outside of Francis\\
-\addlinespace
-road25 & Timp Highway & at the base of AF Canyon\\
-road26 & SR-14 & in Cedar Canyon\\
-road27 & I-84 & between Ogden and Morgan\\
-road28 & SR-65 & on the border of Salt Lake County \& Morgan County\\
-road29 & SR-101 & East of Hyrum\\
-\addlinespace
-road30 & US-91 & between Brigham City \& Mantua\\
-road31 & SR-62 & East of Kingston\\
-road32 & US-89 & between Logan and Bear Lake\\
-road33 & SR-24 & in Capitol Reef National Park\\
-road34 & Bangerter & near Bluffdale\\
-\addlinespace
-road35 & SR-191 & between Helper \& Duchesne\\
-road36 & SR-24 & near Steamboat Point\\
-road37 & I-80 & in Parley's Canyon\\
-road38 & I-15 & at the Point of the Mountain\\
-road39 & I-80 & in SLC near Sugar House and 1300 E\\
-\addlinespace
-road40 & I-15 & in SLC between 2100 S \& 1300 S\\
-road41 & I-215 & near Taylorsville\\
-road42 & Bangerter & near West Valley City\\
-road43 & I-215 & near Cottonwood Heights\\
-road44 & MVC (UT-85) & West of West Jordan\\
-\addlinespace
-road45 & US-89 & near the Border of Arizona by Lake Powell\\
-road46 & SR-189 & up Provo Canyon near Vivian Park\\
-road47 & US-6 & up Spanish Fork Canyon near Diamond Fork Rd\\
-road48 & I-70 & near Green River (NW of Moab)\\
-road49 & I-70 & near Richfield \& Filmore\\
-\addlinespace
-road50 & I-80 & between SLC and Tooele\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Link Rankings by Both Methods}
-The logsum method results are as follows in Table \ref{linkresults}.
+The logsum method results are as follows in Table \ref{tab:linkresults}.
 The results are ranked from the road with the largest (most positive
-cost to the road with the smallest cost.
-
-We can see that road 27, which corresponds to I-84 between Ogden and Morgan, experiences the largest cost per day according to the resiliency model. Following road 27, roads 50, 37, 30, and 17 make up the five most important roads according to the cost estimation provided by the resiliency model. Each of these roads with the exception of SR-18 in St. George, is an Interstate or State Highway facility in Northern Utah, which is heavily populated. Some roads, such as road 10, road 11, or road 33, which are located in remote parts of the state, experiences no measurable change to HBW, HBO, or NHB traffic. This is likely due to the location of the highway link that was cut. A ranking is provided for all of the roads in Table \ref{tab:linkresults}.
+cost) to the road with the smallest cost. We can see that scenario 27, which
+corresponds to I-84 between Ogden and Morgan, experiences the largest cost
+per day according to the Resiliency Model. Following scenario 27, scenarios 50, 37, 30,
+and 17 make up the five most important roads according to the cost estimation
+provided by the Resiliency Model. Each of the roads in these scenarios --- with the exception
+of SR-18 in St. George --- is an interstate or state highway facility in
+northern Utah, which is heavily populated. Some scenarios, such as scenario 10,
+scenario 11, or scenario 33, are roads that are located in remote parts of the state, and
+experience no measurable change to HBW, HBO, or NHB traffic. This is
+likely due to the remoteness of the geographic location of the highway
+link that was cut. A ranking is provided for all of the examined scenarios in Table \ref{tab:linkresults}.
 
 \begin{table}
 
-\caption{\label{tab:linkresults}Link Analysis Results}
+
+\caption{\label{tab:linkresults}Logsum Analysis Results}
 \centering
-\begin{tabular}[t]{lrrll}
+\begin{tabular}[t]{crrll}
 \toprule
-Scenario & Delta & Cost Value & Route & Location\\
+Scenario & $\Delta$ Logsum & \makecell{Cost \\(Dollars per Day)} & Route & Location\\
 \midrule
-ROAD27 & -23830.208 & 14893880.000 & I-84 & between Ogden and Morgan\\
-ROAD50 & -19686.788 & 12304242.500 & I-80 & between SLC and Tooele\\
-ROAD37 & -8932.691 & 5582931.875 & I-80 & in Parleys Canyon\\
-ROAD30 & -7511.948 & 4694967.500 & US-91 & between Brigham City \& Mantua\\
-ROAD17 & -5243.828 & 3277392.500 & SR-18 & just North of St. George\\
-\addlinespace
-ROAD46 & -4911.457 & 3069660.625 & SR-189 & up Provo Canyon near Vivian Park\\
-ROAD38 & -4422.194 & 2763871.250 & I-15 & at the Point of the Mount\\
-ROAD18 & -3186.967 & 1991854.375 & I-15 & in Rocky Ridge (between Payson \& Nephi)\\
-ROAD42 & -2657.614 & 1661008.750 & Bangerter & near West Valley City\\
-ROAD41 & -1700.167 & 1062604.375 & I-215 & near Taylorsville\\
-\addlinespace
-ROAD25 & -1139.020 & 711887.500 & Timp Highway & at the base of AF Canyon\\
-ROAD24 & -387.467 & 242166.875 & UT-35 & outside of Francis\\
-ROAD23 & -297.882 & 186176.250 & Legacy Parkway & near West Bountiful\\
-ROAD20 & -253.712 & 158570.000 & I-15 & near New Harmony (between Cedar City \& St. George)\\
-ROAD47 & -142.671 & 89169.375 & US-6 & up Spanish Fork Canyon near Diamond Fork Rd\\
-\addlinespace
-ROAD26 & -125.740 & 78587.500 & SR-14 & in Cedar Canyon\\
-ROAD15 & -67.634 & 42271.250 & SR-199 & near Rush Valley\\
-ROAD32 & -60.883 & 38051.875 & US-89 & between Logan and Bear Lake\\
-ROAD14 & -45.386 & 28366.250 & I-15 & in Orem between Univ. Ave \& Center St\\
-ROAD29 & -41.595 & 25996.875 & SR-101 & East of Hyrum\\
-\addlinespace
-ROAD31 & -40.108 & 25067.500 & SR-62 & East of Kingston\\
-ROAD22 & -30.394 & 18996.250 & US-6 & in Carbon County North of Helper\\
-ROAD49 & -17.768 & 11105.000 & I-70 & near Richfield \& Filmore\\
-ROAD45 & -17.029 & 10643.125 & US-89 & near the Border of Arizona by Lake Powell\\
-ROAD21 & -11.267 & 7041.875 & US-40 & East of Strawberry Reservoir\\
-\addlinespace
-ROAD36 & -10.170 & 6356.250 & SR-24 & near Steamboat Point\\
-ROAD16 & -9.724 & 6077.500 & SR-153 & between Beaver \& Junction\\
-ROAD48 & -9.717 & 6073.125 & I-70 & near Green River (NW of Moab)\\
-ROAD19 & -7.623 & 4764.375 & I-15 & near I-70 \& Filmore\\
-ROAD35 & -3.762 & 2351.250 & SR-191 & between Helper \& Dechesne\\
-\addlinespace
-ROAD13 & -0.135 & 84.375 & I-70 & at Dragon Point (W of Green River)\\
-ROAD28 & -0.103 & 64.375 & SR-65 & on the border of Salt Lake County \& Morgan County\\
-ROAD10 & 0.000 & 0.000 & SR-95 & near Hite\\
-ROAD11 & 0.000 & 0.000 & US-6 & near King Top\\
-ROAD33 & 0.000 & 0.000 & SR-24 & in Capitol Reef National Park\\
-\addlinespace
-ROAD12 & 894.999 & -559374.375 & I-15 & in Bountiful\\
-ROAD44 & 2149.291 & -1343306.875 & MVC (UT-85) & West of West Jordan\\
-ROAD43 & 4043.132 & -2526957.500 & I-215 & near Cottonwood Heights\\
-ROAD40 & 5576.276 & -3485172.500 & I-15 & in SLC between 2100 S \& 1300 S\\
-ROAD39 & 7434.744 & -4646715.000 & I-80 & in SLC near Sugar House and 1300 E\\
-\addlinespace
-ROAD34 & 9362.283 & -5851426.875 & Bangerter & near Bluffdale\\
+27 & -23830.208 & 14893880.00 & I-84 & between Ogden and Morgan\\
+50 & -19686.788 & 12304242.50 & I-80 & between SLC and Tooele\\
+37 & -8932.691 & 5582931.88 & I-80 & in Parley's Canyon\\
+30 & -7511.948 & 4694967.50 & US-91 & between Brigham City \& Mantua\\
+17 & -5243.828 & 3277392.50 & SR-18 & just North of St. George\\
+46 & -4911.457 & 3069660.63 & SR-189 & up Provo Canyon near Vivian Park\\
+38 & -4422.194 & 2763871.25 & I-15 & at the Point of the Mount\\
+18 & -3186.967 & 1991854.38 & I-15 & in Rocky Ridge (between Payson \& Nephi)\\
+42 & -2657.614 & 1661008.75 & Bangerter & near West Valley City\\
+41 & -1700.167 & 1062604.38 & I-215 & near Taylorsville\\
+25 & -1139.020 & 711887.50 & Timp Hwy & at the mouth of AF Canyon\\
+24 & -387.467 & 242166.88 & UT-35 & outside of Francis\\
+23 & -297.882 & 186176.25 & Legacy & near West Bountiful\\
+20 & -253.712 & 158570.00 & I-15 & near New Harmony\\
+47 & -142.671 & 89169.38 & US-6 & Spanish Fork Canyon at Diamond Fork Rd\\
+26 & -125.740 & 78587.50 & SR-14 & in Cedar Canyon\\
+15 & -67.634 & 42271.25 & SR-199 & near Rush Valley\\
+32 & -60.883 & 38051.88 & US-89 & between Logan and Bear Lake\\
+14 & -45.386 & 28366.25 & I-15 & in Orem between Univ. Ave \& Center St\\
+29 & -41.595 & 25996.88 & SR-101 & East of Hyrum\\
+31 & -40.108 & 25067.50 & SR-62 & East of Kingston\\
+22 & -30.394 & 18996.25 & US-6 & in Carbon County North of Helper\\
+49 & -17.768 & 11105.00 & I-70 & near Richfield \& Fillmore\\
+45 & -17.029 & 10643.13 & US-89 & near Arizona Border\\
+21 & -11.267 & 7041.88 & US-40 & East of Strawberry Reservoir\\
+36 & -10.170 & 6356.25 & SR-24 & near Steamboat Point\\
+16 & -9.724 & 6077.50 & SR-153 & between Beaver \& Junction\\
+48 & -9.717 & 6073.13 & I-70 & near Green River (NW of Moab)\\
+19 & -7.623 & 4764.38 & I-15 & near I-70 \& Fillmore\\
+35 & -3.762 & 2351.25 & SR-191 & between Helper \& Duchesne\\
+13 & -0.135 & 84.38 & I-70 & at Dragon Point (W of Green River)\\
+28 & -0.103 & 64.38 & SR-65 & border of Salt Lake \& Morgan Counties\\
+10 & 0.000 & 0.00 & SR-95 & near Hite\\
+11 & 0.000 & 0.00 & US-6 & near King Top\\
+33 & 0.000 & 0.00 & SR-24 & in Capitol Reef National Park\\
+12 & 894.999 & -559374.38 & I-15 & in Bountiful\\
+44 & 2149.291 & -1343306.88 & UT-85 & West of West Jordan\\
+43 & 4043.132 & -2526957.50 & I-215 & near Cottonwood Heights\\
+40 & 5576.276 & -3485172.50 & I-15 & in SLC between 2100 S \& 1300 S\\
+39 & 7434.744 & -4646715.00 & I-80 & in SLC near Sugar House and 1300 E\\
+34 & 9362.283 & -5851426.88 & Bangerter & near Bluffdale\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Table \ref{tab:timeresults} contains the ranking results from the travel
 time method. Here, we see that the first five roads differ from the
-results of the logsum model. Instead, road 48 becomes the most important
-road due to costs experienced. Road 48 is a part of I-70 near Green River,
+results of the logsum model. Scenario, road 48 becomes the most important
+road due to costs experienced. Scneario 48 is a part of I-70 near Green River,
 Utah. The other four roads that make up the top five most important roads
-in the travel time method analysis are road 13, road 20, road 50, and road
-49. Some of these roads appear in both the logsum and travel time methods.
+in the travel time method analysis are scenario 13, scenario 20, scenario 50, and scenario
+49. Some of these scenarios appear in both the logsum and travel time method results. This is not unexpected, because each of these facilites is a main arterial in the region where they are located, and are interstate highways carrying large amounts of private passenger vehicles and freight.
 Here again, several of the roads that are most important are located in
 Northern Utah. It is important to note that the main driving factor as to
 why a road was important or not in the travel time analysis was how much
@@ -302,100 +239,100 @@ with freight trips.
 
 \begin{table}
 
-\caption{\label{tab:timeresults}Travel Time Analsyis Results}
+\caption{\label{tab:timeresults}Travel Time Analsyis Results ($\Delta$ Cost in Dollars per Day)}
+\makebox[\linewidth]{
 \centering
 \begin{tabular}[t]{lrrrrrrrrrr}
 \toprule
-ROAD & IIF & XXF & IXF & HBW & HBO & NHB & REC & XXP & TIMEDIFF (Min) & Total Cost\\
+ROAD & \makecell{IIF} & \makecell{XXF} & \makecell{IXF} & \makecell{HBW} & \makecell{HBO} & \makecell{NHB} & \makecell{REC} & \makecell{XXP} & \makecell{TIME($\Delta$ hr)} & \makecell{Total Cost}\\
 \midrule
-48 & 9.907799e+05 & 8.454694e+07 & 0.0217 & 195.8176 & 256.6567 & 28.9348 & 15447.5499 & 417991.5503 & 517790549.30 & 8.597164e+07\\
-13 & 8.399095e+04 & 2.513068e+07 & 0.0000 & 0.0000 & 3.2527 & 0.0000 & 210.5181 & 95273.2859 & 76387376.42 & 2.531016e+07\\
-20 & 5.685583e+05 & 1.871674e+07 & 175.0997 & 2873.2413 & 2640.2752 & 1208.8308 & 11372.0957 & 234813.5438 & 543606576.50 & 1.953838e+07\\
-50 & 6.087866e+05 & 1.027499e+07 & 53.5297 & 244275.7151 & 108412.9438 & 84712.3575 & 398.7293 & 55870.1723 & 125766274.10 & 1.137750e+07\\
-49 & 3.079064e+05 & 7.810609e+06 & 0.0000 & 78.0622 & 59.2752 & 17.6232 & 155.5550 & 29826.7738 & 62136743.99 & 8.148653e+06\\
-\addlinespace
-18 & 3.935367e+06 & 1.847822e+06 & 1148.1140 & 20436.1302 & 21163.5461 & 15362.6359 & 13839.5567 & 143890.3925 & 937282072.00 & 5.999030e+06\\
-27 & 1.854494e+05 & 4.359448e+06 & 664.2652 & 35891.3868 & 20811.4770 & 52515.3604 & 207.6318 & 9608.6486 & 38255330.83 & 4.664596e+06\\
-19 & 2.307693e+06 & 1.069414e+06 & 104.3208 & 67.2237 & 70.0649 & 13.2078 & 6829.1911 & 94820.4414 & 442572261.70 & 3.479012e+06\\
-37 & 1.080281e+06 & 9.788824e+05 & 1127.7596 & 46220.2113 & 36178.1897 & 37631.6332 & 675.1268 & 5668.6435 & 51291892.31 & 2.186665e+06\\
-47 & 1.411715e+06 & 6.163554e+05 & 8.1666 & 1631.6607 & 373.0056 & 468.6302 & 2600.3043 & 14011.5554 & 241897360.20 & 2.047164e+06\\
-\addlinespace
-38 & 1.341423e+06 & 3.911825e+05 & 153.2942 & 75916.0675 & 88791.1404 & 84969.5325 & 2485.9995 & 17292.8808 & 214931383.10 & 2.002214e+06\\
-14 & 7.120600e+05 & 2.383607e+05 & 4.8294 & 31899.2443 & 35721.9390 & 38114.5497 & 1723.7055 & 10899.5483 & 134164459.50 & 1.068785e+06\\
-30 & 9.099365e+05 & 8.036293e+02 & 514.7669 & 15379.0610 & 12882.8926 & 25635.9186 & 624.3483 & 3690.2614 & 115025954.80 & 9.694674e+05\\
-39 & 1.681473e+05 & 6.624298e+05 & 297.8676 & 15712.6821 & 15091.4466 & 19512.5202 & 135.4998 & 2821.0313 & 8154310.12 & 8.841482e+05\\
-22 & 4.217119e+05 & 2.608851e+05 & 7.9739 & 4.4674 & 27.9534 & 17.1794 & 1163.6510 & 4843.3492 & 83071865.27 & 6.886616e+05\\
-\addlinespace
-45 & 8.637883e+02 & 5.509410e+05 & 145.7363 & 183.9739 & 232.6245 & 78.5503 & 13.4424 & 40330.4295 & 5447581.96 & 5.927895e+05\\
-21 & 5.378431e+05 & 0.000000e+00 & 0.3000 & 26.3054 & 89.7595 & 38.6124 & 422.8649 & 3397.7307 & 34192023.06 & 5.418187e+05\\
-40 & 2.662065e+05 & 1.040071e+05 & 1.0558 & 19182.8100 & 19129.6986 & 20511.6397 & 266.8174 & 3233.3472 & 35243767.20 & 4.325389e+05\\
-12 & 2.993304e+05 & 7.818270e+04 & 0.1602 & 12585.8118 & 9574.6810 & 12507.6326 & 251.2141 & 3445.9185 & 38335415.98 & 4.158785e+05\\
-35 & 1.812866e+05 & 0.000000e+00 & 0.0000 & 16.8416 & 69.7900 & 1.0298 & 355.1579 & 2691.0964 & 65228930.22 & 1.844205e+05\\
-\addlinespace
-46 & 8.059370e+04 & 1.041404e+03 & 99.7032 & 15111.9443 & 21009.6172 & 12684.3356 & 924.3246 & 171.8691 & 78989455.18 & 1.316369e+05\\
-41 & 1.515385e+04 & 0.000000e+00 & 0.4593 & 11092.2455 & 17748.7203 & 22620.5138 & 44.2187 & 0.0000 & 1280460.38 & 6.666000e+04\\
-34 & 1.951111e+04 & 0.000000e+00 & 0.2150 & 8202.9795 & 11805.6401 & 14453.2904 & 57.3198 & 0.0000 & 3104087.28 & 5.403055e+04\\
-32 & 4.771497e+04 & 8.089437e+02 & 0.9723 & 736.0051 & 596.8124 & 124.5756 & 5.3209 & 0.0000 & 16516731.75 & 4.998760e+04\\
-43 & 4.898116e+03 & 0.000000e+00 & 32.3321 & 6214.8820 & 10069.7932 & 13886.2694 & 84.3510 & 0.0000 & 1061412.27 & 3.518574e+04\\
-\addlinespace
-16 & 3.053316e+04 & 0.000000e+00 & 0.1102 & 35.2392 & 0.8310 & 30.9960 & 118.4095 & 0.0000 & 400528.31 & 3.071875e+04\\
-42 & 4.319564e+03 & 0.000000e+00 & 1.0689 & 6623.8202 & 3955.9950 & 4711.9401 & 0.9951 & 0.0000 & 118983.58 & 1.961338e+04\\
-17 & 2.085366e+03 & 0.000000e+00 & 0.1453 & 2384.3859 & 3350.5890 & 6416.1449 & 1.4531 & 0.0000 & 2714732.79 & 1.423808e+04\\
-44 & 3.495956e+03 & 0.000000e+00 & 0.0112 & 3577.6774 & 1909.6427 & 5214.1316 & 2.3779 & 0.0000 & 272105.44 & 1.419980e+04\\
-11 & 7.576949e+03 & 0.000000e+00 & 0.0000 & 0.0206 & 2.7587 & 0.0505 & 0.5076 & 0.0000 & 5602443.84 & 7.580286e+03\\
-\addlinespace
-24 & 1.884429e+03 & 0.000000e+00 & 0.0000 & 847.0520 & 276.3691 & 1828.9714 & 0.6032 & 0.0000 & 4099829.14 & 4.837425e+03\\
-33 & 4.088993e+03 & 0.000000e+00 & 0.0479 & 2.6681 & 4.8372 & 0.0000 & 23.9748 & 0.0000 & 2698368.92 & 4.120521e+03\\
-25 & 5.627087e+01 & 0.000000e+00 & 0.0000 & 516.3094 & 272.7545 & 1852.3708 & 0.2881 & 0.0000 & 66958.96 & 2.697994e+03\\
-36 & 1.920113e+03 & 0.000000e+00 & 0.0000 & 12.8155 & 33.8723 & 12.5058 & 17.9324 & 0.0000 & 1826834.26 & 1.997239e+03\\
-26 & 7.331829e+02 & 0.000000e+00 & 0.0779 & 261.0639 & 214.9443 & 189.3878 & 18.4149 & 0.0000 & 978315.43 & 1.417072e+03\\
-\addlinespace
-31 & 2.595082e+02 & 0.000000e+00 & 0.0000 & 324.7364 & 482.7504 & 157.8675 & 0.5736 & 0.0000 & 2192510.85 & 1.225436e+03\\
-10 & 3.459434e+02 & 0.000000e+00 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 780.4662 & 0.0000 & 4755463.02 & 1.126410e+03\\
-15 & 2.097366e+02 & 0.000000e+00 & 0.0032 & 221.0662 & 258.3935 & 67.3873 & 4.4245 & 0.0000 & 1160411.30 & 7.610113e+02\\
-23 & 1.682285e+02 & 0.000000e+00 & 0.0026 & 84.6450 & 52.9403 & 123.9602 & 0.0107 & 0.0000 & 13581.54 & 4.297873e+02\\
-29 & 1.928357e+00 & 0.000000e+00 & 0.0058 & 122.3929 & 0.3114 & 62.3210 & 0.0000 & 0.0000 & 373344.59 & 1.869595e+02\\
-\addlinespace
-28 & 5.780939e+00 & 0.000000e+00 & 0.0000 & 0.0239 & 0.0477 & 0.0636 & 12.8707 & 0.0000 & 55504.21 & 1.878684e+01\\
-Base & 0.000000e+00 & 0.000000e+00 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.00 & 0.000000e+00\\
+48 & 990780 & 84546937 & 0 & 196 & 257 & 29 & 15448 & 417992 & 8629842 & 85971638\\
+13 & 83991 & 25130678 & 0 & 0 & 3 & 0 & 211 & 95273 & 1273123 & 25310156\\
+20 & 568558 & 18716735 & 175 & 2873 & 2640 & 1209 & 11372 & 234814 & 9060110 & 19538377\\
+50 & 608787 & 10274995 & 54 & 244276 & 108413 & 84712 & 399 & 55870 & 2096105 & 11377505\\
+49 & 307906 & 7810609 & 0 & 78 & 59 & 18 & 156 & 29827 & 1035612 & 8148653\\
+18 & 3935367 & 1847822 & 1148 & 20436 & 21164 & 15363 & 13840 & 143890 & 15621368 & 5999030\\
+27 & 185449 & 4359448 & 664 & 35891 & 20811 & 52515 & 208 & 9609 & 637589 & 4664596\\
+19 & 2307693 & 1069414 & 104 & 67 & 70 & 13 & 6829 & 94820 & 7376204 & 3479012\\
+37 & 1080281 & 978882 & 1128 & 46220 & 36178 & 37632 & 675 & 5669 & 854865 & 2186665\\
+47 & 1411715 & 616355 & 8 & 1632 & 373 & 469 & 2600 & 14012 & 4031623 & 2047164\\
+38 & 1341423 & 391182 & 153 & 75916 & 88791 & 84970 & 2486 & 17293 & 3582190 & 2002214\\
+14 & 712060 & 238361 & 5 & 31899 & 35722 & 38115 & 1724 & 10900 & 2236074 & 1068785\\
+30 & 909936 & 804 & 515 & 15379 & 12883 & 25636 & 624 & 3690 & 1917099 & 969467\\
+39 & 168147 & 662430 & 298 & 15713 & 15091 & 19513 & 135 & 2821 & 135905 & 884148\\
+22 & 421712 & 260885 & 8 & 4 & 28 & 17 & 1164 & 4843 & 1384531 & 688662\\
+45 & 864 & 550941 & 146 & 184 & 233 & 79 & 13 & 40330 & 90793 & 592790\\
+21 & 537843 & 0 & 0 & 26 & 90 & 39 & 423 & 3398 & 569867 & 541819\\
+40 & 266206 & 104007 & 1 & 19183 & 19130 & 20512 & 267 & 3233 & 587396 & 432539\\
+12 & 299330 & 78183 & 0 & 12586 & 9575 & 12508 & 251 & 3446 & 638924 & 415879\\
+35 & 181287 & 0 & 0 & 17 & 70 & 1 & 355 & 2691 & 1087149 & 184421\\
+46 & 80594 & 1041 & 100 & 15112 & 21010 & 12684 & 924 & 172 & 1316491 & 131637\\
+41 & 15154 & 0 & 0 & 11092 & 17749 & 22621 & 44 & 0 & 21341 & 66660\\
+34 & 19511 & 0 & 0 & 8203 & 11806 & 14453 & 57 & 0 & 51735 & 54031\\
+32 & 47715 & 809 & 1 & 736 & 597 & 125 & 5 & 0 & 275279 & 49988\\
+43 & 4898 & 0 & 32 & 6215 & 10070 & 13886 & 84 & 0 & 17690 & 35186\\
+16 & 30533 & 0 & 0 & 35 & 1 & 31 & 118 & 0 & 6675 & 30719\\
+42 & 4320 & 0 & 1 & 6624 & 3956 & 4712 & 1 & 0 & 1983 & 19613\\
+17 & 2085 & 0 & 0 & 2384 & 3351 & 6416 & 1 & 0 & 45246 & 14238\\
+44 & 3496 & 0 & 0 & 3578 & 1910 & 5214 & 2 & 0 & 4535 & 14200\\
+11 & 7577 & 0 & 0 & 0 & 3 & 0 & 1 & 0 & 93374 & 7580\\
+24 & 1884 & 0 & 0 & 847 & 276 & 1829 & 1 & 0 & 68330 & 4837\\
+33 & 4089 & 0 & 0 & 3 & 5 & 0 & 24 & 0 & 44973 & 4121\\
+25 & 56 & 0 & 0 & 516 & 273 & 1852 & 0 & 0 & 1116 & 2698\\
+36 & 1920 & 0 & 0 & 13 & 34 & 13 & 18 & 0 & 30447 & 1997\\
+26 & 733 & 0 & 0 & 261 & 215 & 189 & 18 & 0 & 16305 & 1417\\
+31 & 260 & 0 & 0 & 325 & 483 & 158 & 1 & 0 & 36542 & 1225\\
+10 & 346 & 0 & 0 & 0 & 0 & 0 & 780 & 0 & 79258 & 1126\\
+15 & 210 & 0 & 0 & 221 & 258 & 67 & 4 & 0 & 19340 & 761\\
+23 & 168 & 0 & 0 & 85 & 53 & 124 & 0 & 0 & 226 & 430\\
+29 & 2 & 0 & 0 & 122 & 0 & 62 & 0 & 0 & 6222 & 187\\
+28 & 6 & 0 & 0 & 0 & 0 & 0 & 13 & 0 & 925 & 19\\
+Base & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 Some other interesting findings are that in the top 10 of each analysis
-methods, three scenarios appear in both rankings. Road 50, which
-corresponds to I-80 between Tooele and SLC, road 27 which corresponds to I-
-84 in Weber Canyon, road 37 which corresponds to I-80 in Parley’s Canyon,
-and road 27 which is I-84 between Ogden and Morgan, are included in the
+method, four scenarios appear in both rankings. Scenario 50, which
+corresponds to I-80 between Tooele and SLC, Scenario 27 which corresponds to I-
+84 in Weber Canyon, Scenario 37 which corresponds to I-80 in Parley’s Canyon,
+and Scenario 27 which is I-84 between Ogden and Morgan, are included in the
 top 10 scenarios for both methods of analysis. This is likely due to the
-number of passenger trips along these routes and the number of freight
+number of passenger trips along these routes, combined with the number of freight
 trips that occur along these routes as well. Several of these routes are
-the only way through mountain ranges in the routes geographic location.
+the only way through mountain ranges in Utah.
 
 \subsection{Positive Benefit Scenarios}
 
-Five of the scenarios indicated a benefit resulting from highway link closure. These scenarios were examined more closely to determine what possible causes could exist beghind these atypical and unexpected results. The affected links are all located in Salt Lake Valley area at the following locations: Bangerter Highway near Bluffdale, I-80 near 1300 E, I-15 between 2100 S and 1300 S, I-215 near Cottonwood Heights, Mountain View Corridor near West Jordan and I-15 near Bountiful.
+Five of the scenarios indicated a benefit resulting from highway link closure,
+which is an unintuitive result. A network should not experience a benefit due
+to degradation. As a result, these scenarios were examined more closely to d
+etermine what possible causes could exist behind these atypical and unexpected
+results. The affected links are all located in the Salt Lake Valley area at the
+following locations: Bangerter Highway near Bluffdale, I-80 near 1300 E, I-15
+between 2100 S and 1300 S, I-215 near Cottonwood Heights, Mountain View
+Corridor near West Jordan and I-15 near Bountiful.
 
-It was determined that a likely cause which explains these atypical r
-esults is that the shortest path by time is not the shortest path by
+A discovery made while troubleshooting some calculations is that when a highway link is broken, the new
+shortest path by time is longer than in the base scenario with the broken link
+available. However, the new path may actually be shorter by distance. This
+causes an increase in the utility of accessing destinations by non-
+motorized modes, potentially overwhelming the decrease in automobile
+utility.
+
+It was determined that a likely explanation for these atypical results is that the shortest path by time is not the shortest path by
 distance. The automobile accessibility is determined by the AM congested
 travel time in the Utah Statewide Travel Model (USTM). The travel distance
 – used to determine the accessibility of destinations by driving or
 walking – is the distance of that path, and not the actual shortest
-distance path as might be more preferable. Additionally, it was found that
-the alternative route between Grouse Creek, UT and SLC, the alternative
+distance path. There is also the possibility that a new route with a longer travel time, but shorter distance could be found. This would cause both the cost and accessibility to change significantly in some scenarios. Additionally, it was found that
+the alternative route between Grouse Creek, Utah, and Salt Lake City, the alternative
 route was nearly twice as long in the case where I-80 was closed between
-Toeele and Salt Lake. This discovery led us to understand that not all
-route chocies become logical when made using only the model data. In
-reality, it is much more likely that a user would find a shorter route
+Toeele and Salt Lake Counties. This discovery led us to understand that not all
+route choices become logical when made using only the model data. In
+reality, it is possible that a user would find a shorter route
 which consists of roads that are not all in the state highway system.
-
-Another discovery we made, is that When a highway link is broken, the new
-shortest path by time is longer than in the base scenario with this link
-available. But the new path may actually be shorter by distance. This
-causes an increase in the utility of accessing destinations by non-
-motorized modes, potentially overwhelming the decrease in automobile
-utility.
 
 This occurence is only observed in heavily urbanized regions for two reasons:
 \begin{itemize}
@@ -403,8 +340,9 @@ This occurence is only observed in heavily urbanized regions for two reasons:
   means that alternate paths with shorter distances but longer vehicle
   times are more likely.
 	\item The increased availability of destinations within the non-
-  motorized distance threshold (50 miles) means that alternative
+  motorized distance threshold (2.5 miles) means that alternative
   destinations exist.
+
 \end{itemize}
 
 Overall, the results of the analysis indicate that the likely cause of a
@@ -416,7 +354,7 @@ equation.
 
 \section{Summary}
 
-The overall results show that the resiliency model is more sensitive to
+The overall results show that the Resiliency Model is more sensitive to
 network changes than the travel time comparison. The ability for a user to
 choose both a mode and destination (or alternate destination) cause the
 logsum results to often estimate a smaller cost than the travel time
