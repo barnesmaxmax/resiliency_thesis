@@ -17,10 +17,10 @@ closure scenarios throughout the state.
 Two methodologies were developed to identify vulnerable network links in
 Utah. The first method resembles the process used by AEM to determine
 threat categories and threat proximity thresholds to highway links. The
-second method uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on exisiting risk analysis data. Additional
+second method uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on existing risk analysis data. Additional
 points of interest were identified by the research team or by UDOT officials, who have a familiar working knowledge of the USTM network. Using this second
 method, links were identified due to their location in relation to
-population centers, remote geographic location, proximitiy to other highway facilities, were known to be at risk due to geologic or geographic features, or
+population centers, remote geographic location, proximity to other highway facilities, were known to be at risk due to geologic or geographic features, or
 because they were suspected choke points in the network.
 
 After identifying locations of interest, we now apply the model to compare the results of 40 scenarios. In each scenario, an individual highway
@@ -117,7 +117,8 @@ included in both the Resiliency Model and in the travel time method for determin
 cost. HBW, HBO, and NHB trip purposes can be compared because all three trip purposes
 are represented by each method of cost estimation.
 
-The travel time method measures the difference in travel time between the base scenario and any other scenario caused by link closure, and then multiplies that
+The travel time method measures the difference in travel time between the base
+scenario and any other scenario caused by link closure, and then multiplies that
 difference by the VOT for each trip purpose and the number of trips estimated for
 each trip purpose. For external trips, freight trips, and REC trips, these were all
 extracted directly from USTM. Attempting to include a calculation of the costs
@@ -130,13 +131,14 @@ Resiliency Model. Calculating the costs associated with the change in logsum
 provides estimations of the costs experienced by road users due to link loss
 that account for user choice of mode and destination. The logit-based model
 employed in the Resiliency Model ultimately provides lower estimates of the
-total disbenefit, and therefore cost, experienced by road users due to link
+total dis-benefit, and therefore cost, experienced by road users due to link
 degradation or loss for the purposes included for analysis. However, the
 logsum calculation is only used for three purposes in the USTM model. A way to
 account for freight trips, REC trips, and trips that occur between external
 nodes must also be found. These trip purposes typically have fixed origins
 nd destinations. As such, a way to account for all purposes must be developed.
-Thus, by combining elements from the travel time method and the Resiliency Model, an estimate can be made that represents all traffic on the USTM network.
+Thus, by combining elements from the travel time method and the Resiliency
+Model, an estimate can be made that represents all traffic on the USTM network.
 
 \begin{figure}
 
@@ -225,10 +227,13 @@ Scenario & $\Delta$ Logsum & \makecell{Cost \\(Dollars per Day)} & Route & Locat
 Table \ref{tab:timeresults} contains the ranking results from the travel
 time method. Here, we see that the first five roads differ from the
 results of the logsum model. Scenario, road 48 becomes the most important
-road due to costs experienced. Scneario 48 is a part of I-70 near Green River,
+road due to costs experienced. Scenario 48 is a part of I-70 near Green River,
 Utah. The other four roads that make up the top five most important roads
 in the travel time method analysis are scenario 13, scenario 20, scenario 50, and scenario
-49. Some of these scenarios appear in both the logsum and travel time method results. This is not unexpected, because each of these facilites is a main arterial in the region where they are located, and are interstate highways carrying large amounts of private passenger vehicles and freight.
+49. Some of these scenarios appear in both the logsum and travel time method
+results. This is not unexpected, because each of these facilities is a main
+arterial in the region where they are located, and are interstate highways
+carrying large amounts of private passenger vehicles and freight.
 Here again, several of the roads that are most important are located in
 Northern Utah. It is important to note that the main driving factor as to
 why a road was important or not in the travel time analysis was how much
@@ -239,7 +244,7 @@ with freight trips.
 
 \begin{table}
 
-\caption{\label{tab:timeresults}Travel Time Analsyis Results ($\Delta$ Cost in Dollars per Day)}
+\caption{\label{tab:timeresults}Travel Time Analysis Results ($\Delta$ Cost in Dollars per Day)}
 \makebox[\linewidth]{
 \centering
 \begin{tabular}[t]{lrrrrrrrrrr}
@@ -307,8 +312,8 @@ the only way through mountain ranges in Utah.
 
 Five of the scenarios indicated a benefit resulting from highway link closure,
 which is an unintuitive result. A network should not experience a benefit due
-to degradation. As a result, these scenarios were examined more closely to d
-etermine what possible causes could exist behind these atypical and unexpected
+to degradation. As a result, these scenarios were examined more closely to
+determine what possible causes could exist behind these atypical and unexpected
 results. The affected links are all located in the Salt Lake Valley area at the
 following locations: Bangerter Highway near Bluffdale, I-80 near 1300 E, I-15
 between 2100 S and 1300 S, I-215 near Cottonwood Heights, Mountain View
@@ -321,20 +326,24 @@ causes an increase in the utility of accessing destinations by non-
 motorized modes, potentially overwhelming the decrease in automobile
 utility.
 
-It was determined that a likely explanation for these atypical results is that the shortest path by time is not the shortest path by
+It was determined that a likely explanation for these atypical results is that
+the shortest path by time is not the shortest path by
 distance. The automobile accessibility is determined by the AM congested
 travel time in the Utah Statewide Travel Model (USTM). The travel distance
 – used to determine the accessibility of destinations by driving or
 walking – is the distance of that path, and not the actual shortest
-distance path. There is also the possibility that a new route with a longer travel time, but shorter distance could be found. This would cause both the cost and accessibility to change significantly in some scenarios. Additionally, it was found that
+distance path. There is also the possibility that a new route with a longer
+travel time, but shorter distance could be found. This would cause both the
+cost and accessibility to change significantly in some scenarios. Additionally,
+it was found that
 the alternative route between Grouse Creek, Utah, and Salt Lake City, the alternative
 route was nearly twice as long in the case where I-80 was closed between
-Toeele and Salt Lake Counties. This discovery led us to understand that not all
+Tooele and Salt Lake Counties. This discovery led us to understand that not all
 route choices become logical when made using only the model data. In
 reality, it is possible that a user would find a shorter route
 which consists of roads that are not all in the state highway system.
 
-This occurence is only observed in heavily urbanized regions for two reasons:
+This occurrence is only observed in heavily urbanized regions for two reasons:
 \begin{itemize}
 	\item The presence of high-speed expressways and parallel local roads
   means that alternate paths with shorter distances but longer vehicle

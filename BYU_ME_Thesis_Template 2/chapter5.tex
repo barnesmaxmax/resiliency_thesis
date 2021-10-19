@@ -31,7 +31,10 @@ future.
 
 \section{Limitations and Next Steps}
 
-Implementation of a logit-based travel demand model is highly important for resource allocation moving into the future. Updating USTM to include a logit-based trip distribution model instead of a gravity-based model would improve the flexibility of travel demand estimates moving forward.
+Implementation of a logit-based travel demand model is highly important for
+resource allocation moving into the future. Updating USTM to include a
+logit-based trip distribution model instead of a gravity-based model would
+improve the flexibility of travel demand estimates moving forward.
 
 The decision to not include a feedback loop introduces limitations on the
 ability of the model to accurately estimate the effects of link closure on
@@ -40,7 +43,10 @@ travel time because the increases in travel time due to congestion cannot be
 accurately measured after one iteration. The limitation has further negative
 impacts because the model cannot accurately estimate costs associated with link
 closure either.
-If a feedback loop had been included, the model would have been run several times for each scenario until the specifications of a convergence factor had been met, which would have allowed for more accurate estimation of increased travel times and more accurate route choices between OD pairs.
+If a feedback loop had been included, the model would have been run several
+times for each scenario until the specifications of a convergence factor had
+been met, which would have allowed for more accurate estimation of increased
+travel times and more accurate route choices between OD pairs.
 
 Adding a congestion feedback loop to the Resiliency Model would allow more
 accurate cost estimations to be made. A feedback loop would cause the
@@ -50,13 +56,15 @@ parameter were met. The loop allows for better estimates of the true change
 in travel time due to both route change and increased congestion. The loop
 also allows for more accurate route choice, mode choice, and destination
 choice to be made when the true effects of congestions are accounted for.
-In June 2020, the UDOT Technical Advisory Commitee decided to not include a feedback loop to save time
+In June 2020, the UDOT Technical Advisory Committee decided to not include a
+feedback loop to save time
 on model development for this study. A feedback loop and sensitivity analysis
 will be included as part of future work.
 
 It is not unreasonable to assume that in the event of an earthquake or
 similar widespread disaster event, that multiple links could become
-damaged. An important use of the Resiliency Model in future research would be to analyze the results of simultaneous multiple link
+damaged. An important use of the Resiliency Model in future research would be
+to analyze the results of simultaneous multiple link
 loss. This will allow for
 greater understanding of the effects that adverse events can have on Utah’s
 highway network, and help UDOT to better prepare for the development and
@@ -85,4 +93,11 @@ provided by the Resiliency Model
 should be used to prioritize link importance to the functionality of
 Utah’s highway network. The Resiliency Model provides different estimates of
 costs experienced by Utahns due to link loss than traditional methods for
-determining costs do. There are several implications of this. First, purely using change in travel time or travel time delay as the main disbenefit may not be entirely acccurate in most situations. Second, allowing users in the model to choose both a mode and destination, increases the resemblance of a real life decision making process, especially given adverse circumstance on Utah's highway network. It is evident that the Resiliency Model provides several modeling estimation advantages to the forefront, something which must be explored further in future research.
+determining costs do. There are several implications of this. First, purely
+using change in travel time or travel time delay as the main dis-benefit may not
+be entirely accurate in most situations. Second, allowing users in the model
+to choose both a mode and destination, increases the resemblance of a real life
+decision making process, especially given adverse circumstance on Utah's
+highway network. It is evident that the Resiliency Model provides several
+modeling estimation advantages to the forefront, something which must be
+explored further in future research.

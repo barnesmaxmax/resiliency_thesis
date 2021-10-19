@@ -1,46 +1,46 @@
-\contentsline {chapter}{LIST OF TABLES}{vi}{section*.3}%
-\contentsline {chapter}{LIST OF FIGURES}{viii}{section*.5}%
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}1\hspace {1em} }Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Objectives}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Scope}{2}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Outline of Report}{2}{section.1.4}%
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2\hspace {1em} }Literature Review}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Overview}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Identifying Critical Links on I-15}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Lessons Learned from Crisis Events}{8}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}I-35W Bridge Collapse}{9}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}I-85/Piedmont Road Bridge Fire}{10}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Attempts to Evaluate Systemic Resiliency}{12}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Network Connectivity}{14}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Changes in Travel Time}{16}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Changes in Accessibility}{18}{subsection.2.3.6}%
-\contentsline {section}{\numberline {2.4}Summary}{22}{section.2.4}%
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Model Design and Implementation}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Overview}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Utah Statewide Travel Model}{23}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Model Design}{27}{section.3.3}%
-\contentsline {subsubsection}{Transportation Networks}{30}{section*.12}%
-\contentsline {subsubsection}{Non-Motorized Paths}{31}{section*.13}%
-\contentsline {subsubsection}{Trip Attractions and Socioeconomic Data}{31}{section*.14}%
-\contentsline {subsection}{\numberline {3.3.1}Mode Choice Model}{32}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Destination Choice Model}{34}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Model Calibration and Validation}{35}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Trips by Purpose and Mode}{35}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Calibrating Choice Constants}{36}{subsection.3.4.2}%
-\contentsline {subsubsection}{Mode Choice Calibration}{36}{section*.16}%
-\contentsline {subsubsection}{Destination Choice Calibration}{36}{section*.18}%
-\contentsline {subsection}{\numberline {3.4.3}Calibration Results}{37}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Method to Calculate Costs for Non-model Purposes}{38}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Summary}{40}{section.3.6}%
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Model Application}{41}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Overview}{41}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Vulnerable Link Identification}{41}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Localized Scenario Analysis}{42}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Positive Benefit Scenarios}{47}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Summary}{49}{section.4.4}%
-\contentsline {chapter}{\numberline {Chapter\nobreakspace {}5\hspace {1em} }Conclusions and Recommendations}{51}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Overview}{51}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Recommendations}{51}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitations and Next Steps}{51}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Summary}{53}{section.5.4}%
+\contentsline {chapter}{LIST OF TABLES}{vi}{section*.3}% 
+\contentsline {chapter}{LIST OF FIGURES}{viii}{section*.5}% 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}1\hspace {1em} }Introduction}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Problem Statement}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Objectives}{2}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Scope}{2}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Outline of Report}{2}{section.1.4}% 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2\hspace {1em} }Literature Review}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Overview}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Identifying Critical Links on I-15}{6}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Lessons Learned from Crisis Events}{9}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}I-35W Bridge Collapse}{9}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}I-85/Piedmont Road Bridge Fire}{11}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Attempts to Evaluate Systemic Resiliency}{12}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Network Connectivity}{13}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Changes in Travel Time}{17}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Changes in Accessibility}{19}{section.2.7}% 
+\contentsline {section}{\numberline {2.8}Summary}{23}{section.2.8}% 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3\hspace {1em} }Model Design and Implementation}{25}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Overview}{25}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Utah Statewide Travel Model}{25}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Model Design}{29}{section.3.3}% 
+\contentsline {subsubsection}{Transportation Networks}{32}{section*.12}% 
+\contentsline {subsubsection}{Non-Motorized Paths}{33}{section*.13}% 
+\contentsline {subsubsection}{Trip Attractions and Socioeconomic Data}{34}{section*.14}% 
+\contentsline {subsection}{\numberline {3.3.1}Mode Choice Model}{34}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Destination Choice Model}{36}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Model Calibration and Validation}{38}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Trips by Purpose and Mode}{38}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Calibrating Choice Constants}{38}{subsection.3.4.2}% 
+\contentsline {subsubsection}{Mode Choice Calibration}{39}{section*.16}% 
+\contentsline {subsubsection}{Destination Choice Calibration}{40}{section*.18}% 
+\contentsline {subsection}{\numberline {3.4.3}Calibration Results}{40}{subsection.3.4.3}% 
+\contentsline {section}{\numberline {3.5}Method to Calculate Costs for Non-model Purposes}{41}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}Summary}{43}{section.3.6}% 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4\hspace {1em} }Model Application}{45}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Overview}{45}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Vulnerable Link Identification}{45}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Localized Scenario Analysis}{46}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Positive Benefit Scenarios}{50}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}Summary}{54}{section.4.4}% 
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}5\hspace {1em} }Conclusions and Recommendations}{55}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Overview}{55}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Recommendations}{55}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Limitations and Next Steps}{56}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Summary}{57}{section.5.4}% 

@@ -79,7 +79,7 @@ T_{ij}= P_i*(A_j F_{ij})/\sum_{j\in J}(A_j F_{ij})
 \noindent Where:
 \begin{itemize}
 	\item $T_{ij}$ represents the trips made between an origin $i$ and a
-  destination $j$ among all destinatinos $J$
+  destination $j$ among all destinations $J$
 	\item $P_i$ represents the productions at origin $i$
 	\item $A_j$ represents the attractions and destination $j$
 	\item And $F_{ij}$ is the impedance factor between an $OD$ pair
@@ -129,38 +129,32 @@ Equation \ref{eqn:utility} shows how the utility is calculated:
 in Equation \ref{eqn:probability}:
 
 \begin{equation}
-{P}_{m} = \frac{e^{u_{ij}}}{\sum_{j\in J}e^{u_{k}}}
+{P}_{ij} = \frac{e^{u_{ij}}}{\sum_{j\in J}e^{u_{k}}}
   \label{eqn:probability}
 \end{equation}
 
-\noindent Where $P_{m}$ represents the probability of trips made between an
-origin $i$ and a destination $j$ among all destinations $J$. The probabilites
+\noindent Where $P_{ij}$ represents the probability of trips made between an
+origin $i$ and a destination $j$ among all destinations $J$. The probabilities
 calculated are then used to calculate the mode or destination choice probability,
-which allow trips by purpose and trips by mode to be calculated.
+which allow trips by purpose and trips by mode to be calculated. These Equations
+are shown in Equations \ref{eqn:ij} and \ref{eqn:ijk} later in this chapter. Then
+we have the logsum calculation,
 
 \begin{equation}
-  Trips_{ij} = Productions_{i} \times {P}_{m}
-\end{equation}
-
-\begin{equation}
-  Trips_{ijk} = Trips_{ij} \times {P}_{m}
-  \label{eqn:tripsijk}
-\end{equation}
-
-\noindent The ability to account for trips by purpose and by mode allows us to
-determine information about how well the model is calibrated, and the utiltiy
-values can also be used to determine the logsum calculations, which are capable
-of accounting for more than one type of data.
-
-\begin{equation}
- Logsum = \ln\sum\exp(f(\beta_m, A_jm, \gamma_m, t_{ijk}))
+ Logsum = \ln\sum\exp(f(\beta_i, , C_i, A_j, \gamma_i, t_{ij}))
   \label{eqn:logsum}
 \end{equation}
 
-\noindent The ability to incorporate multiple types of data and improved methods for determining trip distribution, mode choice, and destination choice all allow logit-based models to add an additional layer of sensitivity into estimations of trips between OD pairs on a road network. Consequently, logit-based travel demand models are better equiped to estimate the choice-based effects caused by major changes to a road network, such as link loss or major link degradation caused by adverse natural or man-made events.
+\noindent The ability to incorporate multiple types of data and improved methods
+for determining trip distribution, mode choice, and destination choice all allow
+logit-based models to add an additional layer of sensitivity into estimations of
+trips between OD pairs on a road network. Consequently, logit-based travel
+demand models are better equipped to estimate the choice-based effects caused
+by major changes to a road network, such as link loss or major link degradation
+caused by adverse natural or man-made events.
 
 Destination choice models explicitly consider multimodal accessibility, as seen
-in Equation \ref{eqn:tripsijk}, such as accessibilty by automobile,
+in Equation \ref{eqn:tripsijk}, such as accessibility by automobile,
 non-motorized trip, or transit. The ability to consider accessibility from a
 multimodal perspective gives a user the ability to choose the location of
 their destination based on a variety of factors including mode accessibility
@@ -173,7 +167,13 @@ is a measure of the appeal or attractiveness of one destination when compared wi
 another destination. The destination choice (DC) size term is discussed in further detail in
 Chapter \ref{chp:chapter4}.
 
-A critical feature of logit-based choice models – described briefly in Chapter \ref{chp:chapter2} – is that they are more versatile than traditional modeling methods, with the ability to incorporate different types of data --- \textit{and} account for user choice. Additionally, logit-based choice models are better able to measure the changes in accessibility of a destination due to network changes than other models because of their adaptive nature. As such, logit-based models are typically used in new or more advanced travel models.
+A critical feature of logit-based choice models – described briefly in Chapter
+\ref{chp:chapter2} – is that they are more versatile than traditional modeling
+methods, with the ability to incorporate different types of data --- \textit{and}
+account for user choice. Additionally, logit-based choice models are better
+able to measure the changes in accessibility of a destination due to network
+changes than other models because of their adaptive nature. As such, logit-based
+models are typically used in new or more advanced travel models.
 
 Logit-based destination choice models are becoming increasingly common in four-
 step and other modern travel models. However, no logit-based destination
@@ -190,9 +190,23 @@ could be created. The model framework used to create the Resiliency Model
 consists of the following steps:
 
 \begin{itemize}
-	\item \textbf{Skim Network} - In this step, the model determines the shortest path by AM peak travel time on the USTM network between each origin and destination. The model also determines the distance of the shortest time path. Transit times are given by an external data source.
-	\item \textbf{Mode Choice Logsum} - The mode choice logsum is a function of the travel impedances and serves as an accessibility term in the destination choice model. The mode choice logsum contains utility functions that determine the probability and logsum associated with travel between each OD pair. The mode choice model also contains constants and coefficients that can be used to calibrate and adjust the utility equations, determining the mode choice probabilities.
-	\item \textbf{Destination Choice (DC) Logsum} - The destination choice logsum is a function of the travel impedances (represented by the mode choice logsum) and the attraction size term of each destination zone. This is the key evaluation metric of the model because of the ability to incorporate multiple data types into the model structure. The attraction size term is determined using socioeconomic data for each destination zone given by USTM.
+	\item \textbf{Skim Network} - In this step, the model determines the shortest
+  path by AM peak travel time on the USTM network between each origin and
+  destination. The model also determines the distance of the shortest time
+  path. Transit times are given by an external data source.
+	\item \textbf{Mode Choice Logsum} - The mode choice logsum is a function of
+  the travel impedances and serves as an accessibility term in the destination
+  choice model. The mode choice logsum contains utility functions that
+  determine the probability and logsum associated with travel between each OD
+  pair. The mode choice model also contains constants and coefficients that can
+  be used to calibrate and adjust the utility equations, determining the mode
+  choice probabilities.
+	\item \textbf{Destination Choice (DC) Logsum} - The destination choice logsum
+  is a function of the travel impedances (represented by the mode choice logsum)
+  and the attraction size term of each destination zone. This is the key
+  evaluation metric of the model because of the ability to incorporate multiple
+  data types into the model structure. The attraction size term is determined
+  using socioeconomic data for each destination zone given by USTM.
 	\end{itemize}
 
   \begin{figure}
@@ -216,18 +230,22 @@ infrastructure would not be affected by changes to the highway network.
 Throughout this section, lower-cased index variables \(k\) belong to a set of
 all indices described by the corresponding capital letter \(K\).
 
-With the travel time \(t_{ijk}\) and distance for all modes \(k \in K\), the model computes mode choice utility values. The multinomial logit mode choice model describes the probability of a person at origin \(i\) choosing mode \(k\) for a trip to destination \(j\):
+With the travel time \(t_{ijk}\) and distance for all modes \(k \in K\), the
+model computes mode choice utility values. The multinomial logit mode choice
+model describes the probability of a person at origin \(i\) choosing mode \(k\)
+for a trip to destination \(j\):
 
 \begin{equation}
-{P}_{ijm}(k) = \frac{\exp(f(\beta_{m},
-t_{ijk}))}{\sum_{K}\exp(f(\beta_{m}, t_{ijk}))}
+{P}_{ijk}(m) = \frac{\exp(f(\beta \times t_{ijk}))}
+{\sum_{K}\exp(f(\beta \times t_{ijk}))}
   \label{eq:mcp}
 \end{equation}
 
 \noindent The log of the denominator of the this equation is called the
-mode choice logsum, \(MCLS_{ijm}\) and is a measure of the travel cost by
-all modes, weighted by utility parameters \(\beta\) that may vary by
-trip purpose $m$. The parameter values are described in greater detail in Table \ref{tab:coeffs}.
+mode choice logsum, \(MCLS_{ijk}\) and is a measure of the travel cost by
+all modes, $k$, weighted by utility parameters \(\beta\) that may vary by
+trip purpose $m$. The parameter values are described in greater detail in
+Table \ref{tab:coeffs}.
 
 The \(MCLS\) is then used as a travel impedance term in the multinomial
 logit
@@ -235,8 +253,8 @@ destination choice model, where the probability of a person at origin \(i\)
 choosing destination \(j \in J\) is
 
 \begin{equation}
-{P}_{im}(j) = \frac{\exp(f(\gamma_{m}, MCLS_{ijm},
-A_j))}{\sum_{J}\exp(f(\gamma_{m}, MCLS_{ijm}, A_j))}
+{P}_{ij}(m) = \frac{\exp(f(\gamma, MCLS_{ijk}, A_j))}
+{\sum_{J}\exp(f(\gamma, MCLS_{ijk}, A_j))}
   \label{eq:dcp}
 \end{equation}
 
@@ -247,29 +265,29 @@ choice logsum, \(DCLS_{im}\). This quantity represents the value of access to
 all destinations
 by all modes of travel, and varies by trip purpose.
 
-The \(DCLS_{im}\) measure is relative, but can be compared across
+The \(DCLS\) measure is relative, but can be compared across
 scenarios. The difference between the measures of two scenarios,
 
 \begin{equation}
-\Delta_{im} = DCLS_{im}^{\mathrm{Base}} - DCLS_{im}^{\mathrm{Scenario}}
+\Delta = DCLS^{\mathrm{Base}} - DCLS^{\mathrm{Scenario}}
   \label{eq:deltas}
 \end{equation}
 
  \noindent however, provides an estimate of the accessibility lost when
- \(t_{ij\mathrm{drive}}\)
+ \(t_{ij\mathrm{AUTO}}\)
 changes due to a damaged highway link. This accessibility change is \emph{per
 trip},
-meaning that the total lost accessibility is \(P_{im} * \Delta_{im}\) where
+meaning that the total lost accessibility is \(P_{ik} * \Delta_{DCLS}\) where
 \(P\) is
-the number of trip productions at zone \(i\) for purpose \(m\). This measure is
+the number of trip productions at zone \(i\) for purpose \(k\). This measure is
 given in units of dimensionless utility, but the mode choice cost coefficient
 \(\beta\) provides a conversion factor between utility and cost. The total
 financial
 cost of a damaged link for the entire region for all trip purposes is:
 
 \begin{equation}
-\mathrm{Cost} = \sum_{I}\sum_{M} -1 / \beta_{\mathrm{cost},m} * P_{im}
-\Delta_{im}
+\mathrm{Cost} = \sum_{I}\sum_{K} -1 / \beta_{\mathrm{cost},k} * P_{ik}
+\Delta_{ik}
   \label{eq:totalcost}
 \end{equation}
 
@@ -280,8 +298,8 @@ and a value of time coefficient derived from the cost and vehicle time
 coefficients
 of the mode choice model,
 \begin{equation}
-\mathrm{Cost}' =  \sum_I \sum_J \sum_M \frac{\beta_{\mathrm{time}, m}
-}{\beta_{\mathrm{cost}, m}} T_{ijm} t_{ijm}
+\mathrm{Cost}' =  \sum_I \sum_J \sum_K \frac{\beta_{\mathrm{time}, k}
+}{\beta_{\mathrm{cost}, k}} T_{ijk} t_{ijk}
   \label{eq:ttmethod}
 \end{equation}
 
@@ -298,9 +316,26 @@ The Resiliency Model requires an understanding of the distance between zones by 
 these distances change when a link in the network is damaged or destroyed. To measure the
 automobile, transit, and non-motorized trip times, initial data was needed for each trip mode.
 
-The highway network is made up of both the urban and rural highway networks for the whole state of Utah. The highway network contains many link- and node-attribute data including street name, link distance, lanes, functional classification, transportation analysis zone number (TAZ ID), county name, as well as speed limits and travel time data for five different times of day.  Of particular interest from the available information was the $AM_{TIME}$ which contains the travel time in minutes for the AM time period along a link and the $DISTANCE$, which contained the linear distance between nodes along a link. The $AM_{TIME}$ was used to determine the travel time between an origin and destination. The $DISTANCE$ was used to measure the network distance between the shortest OD pair based on AM travel time.
+The highway network is made up of both the urban and rural highway networks
+for the whole state of Utah. The highway network contains many link- and
+node-attribute data including street name, link distance, lanes, functional
+classification, transportation analysis zone number (TAZ ID), county name,
+as well as speed limits and travel time data for five different times of day.
+Of particular interest from the available information was the $AM_{TIME}$ which
+contains the travel time in minutes for the AM time period along a link and
+the $DISTANCE$, which contained the linear distance between nodes along a link.
+The $AM_{TIME}$ was used to determine the travel time between an origin and
+destination. The $DISTANCE$ was used to measure the network distance between
+the shortest OD pair based on AM travel time.
 
-The highway skim module creates an output matrix (or highway skim) of travel times and distances between origin destination (OD) pairs and must be created before automobile ($AUTO$) and non-motorized ($NMOT$) trips can be incorporated into the model. We used the $AM_{TIME}$ and $DISTANCE$ variables available in the highway network file to create a matrix of distances and shortest travel times between all OD pairs in the USTM network. The output matrix forms the basis for further analysis by providing the needed automobile and non-motorized information for the other modules in the model.
+The highway skim module creates an output matrix (or highway skim) of travel
+times and distances between origin destination (OD) pairs and must be created
+before automobile ($AUTO$) and non-motorized ($NMOT$) trips can be incorporated
+into the model. We used the $AM_{TIME}$ and $DISTANCE$ variables available in
+the highway network file to create a matrix of distances and shortest travel
+times between all OD pairs in the USTM network. The output matrix forms the
+basis for further analysis by providing the needed automobile and non-motorized
+information for the other modules in the model.
 
 Transit network resiliency is outside the scope of this project. Accordingly, the Resiliency
 Model assumes that transit services are fixed, meaning that changes to the
@@ -320,7 +355,12 @@ time for a single transit mode in this implementation.
 
 \subsubsection{Non-Motorized Paths}
 
-The NMOT trip distances are held fixed, similarly to transit distances. We determined that the longest distance a pedestrian would commute via a NMOT mode is 2.5 miles or less. Accordingly, the upper limit for NMOT trips in the NMOT utility equation was set at 2.5 miles. The decision to hold these trips constant was made for several reasons, mainly because pedestrians often cut through construction zones, or can find shorter detours on side streets that may not be viable for large amounts of traffic.
+The NMOT trip distances are held fixed, similarly to transit distances. We
+determined that the longest distance a pedestrian would commute via a NMOT
+mode is 2.5 miles or less. The decision to hold NMOT
+trips constant was made for several reasons, mainly because pedestrians often
+cut through construction zones, or can find shorter detours on side streets
+that may not be viable for large amounts of traffic.
 
 \subsubsection{Trip Attractions and Socioeconomic Data}
 
@@ -343,11 +383,11 @@ network for each trip purpose. The trip purposes considered in the model are hom
 the transit skim, and the MC coefficients and constants as inputs.
 
 The MC constants and coefficients used in the Resiliency Model were extracted from USTM where
-, or adapted from SWIM. The Travel Time represented with $TT_ij$, Travel Cost represented as $C_{Cost}$, Walk Distance (less than 1 mile) represented as $D_{<1MILE}$, and Walk Distance (1 mile or more) representad as $D_{>1MILE}$ are the coefficients for the
+, or adapted from SWIM. The Travel Time represented with $TT_ij$, Travel Cost represented as $C_{Cost}$, Walk Distance (less than 1 mile) represented as $D_{<1MILE}$, and Walk Distance (1 mile or more) represented as $D_{>1MILE}$ are the coefficients for the
 $HBW$, $HBO$,and $NHB$ purposes. The MC coefficients were adapted
 from USTM and supplemented with coefficients from the Roanoke (Virginia)
 Valley Transportation Planning Organization (RVTPO) travel model where USTM had gaps in the data. This model was
-selected as a source for these coefficients due to its simplicity and analogous data elements to the purpose of the proposed resilience model.The
+selected as a source for these coefficients due to its simplicity and analogous data elements to the purpose of the proposed resilience model. The
 values for each of the coefficients are in Table \ref{tab:coeffs}. The alternative-specific constants in the model were calibrated to regional MC
 targets developed from the 2015 Utah Household Travel Survey (UHTS) using
 methods described by \citet{koppelman2006}.
@@ -398,30 +438,30 @@ also presented in Table \ref{tab:coeffs}.
 \end{tabular}
 \end{table}
 
-The following are sample utility equations for each of the modes considered in the Resiliency Model. Data included in these equations that are not constants or coefficients are in bold font. $AUTOCOST$ is a constant term applied only to utility equations that consider automobile travel. Aditionally, $D$ will denote the distance in the following equations.
+The following are sample utility equations for each of the modes considered in the Resiliency Model. $\alpha$ denotes mode choice constants, $\beta$ denotes mode choice coefficients, and $\gamma$ denotes destination choice parameters. Additionally, $C$ will denote other variables which are typically zonally related.
 
 \begin{equation}
-U_{{AUTO}_{ij}} = C_{TT} * TT_{ij} + C_{COST} * AUTOCOST * D_{ij}
+U_{{AUTO}_{ij}} = \beta1_{ij} \times C1_{ij} + \beta2_{ij} \times C2_{ij}
 	\label{eqn:auto}
 \end{equation}
 
 \begin{equation}
-U_{{TRANSIT}_{ij}} = K_{TRN} + C_{TT} * TRANSIT TIME_{ij}
+U_{{TRANSIT}_{ij}} = \alpha_{TRN} + \beta1_{ij} \times C1_{ij} + \beta2_{ij} \times C2_{ij}
 	\label{eqn:transit}
 \end{equation}
 
 \begin{equation}
-U_{{NMOT}_{ij}} = K_{NMOT} + 20 * (C_{WALK1} * D_{{<1MILE}_{ij}} + C_{WALK2} * D_{{>1MILE}_{ij}}
+U_{{NMOT}_{ij}} = \alpha_{NMOT} + 20 * (\beta1_{ij} \times C1_{ij} + \beta2_{ij} \times C2_{ij})
 	\label{eqn:nmot}
 \end{equation}
 
 From the equations above, several aspects between the three MC utility equations are
-apparent. First, the transit and $NMOT$ utility equations both have a constant, denoted by a $K$,
-included. The auto equation does not have a constant because auto serves as the reference
-variable in the Resiliency Model. Second, both the auto and $NMOT$ equations account for
-distance, and last, each of the three utility equations account for travel time, either in the
-form of an in-vehicle travel time coefficient, or another modified factor. The NMOT utility
-equation is not calculated using a specific coefficient for time. Instead, the NMOT distances are
+apparent. First, the transit and $NMOT$ utility equations both have a constant, denoted by a $\alpha$,
+included. The $AUTO$ equation does not have a constant because auto serves as the reference
+variable in the Resiliency Model. Second, both the $AUTO$ and $NMOT$ equations account for a
+distance variable, and last, each of the three utility equations account for travel time, either in the
+form of an in-vehicle travel time coefficient, or another modified factor. The $NMOT$ utility
+equation is not calculated using a specific coefficient for time. Instead, the $NMOT$ distances are
 multiplied by an assumed walking speed of 20 minutes per mile. This is common practice in other
 choice models for $NMOT$ trips.
 
@@ -430,7 +470,7 @@ with each mode of travel for an OD pair, such that the total probability added
 up to 1. The equation used to accomplish this is shown:
 
 \begin{equation}
-	Probability_i = \frac{\exp U_i}{\sum \exp U}
+	Probability_{ijk} = \frac{\exp U_{ij}}{\sum \exp U_{ijk}}
 	\label{eqn:prob}
 \end{equation}
 
@@ -447,12 +487,13 @@ calibrated to targets developed from UHTS.
 
 The DC equation, seen in Equation \ref{eqn:dc}, is made up of the
 MCLS calculated in the previous module, the size term, and several distance and cubic polynomial
-coefficients and their corresponding values.
+coefficients and their corresponding values. The terms in this equation follow the same conventions as mentioned
+above, however, $D$ is used to represent the distance variable in the calibration polynomial:
 
 \begin{equation}
 \begin{aligned}
-	U_{ij} = C_{LSUM} * MCLS_{ij} + \log (SIZETERM_{i}) + C_{D} * D_{ij}\\ + C_{D^2} *
-  D^2_{ij} + C_{D^3} * D^3_{ij} + C_{LOG(D)} * \log D_{ij}
+	U_{ij} = \gamma1 \times MCLS_{ij} + \log (SIZETERM_{j}) + \gamma2 \times C2_{D}\\ + \gamma3_{ij} \times C3_{D^2}
+   + \gamma4 _{ij} \times D^3_{ij}
 \label{eqn:dc}
 \end{aligned}
 \end{equation}
@@ -463,7 +504,7 @@ a user’s resistance to using the specified path or mode. This is like the
 impedance factor in the
 gravity model discussed in Chapter \ref{chp:chapter2} . Feeding the MCLS value into
 the DC module is what allows
-users to choose a destination considering accesibility from all modes. In these
+users to choose a destination considering accessibility from all modes. In these
 equations, the log terms serve to create the logsum values needed to find
 the DC logsum values later on.
 The size term, which
@@ -480,17 +521,18 @@ the attractiveness of
 a destination choice in the model. The size term is made up of statistical
 data about a zone.
 This data was published in 2015 as part of the UHTS and made available via
-UDOT. The size term
+UDOT.  The size term
 equation can be seen below:
 
 \begin{equation}
 \begin{aligned}
-	SIZETERM_i = C_1 * C_{1_i} + C_{2} * C_{2_i} + C_{3} * C_{3_i}i
+	SIZETERM_i = \eta1_{j} \times C_1 + \eta2_{j} \times C_2 + \eta3_{j} \times C_{3}
 	\label{sizeterm}
 \end{aligned}
 \end{equation}
 
-\noindent Where each $C$ represents a different zonal statistic in the UHTS data.
+\noindent Where each $C$ represents a different zonal statistic in the UHTS data,
+and $eta$ represents coefficients used.
 
 The DC logsums are calculated by summing each row in the DC utility matrix,
 and then
@@ -514,24 +556,31 @@ USTM for each trip purpose.
 \subsection{Trips by Purpose and Mode}
 
 In order to calibrate the model, trip totals needed to be broken up by purpose
-($T_{IJ}$) and by mode ($T_{IJK}$). To find the trips by purpose
-($T_{IJ}$), the probability of a trip occurring between an OD pair needed to
-be determined. Likewise, to find the trips by purpose and mode ($T_{IJK}$),
-we multiplied the $T_{IJ}$ by the MC probabilities calculated during the MC
+($Trips_{IJ}$) and by mode ($Trips_{IJK}$), as shown in Equations
+\label{eqn:ij} and \label{eqn:ijk}. To find the trips by purpose
+($Trips_{IJ}$), the probability of a trip occurring between an OD pair needed to
+be determined. Likewise, to find the trips by purpose and mode ($Trips_{IJK}$),
+we multiplied the $Trips_{IJ}$ by the MC probabilities calculated during the MC
 module. A mathematical representation of this can be seen in the equations
 below:
 
 \begin{equation}
-	T_{ij} = P_i * DCPROBABILITY_{ij}
+	Trips_{ij} = P_i * DCPROBABILITY_{ij}
 	\label{eqn:ij}
 \end{equation}
 
 \noindent Where $P_i$ is the productions at zone i, and,
 
 \begin{equation}
-	TRIPS_{ijk} = TRIPS_{ij} * MCPROBABILITY_{ij}
+	Trips_{ijk} = TRIPS_{ij} * MCPROBABILITY_{ij}
 	\label{eqn:ijk}
 \end{equation}
+
+\noindent The ability to account for trips by purpose and by mode allows us to
+determine information about how well the model is calibrated, and the utility
+values can also be used to determine the logsum calculations, which are capable
+of accounting for more than one type of data.
+
 
 \subsection{Calibrating Choice Constants}
 
@@ -566,15 +615,24 @@ over the following iterations. Overall the fit is fairly good.
 
 \subsubsection{Destination Choice Calibration}
 
-The DC parameters were also calibrated, however this process differed slightly from the MC constant calibration process. A destination choice model is also a multinomial logit model, but this model cannot have alternative-specific constants because of the high numbers of alternatives (one alternative for every zone). Instead, the destination choice utility equation can include a calibration polynomial that adjusts the implied utility to match a trip length frequency distribution (TLFD) extracted from USTM. In this model, we include a cubic polynomial as the destination choice calibration term seen in the equation below:
+The DC parameters were also calibrated, however this process differed slightly
+from the MC constant calibration process. A destination choice model is also a
+multinomial logit model, but this model cannot have alternative-specific
+constants because of the high numbers of alternatives (one alternative for
+every zone). Instead, the destination choice utility equation can include a
+calibration polynomial that adjusts the implied utility to match a trip length
+frequency distribution (TLFD) extracted from USTM. In this model, we include a
+cubic polynomial as the destination choice calibration term seen in the
+equation below:
 
 \begin{equation}
-  f(d_{ij}) = \beta_1 D_{ij} + \beta_2 MCLS + \kappa_
-  1(D)+\kappa_2(D)^2+\kappa_3(D)^3
+  f(d_{ij}) = \beta_1 C_{ij} + \beta_2 MCLS + \kappa_
+  1(C_{ij})+\kappa_2(C_{ij})^2+\kappa_3(C_{ij})^3
 	\label{eqn:poly}
 \end{equation}
 
-\noindent with $\kappa_1,\kappa_2,\kappa_3$ calibrated to re-create best fit
+\noindent where $\beta$ represents a coefficient, $C$ represents distance data,
+and each of the $\kappa$'s, '$\kappa_1,\kappa_2,\kappa_3$, are calibrated to re-create best fit
 estimates of the difference between the model and target total. The target
 values for calibration are derived from USTM. The cubic polynomial in
 Equation \ref{eqn:poly}, which is part of the DC utility in
@@ -638,7 +696,9 @@ Transit & 3.2\% & 3.2\% & 0.2\%\\
 \end{tabular}
 \end{table}
 
-Additionally, Figure \ref{fig:ustm_tlfd} shows the original versus the final TLFD for the USTM and resilience models. The fit for both is similar, though there is some variation present between each trip purpose considered.
+Additionally, Figure \ref{fig:ustm_tlfd} shows the original versus the final
+TLFD for the USTM and resilience models. The fit for both is similar, though
+there is some variation present between each trip purpose considered.
 
 \begin{figure}
 
@@ -716,5 +776,5 @@ The creation of a logit-based model, which is sensitive to mode and destination
 choice, allows for more sensitive and robust estimations of accessibility. The
 model also accounts for modes that are not flexible in the case of link
 closure. The Resiliency Model is capable of analyzing the effects of
-road closure on mode and destination choice, and it can estimate overall 
-disbenefit (in dollars) experienced by road users per day.
+road closure on mode and destination choice, and it can estimate overall
+dis-benefit (in dollars) experienced by road users per day.
