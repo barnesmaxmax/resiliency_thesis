@@ -36,8 +36,9 @@
 \contentsline {section}{\numberline {4.1}Overview}{43}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Vulnerable Link Identification}{43}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Localized Scenario Analysis}{44}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Positive Benefit Scenarios}{49}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Summary}{51}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Resiliency Model Results}{46}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Positive Benefit Scenarios}{49}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Summary}{51}{section.4.5}%
 \contentsline {chapter}{\numberline {Chapter\nobreakspace {}5\hspace {1em} }Conclusions and Recommendations}{53}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Overview}{53}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Recommendations}{53}{section.5.2}%
