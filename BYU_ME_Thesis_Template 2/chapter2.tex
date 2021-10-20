@@ -165,9 +165,9 @@ Criteria & Very Low Impact & Low Impact & Moderate Impact & High Impact & Very H
 \midrule
 AADT & $\leq 1,145$ & 1,146-3,275 & 3,276-8,285 & 8,286-17,455 & $>$17,455\\
 Truck AADT & 0 & 1-494 & 495-1,881 & 1,882-4,794 & $>$4,794\\
-AASHTO Class & \makecell{Minor \\Collectors} & \makecell{Minor \\Collectors} & \makecell{Minor \\Arterials} & \makecell{Principal \\Arterials} & \makecell{Interstate \\Expressway}\\
-\makecell{Tourism \\Traffic (\$M)} & $<19.89$ & 19.90-39.66 & 39.67-101.13 & 101.14-505.32 & $>$505.32\\
-\makecell{Maintenance \\Distance (Mi)} & $<70$ & 71-84 & 85-102 & 103-124 & $>124$\\
+\makecell{AASHTO\\Classification} & \makecell{Minor \\Collectors} & \makecell{Minor \\Collectors} & \makecell{Minor \\Arterials} & \makecell{Principal \\Arterials} & \makecell{Interstate \\Expressway}\\
+\makecell{Tourism\\Traffic (\$M)} & $<19.89$ & 19.90-39.66 & 39.67-101.13 & 101.14-505.32 & $>$505.32\\
+\makecell{Maintenance\\Distance (Mi)} & $<70$ & 71-84 & 85-102 & 103-124 & $>124$\\
 \bottomrule
 \end{tabular}
 }
@@ -427,7 +427,7 @@ Year & Author & Performance Metric\\
 \end{tabular}
 \end{table}
 
-\section{Network Connectivity}
+\subsection{Network Connectivity}
 
 Graph theory is the mathematical study of networks of nodes connected by
 edges (links). Within
@@ -438,28 +438,6 @@ critical links as those
 that connect to many other nodes (directly or indirectly), or as links
 whose loss isolates a
 number of nodes from the rest of the network.
-
-\citet{guze2014} conducts a review of the known uses of graph theory
-(a possible application of resiliency) before
-reviewing several
-other multi-criteria optimization methods.
-Graph theory is the study of pairwise objects, and is
-useful for identifying
-shortest path, network connectivity, and other methods of network
-optimization. Graph theory
-supports the idea of resilience through recovery as well as operability through crisis
-because of how it
-represents networks with links and nodes, and the theory's ability to identify next
-shortest paths in the
-case of disaster. Guze’s methodology
-involves an
-analysis of the knapsack problem which is a combinatorial optimization problem.
-Specifically, Guze focuses on flow
-theory in transportation
-systems and identifying a method to find the best graph solution. Guze’s
-greatest contribution to transportation research
-is a simplified method
-for determining shortest path route options on simple networks.
 
 \citet{abdel2007} developed a multi-layered graph to examine the resiliency
 of the traffic
@@ -519,6 +497,28 @@ rather than the friability of multiple links or an entire system. This suggests
 that planners and managers may not be considering the importance of
 understanding the impacts of widespread, all-inclusive disaster scenarios.
 
+\citet{guze2014} conducts a review of the known uses of graph theory
+(a possible application of resiliency) before
+reviewing several
+other multi-criteria optimization methods.
+Graph theory is the study of pairwise objects, and is
+useful for identifying
+shortest path, network connectivity, and other methods of network
+optimization. Graph theory
+supports the idea of resilience through recovery as well as operability through crisis
+because of how it
+represents networks with links and nodes, and the theory's ability to identify next
+shortest paths in the
+case of disaster. Guze’s methodology
+involves an
+analysis of the knapsack problem which is a combinatorial optimization problem.
+Specifically, Guze focuses on flow
+theory in transportation
+systems and identifying a method to find the best graph solution. Guze’s
+greatest contribution to transportation research
+is a simplified method
+for determining shortest path route options on simple networks.
+
 \citet{osei2014} adopt a network analysis methodology that is able to
 analyze
 resilience of transportation networks. In this
@@ -540,7 +540,7 @@ network efficiency, the authors are able to draw comparisons between two
 complex networks. Ultimately, the authors conclude that a denser, highly
 interconnected network will perform better if a link is cut due to a larger giant component value.
 
-\citet{zhang2015.2} investigates the role of network topology, or the physical
+\citet{zhang2015} investigates the role of network topology, or the physical
 layout of the network in a geographic location.
 The authors provide several examples of network topology types including
 hub and spoke, grid, and
@@ -560,7 +560,7 @@ networks are typically extremely large, with nodes and links numbering in the
 hundreds, if not thousands. Thus, the connectivity of a node may be high though
 connectivity may not be an accurate representation of a node's importance.
 
-\section{Changes in Travel Time}
+\subsection{Changes in Travel Time}
 
 Highway system network failures --- in most imaginable cases --- degrade
 the
@@ -572,6 +572,24 @@ provide an estimate of the criticality of that link or node. If a link or node
 becomes completely isolated, the travel time to that node or link would
 increase indefinitely. Thus, ensuring total isolation of a node or link does
 not occur becomes highly important to network resiliency in terms of graph theory.
+
+\citet{Berdica2007} attempt to examine what the effects of road
+degradation on Stockholm's transportation network would be if one or more
+chokepoints were to become damaged or all-together inundated. The authors
+sought to determine how interruptions affect the system, and how overall
+system performance was affected. Users in this method were only given the
+choice of an alternate route, and the authors acknowledge that this is not
+entirely reasonable in a real world situation. This method purely attempts
+to quantify delay experienced by users compared to the original
+equilibrium state, but does make an attempt to determine a monetary value
+associated with closure or degradation.
+
+\citet{Jenelius2010} attempts to examine the importance of the link that
+becomes critical only after partial network degradation, or redundancy
+importance. This measure is primarily flow-based. In the presented context,
+flow-based measures aim to analyze and evaluate changes in the number of
+vehicles using a route given adverse circumstances on the network.
+
 
 \citet{peeta2010} construct a model to efficiently allocate
 highway maintenance and emergency response resources at locations throughout a
@@ -597,17 +615,6 @@ available road capacity, road density, alternate route proximity, average
 delay, transport cost,
 and average speed reduction, are analyzed for importance to the integrity
 of the network.
-
-\citet{Berdica2007} attempt to examine what the effects of road
-degradation on Stockholm's transportation network would be if one or more
-chokepoints were to become damaged or all-together inundated. The authors
-sought to determine how interruptions affect the system, and how overall
-system performance was affected. Users in this method were only given the
-choice of an alternate route, and the authors acknowledge that this is not
-entirely reasonable in a real world situation. This method purely attempts
-to quantify delay experienced by users compared to the original
-equilibrium state, but does make an attempt to determine a monetary value
-associated with closure or degradation.
 
 \citet{ibrahim2011} provide an approach for determining
 vulnerability of infrastructure by estimating the cost of single link
@@ -657,12 +664,6 @@ Jaller’s methodology allows traffic managers to identify critical paths
 for mitigation purposes
 before the occurrence of disaster through careful analysis.
 
-\citet{Jenelius2010} attempts to examine the importance of the link that
-becomes critical only after partial network degradation, or redundancy
-importance. This measure is primarily flow-based. In the presented context,
-flow-based measures aim to analyze and evaluate changes in the number of
-vehicles using a route given adverse circumstances on the network.
-
 A primary limitation with increased travel time methodologies is that they
 ignore the other possible ways a population might adapt its travel to a
 damaged
@@ -672,7 +673,7 @@ that some previously occurring trips might be canceled entirely. It may also be
 prudent to consider how access changes, and evaluate changes in user choice
 based purely upon accessibility.
 
-\section{Changes in Accessibility}
+\subsection{Changes in Accessibility}
 \label{sec:cacc}
 In a travel modeling context, \textbf{accessibility} refers to the ease
 with which
@@ -803,6 +804,15 @@ future research specifically highlighted at the conclusion of Taylor's article i
 \noindent Several authors employ various types logit models in their research,
 or attempt to develop a methodology specifically for use analyzing disrupted networks.
 
+\citet{Masiero2012} use logit-based calculations to determine the Value of
+Time (VOT) associated with the closure of a road in terms of cost, time,
+and punctuality for freight transport. In order to properly determine the
+VOT of route closure, the authors also use a method provided in
+\citet{koppelman2006} which uses model derived coefficients and values to
+determine the cost of an alternative. The authors implemented their
+model on a network consisting of a single travel corridor that has
+experienced long (1 week to 2 months or more) closures in the past.
+
 \citet{Nassir2016} applies a nested logit model to examine a transit
 network in Australia. The main contribution in \citet{Nassir2016} is an
 improved methodology for calculating accessibility measures related to
@@ -819,15 +829,6 @@ adjust their route choice to an altered network. The true implication here
 is that users do not automatically choose the best new route given an
 altered network, it takes users time to learn how the new network
 functions.
-
-\citet{Masiero2012} use logit-based calculations to determine the Value of
-Time (VOT) associated with the closure of a road in terms of cost, time,
-and punctuality for freight transport. In order to properly determine the
-VOT of route closure, the authors also use a method provided in
-\citet{koppelman2006} which uses model derived coefficients and values to
-determine the cost of an alternative. The authors implemented their
-model on a network consisting of a single travel corridor that has
-experienced long (1 week to 2 months or more) closures in the past.
 
 \citet{winkler2016} proposes a travel demand model that is valid for all
 networks,

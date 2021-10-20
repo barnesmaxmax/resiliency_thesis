@@ -106,35 +106,37 @@ destination happens to be close by rail and far by highway, the gravity model
 will not be able to incorporate this.
 
 Alternatively to gravity models, logit-based models are becoming
-increasingly more popular. Logit-based destination choice models improve model
-sensitivity compared with gravity and four-step models, and are advantageous because
+increasingly more popular for trip distribution. Logit-based destination choice models improve model
+sensitivity compared with gravity models, and are advantageous because
 they possess an increased ability to introduce additional variables and reflect
 other statistical assumptions into a model \citep{tfr2021}. A typical choice
 model is made up of a combination of utility and probability values in the
 following equations:
 
 \begin{equation}
-\mathcal{P}_{ij} = \frac{e^{u_{ij}}}{\sum_{j\in J}e^{u_{k}}}
+\mathcal{P}_{ij} = \frac{e^{u_{ij}}}{\sum_{j\in J}e^{u_{ij}}}
   \label{eqn:probability}
 \end{equation}
 
-\noindent Where $\mathcal{P_{ij}}$ represents the probability of trips made between an
-origin $i$ and a destination $j$ among all destinations $J$. The probabilities
+\noindent Where $\mathcal{P}_{ij}$ represents the probability of trips made between an
+origin \(i\) and a destination \(j\) among all destinations $J$, and \(u\) represents the utility. The probabilities
 calculated are then used to calculate the mode or destination choice probability,
 which allow trips by purpose and trips by mode to be calculated. These Equations
 are shown in Equations \ref{eqn:ij} and \ref{eqn:ijk} later in this chapter. Then
-we have the logsum calculation,
+we have the logsum calculation, which is the denominator of the probability function.
+The logsum captures the total value of the choice set, and is interpreted as the
+benefit --- or dis-benefit --- experienced by users in a choice model.
 
 \begin{equation}
- Logsum = \ln\sum\exp(f(\beta_i, C_{ij}, A_j, \gamma_i, t_{ij}))
+ Logsum_{i} = \ln\sum_{j\in J}\exp(f(\beta, u_{ij}, A_j, \gamma, t_{ij}))
   \label{eqn:logsum}
 \end{equation}
 
-\noindent where $\beta_i$ represents a mode choice coefficient, $C_{ij}$ represents
-a data variable, $A_j$ represents the attraction at zone $j$, $\gamma_i$ represents
+\noindent where $\beta$ represents a mode choice coefficient, $u_{ij}$ represents the utility,
+$A_j$ represents the attraction at zone $j$, $\gamma$ represents
 a DC parameter, and $t_{ij}$ represents the travel time between an OD pair.
 
-The ability to incorporate multiple types of data, as in Equation \ref{equn:logsum}, as well as improved methods
+The ability to incorporate multiple types of data, as in Equation \ref{eqn:logsum}, as well as improved methods
 for determining trip distribution, mode choice, and destination choice all allow
 logit-based models to add an additional layer of sensitivity into estimations of
 trips between OD pairs on a road network. Consequently, logit-based travel
@@ -149,7 +151,7 @@ their destination based on a variety of factors including mode accessibility
 (i.e. ease of access to a mode of transport). The information
 derived from the socioeconomic data primarily comprises the size term, which
 is a measure of the appeal or attractiveness of one destination when compared with
-another destination. The destination choice (DC) size term is discussed in further detail in
+another destination. The DC size term is discussed in further detail in
 Chapter \ref{sec:dc}.
 
 A critical feature of logit-based choice models – described briefly in Section
@@ -218,13 +220,13 @@ model describes the probability of a person at origin \(i\) choosing mode \(k\)
 for a trip to destination \(j\):
 
 \begin{equation}
-\mathcal{P}_{ijk}(m) = \frac{\exp(f(\beta_m * t_{ijk}))}
-{\sum_{K}\exp(f(\beta * t_{ijk}))}
+\mathcal{P}_{ijm}(k) = \frac{\exp(f(\beta_m * t_{ijk}))}
+{\sum_{K}\exp(f(\beta_m * t_{ijk}))}
   \label{eq:mcp}
 \end{equation}
 
 \noindent The log of the denominator of the this equation is called the
-mode choice logsum, \(MCLS_{ijk}\) and is a measure of the travel cost by
+mode choice logsum, \(MCLS_{ijm}\) and is a measure of the travel cost by
 all modes, $k$, weighted by MC utility parameters \(\beta\) that may vary by
 trip purpose $m$. The parameter values are described in greater detail in
 Table \ref{tab:coeffs}.
@@ -235,7 +237,7 @@ destination choice model, where the probability of a person at origin \(i\)
 choosing destination \(j \in J\) is
 
 \begin{equation}
-\mathcal{P}_{ij}(m) = \frac{\exp(f(\gamma_m, MCLS_{ijm}, A_j))}
+\mathcal{P}_{im}(j) = \frac{\exp(f(\gamma_m, MCLS_{ijm}, A_{jm}))}
 {\sum_{J}\exp(f(\gamma, MCLS_{ijm}, A_j))}
   \label{eq:dcp}
 \end{equation}
@@ -251,7 +253,7 @@ The \(DCLS\) measure is relative, but can be compared across
 scenarios. The difference between the measures of two scenarios,
 
 \begin{equation}
-\Delta = DCLS^{\mathrm{Base}} - DCLS^{\mathrm{Scenario}}
+\Delta_{im} = {DCLS_{im}}^{\mathrm{Base}} - {DCLS_{im}}^{\mathrm{Scenario}}
   \label{eq:deltas}
 \end{equation}
 
@@ -259,7 +261,7 @@ scenarios. The difference between the measures of two scenarios,
  \(t_{ij\mathrm{AUTO}}\)
 changes due to a damaged highway link. This accessibility change is \emph{per
 trip},
-meaning that the total lost accessibility is \(P_{ik} * \Delta_{DCLS}\) where
+meaning that the total lost accessibility is \(P_{im} * \Delta_{DCLS}\) where
 \(P\) is
 the number of trip productions at zone \(i\) for purpose \(k\). This measure is
 given in units of dimensionless utility, but the mode choice cost coefficient
@@ -268,8 +270,8 @@ financial
 cost of a damaged link for the entire region for all trip purposes is:
 
 \begin{equation}
-\mathrm{Cost} = \sum_{I}\sum_{K} -1 / \beta_{\mathrm{cost},k} * P_{ik}
-\Delta_{ik}
+\mathrm{Cost} = \sum_{I}\sum_{M} -1 / \beta_{\mathrm{cost},m} * P_{im}
+\Delta_{im}
   \label{eq:totalcost}
 \end{equation}
 
@@ -280,7 +282,7 @@ and a value of time coefficient derived from the cost and vehicle time
 coefficients of the mode choice model,
 \begin{equation}
 \mathrm{Cost}' =  \sum_I \sum_J \sum_K \frac{\beta_{\mathrm{time}, k}
-}{\beta_{\mathrm{cost}, k}} T_{ijk} t_{ijk}
+}{\beta_{\mathrm{cost}, k}} T_{{ijm}_{auto}} t_{{ij}_{auto}}
   \label{eq:ttmethod}
 \end{equation}
 
@@ -306,17 +308,17 @@ for the whole state of Utah. The highway network contains many link- and
 node-attribute data including street name, link distance, lanes, functional
 classification, transportation analysis zone number (TAZ ID), county name,
 as well as speed limits and travel time data for five different times of day.
-Of particular interest from the available information was the $AM_{TIME}$ which
+Of particular interest from the available information was the \(AM\_TIME\) which
 contains the travel time in minutes for the AM time period along a link and
-the $DISTANCE$, which contained the linear distance between nodes along a link.
-The $AM_{TIME}$ was used to determine the travel time between an origin and
-destination. The $DISTANCE$ was used to measure the network distance between
+the \(DISTANCE\), which contained the linear distance between nodes along a link.
+The \(AM\_TIME\) was used to determine the travel time between an origin and
+destination. The \(DISTANCE\) was used to measure the network distance between
 the shortest OD pair based on AM travel time.
 
 The highway skim module creates an output matrix (or highway skim) of travel
 times and distances between origin destination (OD) pairs and must be created
-before automobile ($AUTO$) and non-motorized ($NMOT$) trips can be incorporated
-into the model. We used the $AM_{TIME}$ and $DISTANCE$ variables available in
+before automobile (\(AUTO\)) and non-motorized (\(NMOT\)) trips can be incorporated
+into the model. We used the \(AM\_TIME\) and \(DISTANCE\) variables available in
 the highway network file to create a matrix of distances and shortest travel
 times between all OD pairs in the USTM network. The output matrix forms the
 basis for further analysis by providing the needed automobile and non-motorized
