@@ -13,21 +13,21 @@ outlines next steps.
 The USTM model is a gravity-based travel demand model, while the Resiliency
 Model is logit-based. The logit-based nature of the Resiliency Model allows
 for greater sensitivity in user mode and destination choice, which causes
-the estimated costs associated with link closure to be lower yet more
-accurate for estimations made using the Resiliency Model. The Resiliency
+the estimated costs associated with link closure to be lower using the Resiliency Model. The Resiliency
 Model's incorporation of both the logsum for HBW, HBO, and NHB purposes, as
 well as the travel time calculation for the other purposes included in USTM
 provide important functionality towards estimating more realistic, conservative costs
 associated with long term highway closure.
 
-Logit-based modeling returns more sensitive
+Logit-based modeling returns more conservative
 estimations of the value of a link in the network. This is a highly
 important adaptation to USTM because more accurate and efficient estimation allows
 UDOT to better understand the monetary importance of highway links
 throughout Utah. Additionally, the model’s design allows for further
 analysis of additional link closure, eased identification of critical
 points on Utah's highway network, and even multi-link closure in the
-future.
+future. Thus, it is recommended that USTM include a logit-based mode and destination
+choice model in the future.
 
 \section{Limitations and Next Steps}
 
@@ -36,30 +36,29 @@ resource allocation moving into the future. Updating USTM to include a
 logit-based trip distribution model instead of a gravity-based model would
 improve the flexibility of travel demand estimates moving forward.
 
-The decision to not include a feedback loop introduces limitations on the
+The decision to not include a feedback loop, which iteratively runs the model
+until a the specifications of a convergence factor are met. Incorporating a
+feedback loop would have allowed for more accurate estimation of increased
+travel times and more accurate route choices between OD pairs in the final
+iteration of the Resiliency model compared with the first iteration.
+This decision introduces limitations on the
 ability of the model to accurately estimate the effects of link closure on
 travel time. This limits the ability of the model to estimate accurate changes in
-travel time because the increases in travel time due to congestion cannot be
-accurately measured after one iteration. The limitation has further negative
-impacts because the model cannot accurately estimate costs associated with link
-closure either.
-If a feedback loop had been included, the model would have been run several
-times for each scenario until the specifications of a convergence factor had
-been met, which would have allowed for more accurate estimation of increased
-travel times and more accurate route choices between OD pairs.
+response to increased travel time due to congestion because cannot be
+accurately measured after one iteration.
 
 Adding a congestion feedback loop to the Resiliency Model would allow more
 accurate cost estimations to be made. A feedback loop would cause the
 travel time and logsum information to be fed back into the beginning of the
 model and rerun continuously until the specifications of a convergence
-parameter were met. The loop allows for better estimates of the true change
-in travel time due to both route change and increased congestion. The loop
+parameter were met. The loop would allow for better estimates of the change
+in travel time due to both route change and resulting congestion. The loop
 also allows for more accurate route choice, mode choice, and destination
 choice to be made when the true effects of congestions are accounted for.
 In June 2020, the UDOT Technical Advisory Committee decided to not include a
 feedback loop to save time
 on model development for this study. A feedback loop and sensitivity analysis
-will be included as part of future work.
+should be included as part of future work.
 
 It is not unreasonable to assume that in the event of an earthquake or
 similar widespread disaster event, that multiple links could become
@@ -68,14 +67,18 @@ to analyze the results of simultaneous multiple link
 loss. This will allow for
 greater understanding of the effects that adverse events can have on Utah’s
 highway network, and help UDOT to better prepare for the development and
-maintenance needs of the future. Development of a transit oriented logit model
-would be highly advantageous to the Utah Transit Authority as well.
+maintenance needs of the future. Developing a fully functioning transit oriented logit model
+would be highly advantageous to the Utah Transit Authority as well. The capability
+is already incorporated into the structure of the resiliency model, however, a few modifications
+need to be made in order for it to become fully functioning.
 Additionally, the development of logsum calculations for trips with fixed
 origins and destinations should also be considered. This model, however,
 would be very different than the Resiliency Model because freight trips
 do not typically have a mode or destination choice option, so it would be
 more prudent to be able to account for other choices such as travel time,
-distance or even elevation change on a given route.
+distance or even elevation change on a given route. One option is to use the national
+freight network, which would allow freight trips to divert through other Interstate
+facilites.
 
 \section{Summary}
 

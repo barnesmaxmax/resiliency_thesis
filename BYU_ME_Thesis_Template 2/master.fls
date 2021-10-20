@@ -215,6 +215,9 @@ OUTPUT master.toc
 INPUT master.lot
 INPUT master.lot
 OUTPUT master.lot
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT master.lof
 INPUT master.lof
 OUTPUT master.lof
@@ -226,10 +229,7 @@ INPUT chapter2.tex
 INPUT chapter2.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/times/psyro.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -272,9 +272,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT figures/chapter3/MC_split.pdf
-INPUT ./figures/chapter3/MC_split.pdf
-INPUT ./figures/chapter3/MC_split.pdf
+INPUT figures/chapter3/MC_split.png
+INPUT ./figures/chapter3/MC_split.png
+INPUT ./figures/chapter3/MC_split.png
 INPUT figures/chapter3/TLFD.pdf
 INPUT ./figures/chapter3/TLFD.pdf
 INPUT ./figures/chapter3/TLFD.pdf

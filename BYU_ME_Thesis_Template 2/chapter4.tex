@@ -14,11 +14,8 @@ applied to 41 individual scenarios, with 40 of those scenarios involving link
 closure scenarios throughout the state.
 
 \section{Vulnerable Link Identification}
-Two methodologies were developed to identify vulnerable network links in
-Utah. The first method resembles the process used by AEM to determine
-threat categories and threat proximity thresholds to highway links. The
-second method uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on existing risk analysis data. Additional
-points of interest were identified by the research team or by UDOT officials, who have a familiar working knowledge of the USTM network. Using this second
+The methodology developed to identify vulnerable links in Utah uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on existing risk analysis data. Additional
+points of interest were identified by the research team or by UDOT officials, who have a familiar working knowledge of the USTM network. Using this
 method, links were identified due to their location in relation to
 population centers, remote geographic location, proximity to other highway facilities, were known to be at risk due to geologic or geographic features, or
 because they were suspected choke points in the network.
@@ -31,13 +28,11 @@ more general analysis for all 40 scenarios considered in the Resiliency Model.
 \section{Localized Scenario Analysis}
 
 This section outlines an in-depth, localized analysis that was conducted to ensure
-the Resiliency Model was accurately describing trips with OD pairs in the
+the Resiliency Model was accurately describing trips likely behavior with OD pairs in the
 targeted area around a severed link. This analysis was done on a link between
 Tooele and Salt Lake City, Utah. This detailed analysis is useful because it
 provides a closer look at the way the Resiliency Model works, capturing trips
-between two population centers.
-
-Scenario 50, which is located along I-80 between Tooele and Salt Lake Counties
+between two population centers. Scenario 50, which is located along I-80 between Tooele and Salt Lake Counties
 was examined here. The localized analysis shows that the majority of trips
 affected by damage to this link either originate or terminate in one of the
 two counties, as expected. These results can be seen in Table
@@ -47,7 +42,7 @@ which serves to capture trips that have fixed OD pairs such as freight and
 recreational trips. This localized analysis also looks at this method.
 
 Table \ref{tab:tooeletable} compares trips and the overall costs between the
-logsum and travel time methods, the specific cost for trips originating in
+logsum and travel time methods, and the specific cost for trips originating in
 Tooele County and ending in Salt Lake County. We can see that the logsum
 method captures about
 \$54,000 of expenses experienced by road users due to the closure of the
@@ -136,7 +131,7 @@ degradation or loss for the purposes included for analysis. However, the
 logsum calculation is only used for three purposes in the USTM model. A way to
 account for freight trips, REC trips, and trips that occur between external
 nodes must also be found. These trip purposes typically have fixed origins
-nd destinations. As such, a way to account for all purposes must be developed.
+and destinations. As such, a way to account for all purposes must be developed.
 Thus, by combining elements from the travel time method and the Resiliency
 Model, an estimate can be made that represents all traffic on the USTM network.
 
@@ -147,6 +142,8 @@ Model, an estimate can be made that represents all traffic on the USTM network.
 \caption{Links Identified for Analysis.}
 \label{fig:linksmap}
 \end{figure}
+
+\section{Resiliency Model Results}
 
 The following sections will present the results of the 40 scenarios analyzed.
 First, Table \ref{tab:linkresults} shows each of the scenarios we examined,
@@ -177,49 +174,49 @@ link that was cut. A ranking is provided for all of the examined scenarios in Ta
 \centering
 \begin{tabular}[t]{crrll}
 \toprule
-Scenario & $\Delta$ Logsum & \makecell{Cost \\(Dollars per Day)} & Route & Location\\
+Scenario & $\Delta$ Logsum & \makecell{Cost \\(per Day)} & Route & Location\\
 \midrule
-27 & -23830.208 & 14893880.00 & I-84 & between Ogden and Morgan\\
-50 & -19686.788 & 12304242.50 & I-80 & between SLC and Tooele\\
-37 & -8932.691 & 5582931.88 & I-80 & in Parley's Canyon\\
-30 & -7511.948 & 4694967.50 & US-91 & between Brigham City \& Mantua\\
-17 & -5243.828 & 3277392.50 & SR-18 & just North of St. George\\
-46 & -4911.457 & 3069660.63 & SR-189 & up Provo Canyon near Vivian Park\\
-38 & -4422.194 & 2763871.25 & I-15 & at the Point of the Mount\\
-18 & -3186.967 & 1991854.38 & I-15 & in Rocky Ridge (between Payson \& Nephi)\\
-42 & -2657.614 & 1661008.75 & Bangerter & near West Valley City\\
-41 & -1700.167 & 1062604.38 & I-215 & near Taylorsville\\
-25 & -1139.020 & 711887.50 & Timp Hwy & at the mouth of AF Canyon\\
-24 & -387.467 & 242166.88 & UT-35 & outside of Francis\\
-23 & -297.882 & 186176.25 & Legacy & near West Bountiful\\
-20 & -253.712 & 158570.00 & I-15 & near New Harmony\\
-47 & -142.671 & 89169.38 & US-6 & Spanish Fork Canyon at Diamond Fork Rd\\
-26 & -125.740 & 78587.50 & SR-14 & in Cedar Canyon\\
-15 & -67.634 & 42271.25 & SR-199 & near Rush Valley\\
-32 & -60.883 & 38051.88 & US-89 & between Logan and Bear Lake\\
-14 & -45.386 & 28366.25 & I-15 & in Orem between Univ. Ave \& Center St\\
-29 & -41.595 & 25996.88 & SR-101 & East of Hyrum\\
-31 & -40.108 & 25067.50 & SR-62 & East of Kingston\\
-22 & -30.394 & 18996.25 & US-6 & in Carbon County North of Helper\\
-49 & -17.768 & 11105.00 & I-70 & near Richfield \& Fillmore\\
-45 & -17.029 & 10643.13 & US-89 & near Arizona Border\\
-21 & -11.267 & 7041.88 & US-40 & East of Strawberry Reservoir\\
-36 & -10.170 & 6356.25 & SR-24 & near Steamboat Point\\
-16 & -9.724 & 6077.50 & SR-153 & between Beaver \& Junction\\
-48 & -9.717 & 6073.13 & I-70 & near Green River (NW of Moab)\\
-19 & -7.623 & 4764.38 & I-15 & near I-70 \& Fillmore\\
-35 & -3.762 & 2351.25 & SR-191 & between Helper \& Duchesne\\
-13 & -0.135 & 84.38 & I-70 & at Dragon Point (W of Green River)\\
-28 & -0.103 & 64.38 & SR-65 & border of Salt Lake \& Morgan Counties\\
-10 & 0.000 & 0.00 & SR-95 & near Hite\\
-11 & 0.000 & 0.00 & US-6 & near King Top\\
-33 & 0.000 & 0.00 & SR-24 & in Capitol Reef National Park\\
-12 & 894.999 & -559374.38 & I-15 & in Bountiful\\
-44 & 2149.291 & -1343306.88 & UT-85 & West of West Jordan\\
-43 & 4043.132 & -2526957.50 & I-215 & near Cottonwood Heights\\
-40 & 5576.276 & -3485172.50 & I-15 & in SLC between 2100 S \& 1300 S\\
-39 & 7434.744 & -4646715.00 & I-80 & in SLC near Sugar House and 1300 E\\
-34 & 9362.283 & -5851426.88 & Bangerter & near Bluffdale\\
+27 & -23830.208 & \$1,4893,880.00 & I-84 & between Ogden and Morgan\\
+50 & -19686.788 & \$12,304,242.50 & I-80 & between SLC and Tooele\\
+37 & -8932.691 & \$5,582,931.88 & I-80 & in Parley's Canyon\\
+30 & -7511.948 & \$4,694,967.50 & US-91 & between Brigham City \& Mantua\\
+17 & -5243.828 & \$3,277,392.50 & SR-18 & just North of St. George\\
+46 & -4911.457 & \$3,069,660.63 & SR-189 & up Provo Canyon near Vivian Park\\
+38 & -4422.194 & \$2,763,871.25 & I-15 & at the Point of the Mount\\
+18 & -3186.967 & \$1,991,854.38 & I-15 & in Rocky Ridge (between Payson \& Nephi)\\
+42 & -2657.614 & \$1,661,008.75 & Bangerter & near West Valley City\\
+41 & -1700.167 & \$1,062,604.38 & I-215 & near Taylorsville\\
+25 & -1139.020 & \$711,887.50 & Timp Hwy & at the mouth of AF Canyon\\
+24 & -387.467 & \$242,166.88 & UT-35 & outside of Francis\\
+23 & -297.882 & \$186,176.25 & Legacy & near West Bountiful\\
+20 & -253.712 & \$158,570.00 & I-15 & near New Harmony\\
+47 & -142.671 & \$89,169.38 & US-6 & Spanish Fork Canyon at Diamond Fork Rd\\
+26 & -125.740 & \$78,587.50 & SR-14 & in Cedar Canyon\\
+15 & -67.634 & \$42,271.25 & SR-199 & near Rush Valley\\
+32 & -60.883 & \$38,051.88 & US-89 & between Logan and Bear Lake\\
+14 & -45.386 & \$28,366.25 & I-15 & in Orem between Univ. Ave \& Center St\\
+29 & -41.595 & \$25,996.88 & SR-101 & East of Hyrum\\
+31 & -40.108 & \$25,067.50 & SR-62 & East of Kingston\\
+22 & -30.394 & \$18,996.25 & US-6 & in Carbon County North of Helper\\
+49 & -17.768 & \$11,105.00 & I-70 & near Richfield \& Fillmore\\
+45 & -17.029 & \$10,643.13 & US-89 & near Arizona Border\\
+21 & -11.267 & \$7,041.88 & US-40 & East of Strawberry Reservoir\\
+36 & -10.170 & \$6,356.25 & SR-24 & near Steamboat Point\\
+16 & -9.724 & \$6,077.50 & SR-153 & between Beaver \& Junction\\
+48 & -9.717 & \$6,073.13 & I-70 & near Green River (NW of Moab)\\
+19 & -7.623 & \$4,764.38 & I-15 & near I-70 \& Fillmore\\
+35 & -3.762 & \$2,351.25 & SR-191 & between Helper \& Duchesne\\
+13 & -0.135 & \$84.38 & I-70 & at Dragon Point (W of Green River)\\
+28 & -0.103 & \$64.38 & SR-65 & border of Salt Lake \& Morgan Counties\\
+10 & 0.000 & \$0.00 & SR-95 & near Hite\\
+11 & 0.000 & \$0.00 & US-6 & near King Top\\
+33 & 0.000 & \$0.00 & SR-24 & in Capitol Reef National Park\\
+12 & 894.999 & -\$559,374.38 & I-15 & in Bountiful\\
+44 & 2149.291 & -\$1,343,306.88 & UT-85 & West of West Jordan\\
+43 & 4043.132 & -\$2,526,957.50 & I-215 & near Cottonwood Heights\\
+40 & 5576.276 & -\$3,485,172.50 & I-15 & in SLC between 2100 S \& 1300 S\\
+39 & 7434.744 & -\$4,646,715.00 & I-80 & in SLC near Sugar House and 1300 E\\
+34 & 9362.283 & -\$5,851,426.88 & Bangerter & near Bluffdale\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -249,7 +246,7 @@ with freight trips.
 \centering
 \begin{tabular}[t]{lrrrrrrrrrr}
 \toprule
-ROAD & \makecell{IIF} & \makecell{XXF} & \makecell{IXF} & \makecell{HBW} & \makecell{HBO} & \makecell{NHB} & \makecell{REC} & \makecell{XXP} & \makecell{TIME($\Delta$ hr)} & \makecell{Total Cost}\\
+Scenario & \makecell{IIF} & \makecell{XXF} & \makecell{IXF} & \makecell{HBW} & \makecell{HBO} & \makecell{NHB} & \makecell{REC} & \makecell{XXP} & \makecell{TIME($\Delta$ hr)} & \makecell{Total Cost}\\
 \midrule
 48 & 990780 & 84546937 & 0 & 196 & 257 & 29 & 15448 & 417992 & 8629842 & 85971638\\
 13 & 83991 & 25130678 & 0 & 0 & 3 & 0 & 211 & 95273 & 1273123 & 25310156\\
@@ -324,20 +321,14 @@ shortest path by time is longer than in the base scenario with the broken link
 available. However, the new path may actually be shorter by distance. This
 causes an increase in the utility of accessing destinations by non-
 motorized modes, potentially overwhelming the decrease in automobile
-utility.
-
-It was determined that a likely explanation for these atypical results is that
-the shortest path by time is not the shortest path by
-distance. The automobile accessibility is determined by the AM congested
+utility. It also results in increased auto costs. The automobile accessibility is determined by the AM congested
 travel time in the Utah Statewide Travel Model (USTM). The travel distance
 – used to determine the accessibility of destinations by driving or
 walking – is the distance of that path, and not the actual shortest
-distance path. There is also the possibility that a new route with a longer
-travel time, but shorter distance could be found. This would cause both the
-cost and accessibility to change significantly in some scenarios. Additionally,
-it was found that
-the alternative route between Grouse Creek, Utah, and Salt Lake City, the alternative
-route was nearly twice as long in the case where I-80 was closed between
+distance path. Additionally,
+supporting evidence of this theory was found when it was discovered that for
+the alternative route between Grouse Creek, Utah, and Salt Lake City,
+was nearly twice as long in the case where I-80 was closed between
 Tooele and Salt Lake Counties. This discovery led us to understand that not all
 route choices become logical when made using only the model data. In
 reality, it is possible that a user would find a shorter route
@@ -363,8 +354,9 @@ equation.
 
 \section{Summary}
 
-The overall results show that the Resiliency Model is more sensitive to
-network changes than the travel time comparison. The ability for a user to
+The overall results show that the Resiliency Model is less sensitive to
+network changes than the travel time comparison. This is likely because
+other behaviors are accounted for in the Resiliency Model. The ability for a user to
 choose both a mode and destination (or alternate destination) cause the
 logsum results to often estimate a smaller cost than the travel time
 results would. However, when the travel time results are factored in, the
@@ -373,7 +365,7 @@ is due to the large expenses experienced by freight traffic, which has a
 much higher VOT than other passenger trips do. In summary, Table
 \ref{tab:linkresults} and Table \ref{tab:timeresults} show the rankings
 for both the logsum and travel time analysis methods respectively. The
-logsum suggests that I-84 between Ogden and Morgan is the most important
+logsum suggests that I-84 between Ogden and Morgan is the most critical
 road, while the travel time method, or total priority, indicates that I-70
-near Green River is the most important road due to cost associated with
+near Green River is the most critical road due to cost associated with
 closure.

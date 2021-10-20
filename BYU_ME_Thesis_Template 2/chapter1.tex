@@ -19,36 +19,41 @@ corridors with regional and national significance (e.g. U.S. Route 6, Interstate
 importantly, the current index treats each UDOT asset – each bridge, highway segment, etc. – as an
 independent unit, when in fact UDOT operates a system of interrelated transportation facilities. The criticality
 of a single bridge to the overall system is not determined by the volume of traffic it supports
-directly, but by how inconvenient it would be for that traffic to find another path or destination
+directly, but by how inconvenient it would be for that traffic to find another path or destination,
 were the bridge to fail. Resiliency must therefore be considered a function of network, mode, and destination
 alternatives which comprise systemic redundancy. Developing a model capable of accounting for the choices a user makes will help
 transportation planners to calculate sensitive estimates of the costs associated with link closure.
 
 \section{Objectives}
 The primary objective of this research is to develop a methodology and tool to evaluate the
-network redundancy of critical UDOT assets across the state. We base this tool on data collected
+network resiliency of critical UDOT assets across the state. We base this tool on data collected
 for the Utah Statewide Travel Model (USTM), with certain improvements and additional model
 features to more accurately capture the economic costs associated with an impaired state highway
 network. In particular, we develop a method that explicitly considers the availability of
 alternative destinations, modes, and routes to individuals traveling on the impaired network. A
 secondary objective of this research is to apply the model to evaluate the criticality of
 specific
-highway links in Utah by comparison. This thesis presents the results of this evaluation applied
+highway links in Utah, by comparing the change in accessibility, or dis-benefit,
+experienced by road users.
+This thesis presents the results of this evaluation applied
 on 41 individual highway links.
 
 \section{Scope}
 The purpose of this thesis is to provide a functional tool that can be used to evaluate
 the potential economic costs associated with highway link closure in Utah. USTM comprises
-the entire highway network, with roughly 8500 Transportation Analysis Zones (TAZ),
+the entire highway network in Utah, with roughly 8500 Transportation Analysis Zones (TAZ),
 with a population of about 3.2 million people.
-Developing a choice model (hereby named the Resiliency Model) can help to determine
+Developing a choice model (aptly named the Resiliency Model) can help to determine
 the effects of road closures or long term link loss for the entire State of Utah.
-Therefore, the Resiliency Model is based on the theory of logit choice modeling and
+To better determine these effects, the Resiliency Model is based on the theory of logit choice modeling and
 shortest path finding in a network. The specific choice utility equations in the model represent
 a plausible utility outcome, but the focus of this research has not been on developing robust
 utility equations or calibrated volume-delay functions. This model is therefore not designed to
 forecast traffic volumes nor is it designed for any purpose other than providing a comparative estimate
-of the effects of link loss by man-made or natural causes.
+of the effects of link loss by man-made or natural causes. Creating a choice model
+which uses the same network as USTM, and incorporates multiple datatypes is
+advantageous to UDOT moving forward because of the alternative estimates a choice
+model can provide.
 
 \section{Outline of Report}
 
@@ -59,5 +64,5 @@ of the effects of link loss by man-made or natural causes.
 	\item Chapter 2.	This chapter presents a Literature Review, summarizing previous attempts to model network resiliency using the choices and accessibility of individuals on the impacted network.
 	\item Chapter 3.	This chapter presents a proposed model design and implementation of the model within the CUBE transportation planning software application. This chapter also describes model calibration efforts.
   \item Chapter 4.	This chapter presents the Model Application, description and comparison of model results, from the model developed in Chapter 3, to the highway links identified in Chapter 4.
-	\item Chapter 6.	This chapter presents the conclusions, summarizes the findings of the research, and suggests next steps for this research.
-\end{itemize5
+	\item Chapter 5.	This chapter presents the conclusions, summarizes the findings of the research, and suggests next steps for this research.
+\end{itemize}
