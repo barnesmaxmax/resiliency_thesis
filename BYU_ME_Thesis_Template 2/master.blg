@@ -8,53 +8,53 @@ A level-1 auxiliary file: chapter4.aux
 A level-1 auxiliary file: chapter5.aux
 The style file: apalike.bst
 Database file #1: refs.bib
+Warning--I didn't find a database entry for "zhang2015"
 Warning--empty publisher in agarwal2011
 Warning--there's a number but no volume in Berdica2007
-Warning--empty institution in hamedi2018
 Warning--empty booktitle in koppelman2006
 Warning--can't use both volume and number fields in rogers2012
 Warning--empty journal in UtahDepartmentofTransportation2020
 Warning--there's a number but no volume in UtahDepartmentofTransportation2020
 Warning--empty journal in levinson2010
-You've used 40 entries,
+You've used 39 entries,
             1935 wiz_defined-function locations,
-            701 strings with 10488 characters,
-and the built_in function-call counts, 15783 in all, are:
-= -- 1520
-> -- 661
+            699 strings with 10405 characters,
+and the built_in function-call counts, 15369 in all, are:
+= -- 1482
+> -- 643
 < -- 29
-+ -- 237
-- -- 222
-* -- 1364
-:= -- 2756
-add.period$ -- 111
-call.type$ -- 40
-change.case$ -- 310
-chr.to.int$ -- 39
-cite$ -- 48
-duplicate$ -- 580
-empty$ -- 1088
-format.name$ -- 282
-if$ -- 3081
++ -- 231
+- -- 216
+* -- 1326
+:= -- 2682
+add.period$ -- 108
+call.type$ -- 39
+change.case$ -- 301
+chr.to.int$ -- 38
+cite$ -- 46
+duplicate$ -- 565
+empty$ -- 1058
+format.name$ -- 275
+if$ -- 3001
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 33
-newline$ -- 193
-num.names$ -- 120
-pop$ -- 254
+missing$ -- 32
+newline$ -- 188
+num.names$ -- 117
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 310
+purify$ -- 302
 quote$ -- 0
-skip$ -- 453
+skip$ -- 443
 stack$ -- 0
-substring$ -- 1118
-swap$ -- 69
+substring$ -- 1091
+swap$ -- 68
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 238
-warning$ -- 8
-while$ -- 118
+type$ -- 232
+warning$ -- 7
+while$ -- 115
 width$ -- 0
-write$ -- 493
+write$ -- 480
 (There were 8 warnings)
