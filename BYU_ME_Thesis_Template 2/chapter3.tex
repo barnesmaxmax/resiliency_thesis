@@ -399,35 +399,23 @@ also presented in Table \ref{tab:coeffs}.
 \midrule
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Destination Choice}}\\
-\hspace{1em} & Households & 0.0000 & 1.0187 & 0.2077\\
-
-\hspace{1em} & Office Employment & 0.4568 & 0.4032 & 0.2816\\
-
-\hspace{1em} & Other Employment & 1.6827 & 0.4032 & 0.2816\\
-
-\hspace{1em} & Retail Employment & 0.6087 & 3.8138 & 5.1186\\
-
-\hspace{1em} & Distance & -0.0801 & -0.1728 & -0.1157\\
-
-\hspace{1em} & Distance\textasciicircum{}2 & 0.0026 & 0.0034 & 0.0035\\
-
-\hspace{1em} & Distance\textasciicircum{}3 & 0.0000 & 0.0000 & 0.0000\\
+\hspace{1em} & $\gamma_{hh}$ Households & 0.0000 & 1.0187 & 0.2077\\
+\hspace{1em} & $\gamma_{off}$ Office Employment & 0.4568 & 0.4032 & 0.2816\\
+\hspace{1em} & $\gamma_{oth}$ Other Employment & 1.6827 & 0.4032 & 0.2816\\
+\hspace{1em} & $\gamma_{ret}$ Retail Employment & 0.6087 & 3.8138 & 5.1186\\
+\hspace{1em} & $\kappa_1$ Distance & -0.0801 & -0.1728 & -0.1157\\
+\hspace{1em} & $\kappa_2$ Distance squared & 0.0026 & 0.0034 & 0.0035\\
+\hspace{1em} & $\kappa_3$ Distance cubed & 0.0000 & 0.0000 & 0.0000\\
 \cmidrule{1-5}
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Mode Choice}}\\
-\hspace{1em} & Shared & -1.1703 & 0.0164 & -0.0336\\
 
-\hspace{1em} & Transit & -0.3903 & -1.9811 & -2.2714\\
-
-\hspace{1em} & Non-Motorized & -1.2258 & -0.3834 & -0.8655\\
-
-\hspace{1em} & Travel Time [minutes] & -0.0450 & -0.0350 & -0.0400\\
-
-\hspace{1em} & Travel Cost [dollars] & -0.0016 & -0.0016 & -0.0016\\
-
-\hspace{1em} & Walk Distance (less than 1 mile) [miles] & -0.0900 & -0.0700 & -0.0800\\
-
-\hspace{1em} & Walk Distance (1 mile or more) [miles] & -0.1350 & -0.1050 & -0.1200\\
+\hspace{1em} & $\alpha_{TRANSIT}$ Transit constant & -0.3903 & -1.9811 & -2.2714\\
+\hspace{1em} & $\alpha_{NMOT}$ Non-Motorized & -1.2258 & -0.3834 & -0.8655\\
+\hspace{1em} & $\beta_{tt}$ Travel Time [minutes] & -0.0450 & -0.0350 & -0.0400\\
+\hspace{1em} & $\beta_{cost}$ Travel Cost [dollars] & -0.0016 & -0.0016 & -0.0016\\
+\hspace{1em} & $\beta_{d1}$ Walk Distance (less than 1 mile) [miles] & -0.0900 & -0.0700 & -0.0800\\
+\hspace{1em} & $\beta_{d2}$ Walk Distance (1 mile or more) [miles] & -0.1350 & -0.1050 & -0.1200\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -439,25 +427,12 @@ $C$ will denote other variables which are typically zonally related. Additionall
 the equation used to calculate the MC logsum will be shown.
 
 
-\begin{equation}
-U_{{AUTO}_{ijm}} = \beta_{1_{m}} * C_{1_{ij}} + \beta_{2_{m}} * C_{2_{ij}}
-	\label{eqn:auto}
-\end{equation}
-
-\begin{equation}
-U_{{TRANSIT}_{ij}} = \alpha_{TRN} + \beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}}
-	\label{eqn:transit}
-\end{equation}
-
-\begin{equation}
-U_{{NMOT}_{ij}} = \alpha_{NMOT} + 20 * (\beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}})
-	\label{eqn:nmot}
-\end{equation}
-
-\begin{equation}
-  Logsum_{m} = \frac{\exp e^{U_{ijm}}}{\sum \exp e^{U_{ijkm}}}
-  \label{eqn:lsum}
-\end{equation}
+\begin{align}
+U_{ijm\mathrm{AUTO}} &= \beta_{tt} * tt_{ij\mathrm{AUTO}} + \beta_{cost}* cost_{ij\mathrm{AUTO}}\\
+U_{{TRANSIT}_{ij}} &= \alpha_{TRN} + \beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}}\\
+U_{{NMOT}_{ij}} &= \alpha_{NMOT} + 20 * (\beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}})\\
+Logsum_{ijm} &= \ln(\sum_K \exp (U_{ijmk})) \label{eqn:lsum}
+\end{align}
 
 From the equations above, several aspects between the three MC utility equations are
 apparent. First, the transit and $NMOT$ utility equations both have a constant, denoted by a $\alpha$,
