@@ -403,6 +403,7 @@ also presented in Table \ref{tab:coeffs}.
 \hspace{1em} & $\gamma_{off}$ Office Employment & 0.4568 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{oth}$ Other Employment & 1.6827 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{ret}$ Retail Employment & 0.6087 & 3.8138 & 5.1186\\
+\hspace{1em} & $\gamma_{MCLS}$ Mode Choice Logsum &  &  & \\
 \hspace{1em} & $\kappa_1$ Distance & -0.0801 & -0.1728 & -0.1157\\
 \hspace{1em} & $\kappa_2$ Distance squared & 0.0026 & 0.0034 & 0.0035\\
 \hspace{1em} & $\kappa_3$ Distance cubed & 0.0000 & 0.0000 & 0.0000\\
@@ -474,7 +475,7 @@ above, however, \(D\) is used to represent the distance variable in the calibrat
 
 \begin{equation}
 \begin{aligned}
-	U_{ijm} = \gamma_{1_{m}} * MCLS_{ijm} + \log (A_{j}) + f(d_{ij})
+	U_{ijm} = \gamma_{MCLS} * MCLS_{ijm} + \log (A_{jm}) + f(d_{ij})
 \label{eqn:dc}
 \end{aligned}
 \end{equation}
@@ -509,13 +510,13 @@ equation can be seen below:
 
 \begin{equation}
 \begin{aligned}
-	A_j = \eta_{1_{j}} * C_1 + \eta_{2_{j}} * C_2 + \eta_{3_{j}} * C_{3}
+	A_{jm} = \gamma_{jm off} * office_j + \gamma_{2_{j}} * C_2 + \gamma_{3_{j}} * C_{3}
 	\label{eqn:sizeterm}
 \end{aligned}
 \end{equation}
 
-\noindent Where each $C$ represents a different zonal statistic in the UHTS data,
-and $eta$ represents the corresponding DC parameter.
+\noindent Where each different zonal socioeconomic element in the UHTS data influences
+utility through a corresponding $\gamma$ parameter.
 
 The DC logsums are calculated by summing each row in the DC utility matrix,
 and then
@@ -611,32 +612,17 @@ cubic polynomial as the destination choice calibration term seen in the
 equation below:
 
 \begin{equation}
-  f(d_{ij}) = \beta_1 C_{ij} + \beta_2 MCLS + \kappa_
-  1 C_{ij} + \kappa_2 C_{ij}^2 + \kappa_3 C_{ij}^3
+  f(d_{ij}) = \kappa_1 d_{ij} + \kappa_2 d_{ij}^2 + \kappa_3 d_{ij}^3
 	\label{eqn:poly}
 \end{equation}
 
-\noindent where $\beta$ represents a coefficient, $C$ represents distance data,
+\noindent where $\beta$ represents a coefficient, $d$ represents distance data,
 and each of the $\kappa$'s, '$\kappa_1,\kappa_2,\kappa_3$, are calibrated to re-create best fit
 estimates of the difference between the model and target total. The target
 values for calibration are derived from USTM. The cubic polynomial in
 Equation \ref{eqn:poly}, which is part of the DC utility in
 Equation \ref{eqn:dc}), was applied and calibrated to match the target TLFD values from USTM.
-
-\begin{table}
-
-\caption{\label{tab:finaldc}Final DC Parameters}
-\centering
-\begin{tabular}[t]{lrrr}
-\toprule
- & HBW & HBO & NHB\\
-\midrule
-$\kappa_1$ & -0.1956000 & -0.16060 & -0.210200\\
-$\kappa_2$ & 0.0021000 & 0.00290 & 0.011200\\
-$\kappa_3$ & -0.0000061 & -0.00001 & -0.000012\\
-\bottomrule
-\end{tabular}
-\end{table}
+The final calibration values  were presented in Table \ref{tab:coeffs}.
 
 \subsection{Calibration Results}
 
