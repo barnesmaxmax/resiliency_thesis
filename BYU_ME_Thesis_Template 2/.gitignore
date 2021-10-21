@@ -1,6 +1,6 @@
 *.blg
 *.brf
-*.fdb_latekmk
+*.fdb_latexmk
 *.fls
 *.lof
 *.lot
