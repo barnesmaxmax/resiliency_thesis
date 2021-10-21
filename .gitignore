@@ -8,3 +8,17 @@
 *.spl
 
 _bookdown_files/
+
+*.bbl
+
+*.blg
+
+*.brf
+
+*.lof
+
+*.lot
+
+*.out
+
+*.toc
