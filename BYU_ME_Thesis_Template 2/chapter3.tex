@@ -65,7 +65,7 @@ attractiveness) and the impedance (or friction) factor between the OD
 pair. A mathematical representation of the gravity model is given by:
 
 \begin{equation}
-T_{ij}= P_i*(A_j F_{ij})/\sum_{j\in J}(A_j F_{ij})
+T_{ij}= \frac{P_i*(A_j F_{ij})}{\sum_{j\in J}(A_j F_{ij})}
  \label{eqn:gravity}
 \end{equation}
 
@@ -152,7 +152,7 @@ their destination based on a variety of factors including mode accessibility
 derived from the socioeconomic data primarily comprises the size term, which
 is a measure of the appeal or attractiveness of one destination when compared with
 another destination. The DC size term is discussed in further detail in
-Chapter \ref{sec:dc}.
+Section \ref{sec:dc}.
 
 A critical feature of logit-based choice models – described briefly in Section
 \ref{sec:cacc} – is that they are more versatile than traditional modeling
@@ -510,7 +510,7 @@ equation can be seen below:
 
 \begin{equation}
 \begin{aligned}
-	A_{jm} = \gamma_{m off} * \mathrm{office}_j + \gamma_{m oth} * \mathrm{other}_j + \gamma_{m hh} * \mathrm{hh}_j + \gamma_{m ret} * \mathrm{retail}_j
+	A_{jm} = \gamma_{m_{off}} * \mathrm{office}_j + \gamma_{m_{oth}} * \mathrm{other}_j + \gamma_{m_{hh}} * \mathrm{hh}_j + \gamma_{m_{ret}} * \mathrm{retail}_j
 	\label{eqn:sizeterm}
 \end{aligned}
 \end{equation}
