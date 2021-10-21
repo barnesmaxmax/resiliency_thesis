@@ -70,8 +70,7 @@ the logit-based model.
 \toprule
 Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele - SLC Cost \\(Dollars per Day)}} & \multicolumn{2}{c}{Base Trips}\\
 \midrule
- & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method} & \makecell{ Tooele - \\ SLC } &
-\makecell{Whole\\Network} \\
+ & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method} & \makecell{ Tooele - \\ SLC} & \makecell{Whole\\Network}\\
 \midrule
 HBW & \$15397.06 & \$244275.72 & \$12143.11 & \$233373.56 & 7980 & 1684141\\
 HBO & \$12882.89 & \$108412.94 & \$3577.62 & \$98163.53 & 6665.86 & 4593248\\
@@ -90,6 +89,7 @@ Total & \$969241.74 & \$437401.02 & \$132559.20 & \$406899.06 & 531486 & 9788493
 \end{tabular}
 %\end{adjustbox}
 \end{table}
+
 
 \begin{table}
 
@@ -168,8 +168,6 @@ likely due to the remoteness of the geographic location of the highway
 link that was cut. A ranking is provided for all of the examined scenarios in Table \ref{tab:linkresults}.
 
 \begin{table}
-
-
 \caption{\label{tab:linkresults}Logsum Analysis Results}
 \centering
 \begin{tabular}[t]{crrll}
@@ -304,6 +302,71 @@ top 10 scenarios for both methods of analysis. This is likely due to the
 number of passenger trips along these routes, combined with the number of freight
 trips that occur along these routes as well. Several of these routes are
 the only way through mountain ranges in Utah.
+
+\begin{table}
+
+\begin{table}
+
+\caption{Summed results}
+\centering
+\begin{tabular}[t]{crrrr}
+\toprule
+Scenario & Modes in both Models & Other Modes & TIME({$\Delta$} hr) & Total\\
+\midrule
+Base & 0 & 0 & 0 & 0\\
+10 & 0 & 1126 & 79258 & 1126\\
+11 & 3 & 7577 & 93374 & 7580\\
+12 & 34668 & 381210 & 638924 & 415879\\
+13 & 3 & 25310152 & 1273123 & 25310156\\
+\addlinespace
+14 & 105736 & 963049 & 2236074 & 1068785\\
+15 & 547 & 214 & 19340 & 761\\
+16 & 67 & 30652 & 6675 & 30719\\
+17 & 12151 & 2087 & 45246 & 14238\\
+18 & 56962 & 5942068 & 15621368 & 5999030\\
+\addlinespace
+19 & 150 & 3478861 & 7376204 & 3479012\\
+20 & 6722 & 19531654 & 9060110 & 19538377\\
+21 & 155 & 541664 & 569867 & 541819\\
+22 & 50 & 688612 & 1384531 & 688662\\
+23 & 262 & 168 & 226 & 430\\
+\addlinespace
+24 & 2952 & 1885 & 68330 & 4837\\
+25 & 2641 & 57 & 1116 & 2698\\
+26 & 665 & 752 & 16305 & 1417\\
+27 & 109218 & 4555378 & 637589 & 4664596\\
+28 & 0 & 19 & 925 & 19\\
+\addlinespace
+29 & 185 & 2 & 6222 & 187\\
+30 & 53898 & 915570 & 1917099 & 969467\\
+31 & 965 & 260 & 36542 & 1225\\
+32 & 1457 & 48530 & 275279 & 49988\\
+33 & 8 & 4113 & 44973 & 4121\\
+\addlinespace
+34 & 34462 & 19569 & 51735 & 54031\\
+35 & 88 & 184333 & 1087149 & 184421\\
+36 & 59 & 1938 & 30447 & 1997\\
+37 & 120030 & 2066635 & 854865 & 2186665\\
+38 & 249677 & 1752538 & 3582190 & 2002214\\
+\addlinespace
+39 & 50317 & 833832 & 135905 & 884148\\
+40 & 58824 & 373715 & 587396 & 432539\\
+41 & 51461 & 15199 & 21341 & 66660\\
+42 & 15292 & 4322 & 1983 & 19613\\
+43 & 30171 & 5015 & 17690 & 35186\\
+\addlinespace
+44 & 10701 & 3498 & 4535 & 14200\\
+45 & 495 & 592294 & 90793 & 592790\\
+46 & 48806 & 82831 & 1316491 & 131637\\
+47 & 2473 & 2044690 & 4031623 & 2047164\\
+48 & 481 & 85971156 & 8629842 & 85971638\\
+\addlinespace
+49 & 155 & 8148498 & 1035612 & 8148653\\
+50 & 437401 & 10940104 & 2096105 & 11377505\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \subsection{Positive Benefit Scenarios}
 

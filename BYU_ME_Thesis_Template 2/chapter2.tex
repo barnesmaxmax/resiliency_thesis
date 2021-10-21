@@ -143,8 +143,14 @@ report also attempts to
 identify which links are most critical, assessing a “criticality”
 score to the network
 based on the five data elements and categories given in Table \ref{tab:aemscore}.
-A key observation made from the
-criticality scores is that they do not take alternate routes into account.
+Table \ref{tab:aemscore} provides insight into the some of the complications involved in
+attempting to identify critical roads. For example, a road may have a low AADT, but
+the majority of that AADT, which would show that there is a very low to low impact,
+however, if the majority of traffic on that road were truck traffic, then that road almost
+immediately has a moderate to high impact. Other nuances such as that in the previous
+example exist. What would happen in the case that a minor arterial became inundated, however,
+there was a redundant arterial just a few blocks or miles away? One other observation made from the
+\ref{tab:aemscore} is that AEM does not take alternate routes into account.
 AEM does not include a way for their developed risk analysis methodology
 to anticipate what a user would actually do if faced with a real disaster
 scenario. AEM does not answer simple questions such as how many valid
@@ -783,9 +789,13 @@ In the Adelaide model, Taylor breaks one link and
 then calculates the difference in IV and CS values using:
 
 	\begin{equation}
-		E(CS) = (1/\alpha) \log (\sum_{j = 1}^{J} \exp (I_j)) + \beta
+		E(CS) = \frac{1}{\alpha} \log (\sum_{j = 1}^{J} \exp (I_j)) + \beta
 			\label{eqn:taylor}
 	\end{equation}
+
+\noindent where the \(\alpha\) represents the negative of the coefficient of time or cost from the utility function,
+and \(\beta\) is an unknown constant that represents the difference between the actual value of CS and the estimated value.
+The \(I_j\) term represents the observable attributes of the possible utility. 
 
 Taylor's research highlights the possibility for a comprehensive model capable
 of succinctly measuring the dis-benefit caused by a degraded network.
