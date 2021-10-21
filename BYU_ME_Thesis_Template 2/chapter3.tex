@@ -510,7 +510,7 @@ equation can be seen below:
 
 \begin{equation}
 \begin{aligned}
-	A_{jm} = \gamma_{jm off} * office_j + \gamma_{2_{j}} * C_2 + \gamma_{3_{j}} * C_{3}
+	A_{jm} = \gamma_{m off} * \mathrm{office}_j + \gamma_{m oth} * \mathrm{other}_j + \gamma_{m hh} * \mathrm{hh}_j + \gamma_{m ret} * \mathrm{retail}_j
 	\label{eqn:sizeterm}
 \end{aligned}
 \end{equation}
@@ -616,13 +616,14 @@ equation below:
 	\label{eqn:poly}
 \end{equation}
 
-\noindent where $\beta$ represents a coefficient, $d$ represents distance data,
-and each of the $\kappa$'s, '$\kappa_1,\kappa_2,\kappa_3$, are calibrated to re-create best fit
-estimates of the difference between the model and target total. The target
+\noindent where $d_{ij}$ represents the distance from $i$ to $j$
+and each of the  '$\kappa_1,\kappa_2,\kappa_3$, are calibrated to minimize the
+difference between the model and target trip length frequency distribution. The target
 values for calibration are derived from USTM. The cubic polynomial in
-Equation \ref{eqn:poly}, which is part of the DC utility in
-Equation \ref{eqn:dc}), was applied and calibrated to match the target TLFD values from USTM.
-The final calibration values  were presented in Table \ref{tab:coeffs}.
+Equation \ref{eqn:poly} --- which is part of the DC utility in
+Equation \ref{eqn:dc} --- was applied and calibrated to match the target TLFD
+values from USTM. The final calibration values  were presented in Table
+\ref{tab:coeffs}.
 
 \subsection{Calibration Results}
 
