@@ -57,15 +57,15 @@ following data elements:
 \end{itemize}
 
 Each of the local travel demand models and USTM employ a gravity-based trip
-distribution model. The gravity model assumes that trips between origin-
-destination (OD) pairs are proportional to total productions $P$ and
+distribution model. The gravity model assumes that trips between OD
+pairs are proportional to total productions $P$ and
 attractions $A$ throughout the state. That is, all productions will be
 attracted to a location based on the size of a location (i.e. a location's
 attractiveness) and the impedance (or friction) factor between the OD
 pair. A mathematical representation of the gravity model is given by:
 
 \begin{equation}
-T_{ij}= P_i*(A_j F_{ij})/\sum_{j\in J}(A_j F_{ij})
+T_{ij}= \frac{P_i*(A_j F_{ij})}{\sum_{j\in J}(A_j F_{ij})}
  \label{eqn:gravity}
 \end{equation}
 
@@ -152,7 +152,7 @@ their destination based on a variety of factors including mode accessibility
 derived from the socioeconomic data primarily comprises the size term, which
 is a measure of the appeal or attractiveness of one destination when compared with
 another destination. The DC size term is discussed in further detail in
-Chapter \ref{sec:dc}.
+Section \ref{sec:dc}.
 
 A critical feature of logit-based choice models – described briefly in Section
 \ref{sec:cacc} – is that they are more versatile than traditional modeling
@@ -316,7 +316,7 @@ destination. The \(DISTANCE\) was used to measure the network distance between
 the shortest OD pair based on AM travel time.
 
 The highway skim module creates an output matrix (or highway skim) of travel
-times and distances between origin destination (OD) pairs and must be created
+times and distances between OD pairs and must be created
 before automobile (\(AUTO\)) and non-motorized (\(NMOT\)) trips can be incorporated
 into the model. We used the \(AM\_TIME\) and \(DISTANCE\) variables available in
 the highway network file to create a matrix of distances and shortest travel
@@ -403,7 +403,7 @@ also presented in Table \ref{tab:coeffs}.
 \hspace{1em} & $\gamma_{off}$ Office Employment & 0.4568 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{oth}$ Other Employment & 1.6827 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{ret}$ Retail Employment & 0.6087 & 3.8138 & 5.1186\\
-\hspace{1em} & $\gamma_{MCLS}$ Mode Choice Logsum &  &  & \\
+\hspace{1em} & $\gamma_{MCLS}$ Mode Choice Logsum & 1 & 1 & 1\\
 \hspace{1em} & $\kappa_1$ Distance & -0.0801 & -0.1728 & -0.1157\\
 \hspace{1em} & $\kappa_2$ Distance squared & 0.0026 & 0.0034 & 0.0035\\
 \hspace{1em} & $\kappa_3$ Distance cubed & 0.0000 & 0.0000 & 0.0000\\
@@ -430,8 +430,8 @@ the equation used to calculate the MC logsum will be shown.
 
 \begin{align}
 U_{ijm\mathrm{AUTO}} &= \beta_{tt} * tt_{ij\mathrm{AUTO}} + \beta_{cost}* cost_{ij\mathrm{AUTO}}\\
-U_{{TRANSIT}_{ij}} &= \alpha_{TRN} + \beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}}\\
-U_{{NMOT}_{ij}} &= \alpha_{NMOT} + 20 * (\beta_{1_{ij}} * C_{1_{ij}} + \beta_{2_{ij}} * C_{2_{ij}})\\
+U_{{TRANSIT}_{ij}} &= \alpha_{TRANSIT} + \beta_{tt} * tt_{ij} + \beta_{cost} * cost_{ij\mathrm{TRANSIT}}\\
+U_{{NMOT}_{ij}} &= \alpha_{NMOT} + 20 * (\beta_{tt{}} * tt_{ij} + \beta_{cost} * cost_{ij\mathrm{NMOT}})\\
 Logsum_{ijm} &= \ln(\sum_K \exp (U_{ijmk})) \label{eqn:lsum}
 \end{align}
 
@@ -510,7 +510,7 @@ equation can be seen below:
 
 \begin{equation}
 \begin{aligned}
-	A_{jm} = \gamma_{m off} * \mathrm{office}_j + \gamma_{m oth} * \mathrm{other}_j + \gamma_{m hh} * \mathrm{hh}_j + \gamma_{m ret} * \mathrm{retail}_j
+	A_{jm} = \gamma_{m_{off}} * \mathrm{office}_j + \gamma_{m_{oth}} * \mathrm{other}_j + \gamma_{m_{hh}} * \mathrm{hh}_j + \gamma_{m_{ret}} * \mathrm{retail}_j
 	\label{eqn:sizeterm}
 \end{aligned}
 \end{equation}
