@@ -90,7 +90,7 @@
 \setlength{\floatsep}{.375in plus .05in minus .05in}
 
 %redefining \cleardoublepage so that it treats it like its two sided, even though it's not
-% \def\cleardoublepage{\clearpage\ifodd\c@page\else \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi} 
+% \def\cleardoublepage{\clearpage\ifodd\c@page\else \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
 
 %For formatting table captions in the desired way
 \newif\if@istable
@@ -474,7 +474,7 @@
             \leftmargin\labelwidth
             \advance\leftmargin\labelsep
             \@openbib@code
-            \usecounter{enumiv}%
+            %\usecounter{enumiv}%
             \let\p@enumiv\@empty
             \renewcommand\theenumiv{\@arabic\c@enumiv}%
             \setlength{\itemsep}{0.25\baselineskip}}%
@@ -680,7 +680,7 @@
      		%BRIAN CHERRY FEB 08: SET THE MARGINS TO WHAT THEY SHOULD BE FOR TOC,LOT,LOF
         	\setlength{\oddsidemargin}{0.0in}
   			\setlength{\evensidemargin}{0.0in}
-  			\setlength{\textwidth}{6in}		
+  			\setlength{\textwidth}{6in}
       \tableofcontents
       \cleardoubleevenpage
     \fi
@@ -715,7 +715,7 @@
     \ifBYUs@sections@nonomenclature
     \else
        \@nomenclature
-         \par\mbox{ } 
+         \par\mbox{ }
        \cleardoubleevenpage
     \fi
     % Reset the parskip
@@ -738,4 +738,4 @@
 % I couldn't get it to work and from what I read it might not even be possible, because
 % the \AtBeginDocument{} supposedly happens while the preamble is happening and not after
 % the actual \begin{document} has happened (they should just have a handler for each)
-%\AtBeginDocument{Testing this out} 
+%\AtBeginDocument{Testing this out}
