@@ -22,3 +22,9 @@ _bookdown_files/
 *.out
 
 *.toc
+
+BYU_ME_Thesis_Template 2/chapter2.fdb_latexmk
+
+*.fls
+
+*.fdb_latexmk
