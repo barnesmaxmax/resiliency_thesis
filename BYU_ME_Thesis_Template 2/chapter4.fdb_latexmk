@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1634842962 "chapter4.tex" "chapter4.pdf" "chapter4" 1634842966
+["pdflatex"] 1636338822 "chapter4.tex" "chapter4.pdf" "chapter4" 1636338824
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -7,8 +7,8 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1586288259 2432462 fd0fa20e9a3cb5f8169fd0ba1c955158 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "chapter4.aux" 1634809996 3449 6ce5ac5ceb4992a727aa515dd0c4b2ff ""
-  "chapter4.tex" 1634842962 20987 5f0dcbc5668643a4fe8c56f6d778b30e ""
+  "chapter4.aux" 1636338616 3852 1da2eeb5faa9c8faba18168524554e8a ""
+  "chapter4.tex" 1636338822 22585 4c8a81883e73a0a40a5e1cf11853aa1d ""
   (generated)
   "chapter4.log"
   "chapter4.pdf"
