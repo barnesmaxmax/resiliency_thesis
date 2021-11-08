@@ -8,26 +8,54 @@ This chapter summarizes the recommendations resulting from the resiliency
 model application, it also contains information about obtaining the model and
 outlines next steps.
 
+\section{Problem and Objective}
+
+UDOT is responsible for maintaining a
+transportation system to promote public welfare and economic activity throughout
+the state of Utah. UDOT is also responsible to maintain key components of the
+national highway transportation system. Given the importance of this system,
+UDOT has sought a way to identify those facilities which are most critical to
+overall systemic function. Therefore, the objective of this study is to evaluate the relative systemic
+criticality of highway links on a statewide network using a logit-based model
+sensitive to changes in route path, destination choice, and mode choice.
+
+The development of the Resiliency Model directly addresses the objective of
+this study. The Resiliency Model is logit-based, and incorporates a users
+ability to choose a mode and destination, while still being sensitive to route
+path in terms of time and distance. Using the logsum, which captures the total
+value of the available choice set, different estimates were provided compared to
+other traditional methods such as the travel time method. The ability that the
+Resiliency Model gives UDOT to quickly analyze any highway link on USTM, and return a
+cost estimate, is highly advantageous. The Resiliency Model allows UDOT to determine
+the relative systemic criticality of highway links on the network.
+
 \section{Recommendations}
 
 The USTM model is a gravity-based travel demand model, while the Resiliency
 Model is logit-based. The logit-based nature of the Resiliency Model allows
-for greater sensitivity in user mode and destination choice, which causes
-the estimated costs associated with link closure to be lower using the Resiliency Model. The Resiliency
+greater sensitivity towards user mode and destination choice to exist, which causes
+the estimated costs associated with link closure to be different using the Resiliency Model. The Resiliency
 Model's incorporation of both the logsum for HBW, HBO, and NHB purposes, as
-well as the travel time calculation for the other purposes included in USTM
+well as the travel time calculation for the other purposes included in USTM,
 provide important functionality towards estimating more realistic, conservative costs
 associated with long term highway closure.
 
-Logit-based modeling returns more conservative
-estimations of the value of a link in the network. This is a highly
-important adaptation to USTM because more accurate and efficient estimation allows
-UDOT to better understand the monetary importance of highway links
+Logit-based modeling returns more conservative, different,
+estimations of the criticality of a link to a network. This is a highly
+important adaptation to USTM because alternative estimation methods which produce
+different estimations allow
+UDOT to better understand the monetary and systemic importance of highway links
 throughout Utah. Additionally, the model’s design allows for further
 analysis of additional link closure, eased identification of critical
 points on Utah's highway network, and even multi-link closure in the
-future. Thus, it is recommended that USTM include a logit-based mode and destination
-choice model in the future.
+future. Thus, it is recommended that USTM have a logit-based mode and destination
+choice model in the future. Logit-based mode and destination choice models have
+become standard practice in other states, and enables better understanding of
+human behavior. Additionally, UDOT should consider behavior in its resiliency
+analysis. Road users do change modes, destinations, and routes when a network
+suddenly becomes altered. These decisions do result in different criticality
+priority rankings as shown through the logsum and travel time rankings in this study.
+UDOT should also consider development of a better regional freight model.
 
 \section{Limitations and Next Steps}
 
@@ -37,7 +65,7 @@ logit-based trip distribution model instead of a gravity-based model would
 improve the flexibility of travel demand estimates moving forward.
 
 The decision to not include a feedback loop, which iteratively runs the model
-until a the specifications of a convergence factor are met. Incorporating a
+until the specifications of a convergence factor are met. Incorporating a
 feedback loop would have allowed for more accurate estimation of increased
 travel times and more accurate route choices between OD pairs in the final
 iteration of the Resiliency model compared with the first iteration.
@@ -54,7 +82,7 @@ model and rerun continuously until the specifications of a convergence
 parameter were met. The loop would allow for better estimates of the change
 in travel time due to both route change and resulting congestion. The loop
 also allows for more accurate route choice, mode choice, and destination
-choice to be made when the true effects of congestions are accounted for.
+choice to be made when the true effects of congestion are accounted for.
 In June 2020, the UDOT Technical Advisory Committee decided to not include a
 feedback loop to save time
 on model development for this study. A feedback loop and sensitivity analysis
@@ -84,7 +112,7 @@ Another limitation present in the travel time method of analysis is that passeng
 trips occurring between internal-external or external-internal nodes were not
 included. These trips likely do not make up a large portion of trips on the network,
 however, this may still affect the ability of the travel time method of comparison
-to make estimations that reflects all trips on the network.
+to make estimations that reflect all trips on the network.
 
 \section{Summary}
 
@@ -98,8 +126,7 @@ Model includes several types of available data deemed pertinent to
 constructing a working logit-based model in Utah. The Resiliency Model's
 logsum estimations, which account for user choice were calculated, and can help
 professionals better evaluate risk to Utah's infrastructure by identifying
-critical facilities. User choice is a highly important consideration in modern
-modern modeling practice because it accounts for user choice while estimating
+critical facilities. User choice is a highly important consideration in modern modeling practice because it accounts for user choice while estimating
 network trips. The Resiliency Model generates valuable results that should
 be used to prioritize link importance to the overall functionality of Utah's
 highway network. There are several important implications that follow the
@@ -114,4 +141,10 @@ using two different methods of cost estimation, first the logsum and second the 
 allowing different priorities to be evaluated from the Resiliency Model's results.
 It is evident that the Resiliency Model brings several
 modeling estimation advantages to the forefront, something which must be
-explored further in future research.
+explored further in future research. The biggest contribution of this study to
+the field of transportation modeling is the incorporation of a logit-based model
+into a statewide highway network. Applying a logsum to a network as large as USTM, and
+estimating the dis-benefit associated with link closure, provide the basis for both
+UDOT and other state transportation agencies to be able to quickly estimate
+the criticality of any single link or combination of links to overall systemic
+resiliency of a highway network while accounting for route change, mode choice, and destination choice. 

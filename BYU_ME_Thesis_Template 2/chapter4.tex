@@ -3,63 +3,91 @@
 \graphicspath{{figures/}{figures/chapter4/}}
 
 \section{Overview}
-In this chapter, we apply the Resiliency Model to evaluate the effects of link
-loss or degradation on the USTM network. We do this by applying the model to scenarios
+In this chapter, Resiliency Model is applied to evaluate the effects of link
+loss or degradation on the USTM network. To do this, the model is applied to scenarios
 where critical highway links have been removed from the USTM network. This
 chapter includes first, a detailed analysis of a single scenario, where I-80
-between Salt Lake and Tooele Counties is severed. We then compare the model
-output to an alternative method that measures only the change in travel
+between Salt Lake and Tooele Counties is severed. Then, the model
+output is compared to an alternative method that measures only the change in travel
 time and does not allow for mode or destination choice. The model was then
 applied to 41 individual scenarios, with 40 of those scenarios involving link
 closure scenarios throughout the state.
 
 \section{Vulnerable Link Identification}
-The methodology developed to identify vulnerable links in Utah uses an online Risk Priority Analysis map created by UDOT to identify points of interest based on existing risk analysis data. Additional
-points of interest were identified by the research team or by UDOT officials, who have a familiar working knowledge of the USTM network. Using this
-method, links were identified due to their location in relation to
-population centers, remote geographic location, proximity to other highway facilities, were known to be at risk due to geologic or geographic features, or
-because they were suspected choke points in the network.
+The methodology developed to identify vulnerable links in Utah uses an online Risk Priority Analysis GIS toolkit created by BIO-WEST and UDOT, which grades highway links based on several criteria, including:
 
-After identifying locations of interest, we now apply the model to compare the results of 40 scenarios. In each scenario, an individual highway
-facility is removed from the model highway network. Each of these scenario locations is shown in Figure \ref{fig:linksmap}, and is identified in a report by
-\cite{aem2017} or the research team using the methodology described. A detailed analysis of the results of a single scenario will be done, followed by a
+\begin{description}
+   \item Threat (e.g., rock fall/flood, etc.)
+   \item Probability of threat
+   \item Cost to replace
+   \item User Costs (e.g., AADT and Truck Volume)
+\end{description}
+
+This tool, combined with information gathered from the research team and UDOT officials, 40 locations of interest were identified for analysis. Each link was identified due to its location in relation to
+population centers, remote geographic location, and proximity to other highway facilities, or because the link was known to be at risk due to geologic or geographic features, or
+because it was a suspected choke point in the network.
+
+After identifying locations of interest, the model is now applied each of the scenarios to compare the results of the 40 selected scenarios. In each scenario, an individual highway
+facility is removed from the model highway network. Each of these scenario locations is shown in Figure \ref{fig:linksmap}, and some are identified in a report by
+\citet{aem2017,riskanalysis} or the research team using the methodology described. A detailed analysis of the results of a single scenario will be done, followed by a
 more general analysis for all 40 scenarios considered in the Resiliency Model.
 
-\section{Localized Scenario Analysis}
+\section{Analysis of I-80 at Tooele / Salt Lake County Line}
 
-This section outlines an in-depth, localized analysis that was conducted to ensure
+This section outlines an in-depth analysis that was conducted to ensure
 the Resiliency Model was accurately describing trips likely behavior with OD pairs in the
 targeted area around a severed link. This analysis was done on a link between
-Tooele and Salt Lake City, Utah. This detailed analysis is useful because it
+Tooele and Salt Lake City, Utah, which is located close to the county line. A map, with the approximatel
+location of road closure can be seen in Figure \ref{fig:tooelemapwithcone}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.75\linewidth]{figures/chapter4/tooelemapwithcone.png}
+
+}
+
+\caption{Approximate location of the I-80 closure on the Tooele/SL County line.}\label{fig:tooelemapwithcone}
+\end{figure}
+
+This detailed analysis is useful because it
 provides a closer look at the way the Resiliency Model works, capturing trips
 between two population centers. Scenario 50, which is located along I-80 between Tooele and Salt Lake Counties
 was examined here. The localized analysis shows that the majority of trips
 affected by damage to this link either originate or terminate in one of the
 two counties, as expected. These results can be seen in Table
-\ref{tab:tooeletable}. Another method we used to compare results against is
+\ref{tab:tooeletable}. Another method used to compare results is
 the travel time method,
 which serves to capture trips that have fixed OD pairs such as freight and
 recreational trips. This localized analysis also looks at this method.
 
-Table \ref{tab:tooeletable} compares trips and the overall costs between the
+Table \ref{tab:tooeletable} compares the overall cost estimates between the
 logsum and travel time methods, and the specific cost for trips originating in
 Tooele County. We can see that the logsum
-method captures about
-\$123,000 of expenses experienced by road users due to the closure of the
-link. Specifically, for trips originating in Tooele County, the logsum based analysis using the Resiliency
-Model captures \$1,700 of
-expense, which is approximately 1.5\% of the total expense experienced
+method captures \$123,042.44 of expenses experienced by road users due to the closure of the
+link across the whole network. Specifically, for trips originating in Tooele County, the logsum analysis using the Resiliency
+Model captures \$118,766.19 of
+expense, which is approximately 96.52\% of the total expense experienced
 statewide. A further breakdown of expenses experienced at the local level
 for trips originating in Tooele County
 can be seen Table \ref{tab:tooeletable}.
 
 The data supports the conclusion that the Resiliency Model is effectively
-capturing trips originating in Tooele based on the percent capture
-rates in of cost in Table \ref{tab:tooeletable2}. Additionally, when we look at the
-travel time method of analysis, we can see that the costs at both the local and
-statewide levels are much greater with about \$382,000 and \$437,000
-respectively estimated as the costs due to just the increase in travel time, not using
-the logit-based model.
+capturing trips originating in Tooele based on the amount of cost captured,
+shown in Table \ref{tab:tooeletable2} as a percent capture rate. Additionally, when the
+travel time method of analysis is examined, it can be seen that the cost estimated
+is equatl to \$11,377,504.92 for the whole network, and \$781,015.04 for only
+those trips originating in Tooele County. These two estimates include Freight
+trips, which have much higher cost estimates than do any of the other trip purposes.
+Though some Freight trips do originate in Tooele County, many more Freight trips traverse
+I-80, which cause the cost estimate to increase greatly when the travel time method
+is used.
+
+Overall, two key findings are drawn from this analysis:
+\begin{enumerate}
+  \item Cost estimates are different by trip purpose and overall depending on
+  which estimation method is used
+  \item The majority of cost is generated by Freight trips
+\end{enumerate}
 
 \begin{table}
 \caption{\label{tab:tooeletable}Localized Analysis Results}
@@ -68,21 +96,21 @@ the logit-based model.
 %\begin{adjustbox}{width=0.9\textwidth}
 \begin{tabular}[t]{lrrrr}
 \toprule
-Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele - SLC Cost \\(Dollars per Day)}}\\
+Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele Cost \\(Dollars per Day)}}\\
 \midrule
  & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method}\\
 \midrule
-HBW & \$65,655.13 & \$244,275.72 & \$359.94 & \$12,143.11\\
-HBO & \$49,851.54 & \$108,412.94 & \$910.05 & \$3,577.62\\
-NHB & \$7,535.78 & \$84,712.36 & \$441.73 & \$5,025.24\\
+HBW & \$65,655.13 & \$244,275.72 & \$64,555.39 & \$240,181.80\\
+HBO & \$49,851.54 & \$108,412.94 & \$46,793.14 & \$102,699.90\\
+NHB & \$7,535.78 & \$84,712.36 & \$7,417.66 & \$77,025.58\\
 \midrule
 \addlinespace
-REC & \$ -  & \$398.72 & \$ -  & \$29.72\\
+REC & \$ -  & \$398.72 & \$ -  & \$208.74\\
 XXP & \$ -  & \$55,870.17 & \$ - & \$ - \\
 Freight & \$ -  & \$10,883,835.01 & \$ -  & \$360,899.92\\
 \midrule
-HBW, HBO, NHB Total & \$123,042.44 & \$437,401.02 & \$1,711.72 & \$20,745.97\\
-Total & \$123,042.44 & \$11,377,504.92 & \$1,711.72 & \$381,675.61\\
+HBW, HBO, NHB Total & \$123,042.44 & \$437,401.02 & \$118,776.19 & \$419,907.28\\
+Total &  & \$11,377,504.92 &  & \$781,015.04\\
 \bottomrule
 \end{tabular}
 %\end{adjustbox}
@@ -91,15 +119,15 @@ Total & \$123,042.44 & \$11,377,504.92 & \$1,711.72 & \$381,675.61\\
 
 \begin{table}
 
-\caption{\label{tab:tooeletable2}Localized Analysis Cost Capture Rates}
+\caption{\label{tab:tooeletable2}Localized Analysis Cost Capture Percentage Rates}
 \centering
 \begin{tabular}[t]{ccc}
 \toprule
  & Logsum & Travel Time\\
 \midrule
-HBW & 0.0055 & 0.0497 \\
-HBO & 0.0183 & 0.0330 \\
-NHB & 0.0586 & 0.0593 \\
+HBW & 98.32\% & 98.32\% \\
+HBO & 93.86\% & 94.73\% \\
+NHB & 98.43\% & 90.93\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -117,7 +145,7 @@ each trip purpose. For external trips, freight trips, and REC trips, these were 
 extracted directly from USTM. Attempting to include a calculation of the costs
 associated with increased travel time for freight trips, external trips, and REC
 trips allows a better estimation of the true cost experienced by all road users, not
-just those who are included in the Resiliency Model.
+just those that are included in the Resiliency Model.
 
 The HBW, HBO, and NHB purposes are estimated using the logsum portion of the
 Resiliency Model. Calculating the costs associated with the change in logsum
@@ -144,9 +172,9 @@ Model, an estimate can be made that represents all traffic on the USTM network.
 \section{Resiliency Model Results}
 
 The following sections will present the results of the 40 scenarios analyzed.
-First, Table \ref{tab:linkresults} shows each of the scenarios we examined,
+First, Figure \ref{fig:linksmap} shows the geographic location of each of the 40 links analyzed, where the links are numbered starting with 10. Then, Table \ref{tab:linkresults} shows each of the scenarios we examined,
 labeled simply as ``10'' for Scenario 10, and ``11'' for Scenario 11, along with the
-change in accessibility, $\Delta$ Logsum, and the Cost Value in dollars per day
+change in accessibility, \(Delta_{Logsum}\), and the Cost Value in dollars per day
 associated with link closure. Other identifying information, such as route
 numbers or street names and geographic or other identifying descriptions about
 the locations where the link was cut, are also provided.
@@ -165,7 +193,7 @@ Some scenarios, such as Scenario 10,
 Scenario 11, or Scenario 33, are roads that are located in remote parts of the state, and
 experience no measurable change to HBW, HBO, or NHB traffic. This is
 likely due to the remoteness of the geographic location of the highway
-link that was cut. A ranking is provided for all of the scenarios examined
+link that was cut. Additionally, a few scenarios returned positive benefits, which is not entirely intuitive. These resutls will be discussed in greater depth later in this chapter. A ranking is provided for all of the scenarios examined
 using the logsum method in Table \ref{tab:linkresults}.
 
 \begin{table}
@@ -223,8 +251,8 @@ Scenario & $\Delta$ Logsum & \makecell{Cost \\(per Day)} & Route & Location\\
 
 \subsection{Scenario Comparison}
 Table \ref{tab:comparison} contains a comparison of the results of the logsum
-and travel time methods of cost estimation. In the results, we see that the first
-a few of the first 10 scenarios differ from the logsum ranking when considering
+and travel time methods of cost estimation. In the results, it can be seen that the first
+a few results for the first 10 scenarios differ from the logsum ranking when considering
 only HBW, HBO, and NHB as a trip purpose. Scenarios 17, 42, and 46 , which
 correspond to SR-18 near St. George, Bangerter Highway near West Valley, and SR-189
 near Vivian Park, are among the
@@ -247,7 +275,7 @@ A scenario appearing in more than one result comparison is not unexpected,
 because the facilities considered in the Resiliency Model are typically main
 arterials in the region where they are located, or are interstate highway
 facilities which large amounts of private passenger vehicles and freight.
-H ere again, several of the roads that are most critical are located in
+Here again, several of the roads that are most critical are located in
 Northern Utah. From the travel time method, it is important to note that the main driving factor as to
 why a road is important or not closely corresponds closely with
 the amount of
@@ -272,7 +300,7 @@ the only way through mountain ranges in Utah.
 \centering
 \begin{tabular}[t]{crrrrr}
 \toprule
-Scenario & \makecell{HBW, HBO, NHB \\ Logsum Method} & \makecell{HBW, HBO, NHB\\ Travel Time Method} & \makecell{Freight, XX Pass, REC\\ Travel Time Method}\\
+Scenario & \makecell{HBW, HBO, NHB \\ Logsum Method} & \makecell{HBW, HBO, NHB\\ Travel Time Method} & \makecell{Freight, External Passenger,\\ REC, Travel Time Method}\\
 \midrule
 10 & \$0.00 & \$0.00 & \$1,126.41\\
 11 & \$0.00 & \$2.83 & \$7,577.46\\
@@ -332,33 +360,32 @@ between 2100 S and 1300 S, I-215 near Cottonwood Heights, Mountain View
 Corridor near West Jordan and I-15 near Bountiful.
 
 A discovery made while troubleshooting some calculations is that when a highway link is broken, the new
-shortest path by time is longer than in the base scenario with the broken link
+shortest path by time is always longer than in the base scenario with the broken link
 available. However, the new path may actually be shorter by distance. This
 causes an increase in the utility of accessing destinations by non-
 motorized modes, potentially overwhelming the decrease in automobile
-utility. It also results in increased auto costs. The automobile accessibility is determined by the AM congested
-travel time in the Utah Statewide Travel Model (USTM). The travel distance
+utility. It also results in increased auto costs, which are measured per mile of distance travelled. The automobile accessibility is determined by the AM congested
+travel time in USTM. The travel distance
 – used to determine the accessibility of destinations by driving or
 walking – is the distance of that path, and not the actual shortest
 distance path. Additionally,
 supporting evidence of this theory was found when it was discovered that for
 the alternative route between Grouse Creek, Utah, and Salt Lake City,
 was nearly twice as long in the case where I-80 was closed between
-Tooele and Salt Lake Counties. This discovery led us to understand that not all
+Tooele and Salt Lake Counties. This discovery led to the understanding that not all
 route choices become logical when made using only the model data. In
 reality, it is possible that a user would find a shorter route
 which consists of roads that are not all in the state highway system.
 
 This occurrence is only observed in heavily urbanized regions for two reasons:
-\begin{itemize}
+\begin{description}
 	\item The presence of high-speed expressways and parallel local roads
   means that alternate paths with shorter distances but longer vehicle
   times are more likely.
 	\item The increased availability of destinations within the non-
   motorized distance threshold (2.5 miles) means that alternative
   destinations exist.
-
-\end{itemize}
+\end{description}
 
 Overall, the results of the analysis indicate that the likely cause of a
 positive cost being estimated for these five scenarios is that there are
@@ -378,7 +405,7 @@ results would. However, when the travel time results are factored in, the
 overall rankings of the 41 scenarios considered change dramatically. This
 is due to the large expenses experienced by freight traffic, which has a
 much higher VOT than other passenger trips do. In summary, Table
-\ref{tab:linkresults} and Table \ref{tab:timeresults} show the rankings
+\ref{tab:linkresults} and Table \ref{tab:comparison} show the rankings
 for both the logsum and travel time analysis methods respectively. The
 logsum suggests that I-84 between Ogden and Morgan is the most critical
 road, while the travel time method, or total priority, indicates that I-70
