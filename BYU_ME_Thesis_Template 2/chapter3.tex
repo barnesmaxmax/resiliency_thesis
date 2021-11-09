@@ -44,14 +44,14 @@ following data elements:
 \begin{description}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  {Highway Network}: including free flow and congested travel speeds,
-  link length, link capacity estimates, etc.
+  [Highway Network] {including free flow and congested travel speeds,
+  link length, link capacity estimates, etc.}
 \item
-  {Zonal Productions}: available for all zones by purpose,
-  including those in the MPO region areas
+  [Zonal Productions] {available for all zones by purpose,
+  including those in the MPO region areas}
 \item
-  {Calibration Targets}: USTM base scenario estimates of mode split and
-  trip length that could be used to calibrate the utility coefficients of a new model
+  [Calibration Targets] {USTM base scenario estimates of mode split and
+  trip length that could be used to calibrate the utility coefficients of a new model}
 \end{description}
 
 Each of the local travel demand models and USTM employ a gravity-based trip
@@ -83,7 +83,7 @@ and $\beta$ are calibrated parameters. In the gravity model, as the distance
 between an OD pair increases, users become less likely to make trips between
 that OD pair. Destinations are fixed, and trips calculated using the
 gravity model must have a proportional number of users assigned to each
-destination based on its size or level of attraction (i.e., in an ideal
+destination based on its size or level of attraction (e.g., in an ideal
 scenario, if there are 100
 productions, there should be 100 attractions).
 
@@ -164,33 +164,33 @@ standalone model must be developed to examine choice-based resiliency in Utah.
 \section{Model Design} \label{Model Design}
 
 An initial model framework was developed to ensure a robust logit-based model
-could be created. The model framework used to create the Resiliency Model
+could be created. The model framework used to create the presented model
 consists of the following steps:
 
 \begin{description}
-	\item {Skim Network} - In this step, the model determines the shortest
+	\item [Skim Network] {In this step, the model determines the shortest
   path by AM peak travel time on the USTM network between each origin and
   destination. The model also determines the distance of the shortest time
-  path. Transit times are given by an external data source.
-	\item {Mode Choice Logsum} - The mode choice logsum is a function of
+  path. Transit times are given by an external data source.}
+	\item [Mode Choice Logsum] {The mode choice logsum is a function of
   the travel impedances and serves as an accessibility term in the destination
   choice model. The mode choice logsum contains utility functions that
   determine the probability and logsum associated with travel between each OD
   pair. The mode choice model also contains constants and coefficients that can
   be used to calibrate and adjust the utility equations, determining the mode
-  choice probabilities.
-	\item {Destination Choice (DC) Logsum} - The destination choice logsum
+  choice probabilities.}
+	\item [Destination Choice (DC) Logsum] {The destination choice logsum
   is a function of the travel impedances (represented by the mode choice logsum)
   and the attraction size term of each destination zone. This is the key
   evaluation metric of the model because of the ability to incorporate multiple
   data types into the model structure. The attraction size term is determined
-  using socioeconomic data for each destination zone given by USTM.
+  using socioeconomic data for each destination zone given by USTM.}
 \end{description}
 
   \begin{figure}
     \centering
   {\includegraphics[width=0.75\linewidth]{figures/chapter3/framework.png}}
-  \caption{Resiliency Model framework.}\label{fig:framework}
+  \caption{Model framework.}\label{fig:framework}
 
   \end{figure}
 
@@ -283,25 +283,31 @@ flexible OD pairs, such as freight trips. Other purposes included in USTM,
 such as recreation trips (REC) and trips that occur between external nodes
 (i.e., inter-state trips that do not originate or terminate within the state),
 make up very small percentage of total trips. Second, a method capable of
-creating data that could be compared with the results of the Resiliency Model
+creating data that could be compared with the results of the presented logsum model
 was needed. Calculating dis-benefit
 based solely on increased travel time provides valuable insight and tools for
-further analysis of the Resiliency Model results.
+further analysis of the model results.
 
 \section{Model Inputs}
 
-MAX PUT A PARAGRAPH HERE
+Several inputs derived from various sources are needed for the presented model
+to properly function. First, a highway network is needed which contains attribute
+data needed to extract information about travel times and distances between
+transportation analysis zones (TAZ). Additionally, a transit network is needed
+because USTM does not explicitly consider transit. Non-motorized distances are
+considered in the following sections. 
 
-\subsection{Transportation Networks}
+\subsection{Transportation Network}
 
-The Resiliency Model requires an understanding of the distance between zones by multiple modes, and how
+The presented logsum model requires an
+understanding of the distance between zones by multiple modes, and how
 these distances change when a link in the network is damaged or destroyed. To measure the
 automobile, transit, and non-motorized trip times, initial data were needed for each trip mode.
 
 The highway network is made up of both the urban and rural highway networks
 for the whole state of Utah. The highway network contains many link- and
 node-attribute data including street name, link distance, lanes, functional
-classification, transportation analysis zone number (TAZ), county name,
+classification, TAZ, county name,
 as well as speed limits and travel time data for five different times of day.
 Of particular interest from the available information was the \(AM\_TIME\) which
 contains the travel time in minutes for the AM time period along a link and
@@ -319,14 +325,16 @@ times between all OD pairs in the USTM network. The output matrix forms the
 basis for further analysis by providing the needed automobile and non-motorized
 information for the other modules in the model.
 
+\subsection{Transit Network}
+
 Transit network resiliency is outside the scope of this project. Accordingly, the Resiliency
 Model assumes that transit services are fixed, meaning that changes to the
 network do not influence transit availability on the network. However, transit
-is an important mode to include in the Resiliency Model, and  should be
+is an important mode to include in the model, and  should be
 considered in future model development if applicable for more robust analysis.
 Among MPO models in Utah, only the model jointly operated by the WFRC and MAG model include a
 substantive transit forecasting component. The transit travel time skim from the
-WFRC/MAG model was used for the mode choice model in Equation \eqref{eq:mcp};
+WFRC/MAG model was used for the mode choice model in Equation \ref{eq:mcp};
 the zonal travel time between the smaller WFRC/MAG model zones was averaged
 to the larger USTM zones using a crosswalk, or matrix transformation function, and the minimum time among the several modes available
 (commuter rail, light rail, bus rapid transit, local bus) was taken as the travel
@@ -343,9 +351,7 @@ area where a highway may be degraded or damaged. NMOT trips also typically have
 higher accessibility to smaller roads or side-streets that would not be included
 with the USTM network.
 
-\subsection{Trip Productions and Socioeconomic Data}
-
-The Resiliency Model uses socioeconomic data to estimate the productions at
+The presented model also uses socioeconomic data to estimate the productions at
 each zone. The socioeconomic data, which is adapted from the UTS conducted in 2013, contains TAZ related information such
 as county name, total households, household population, total employment,
 and a breakdown of employment by job category, among other data. This information is useful
@@ -357,13 +363,13 @@ created using various DC parameters combined with corresponding socioeconomic da
 to determine the size or attractiveness of a zone. The size term equation was partially
 adapted from the Oregon Statewide Integration Model (SWIM) \citep{swimversion}.
 
-\subsection{Mode Choice Model}
+\section{Mode Choice Model}
 
 The mode choice (MC) module calculates the MCLS between each OD pair in the
 network for each trip purpose. The trip purposes considered in the model are HBW, HBO and NHB. The MC module includes the highway skim,
 the transit skim, and the MC coefficients and constants as inputs.
 
-The MC constants and coefficients used in the Resiliency Model were extracted
+The MC constants and coefficients used in the model were extracted
 from USTM where possible, or adapted from the Roanoke (Virginia)
 Valley Transportation Planning Organization (RVTPO) or SWIM models. The travel time represented with $t_{ij}$, travel cost
 represented as a variable $C_{ij}$, walk distance (i.e., less than 1 mile) represented
@@ -371,7 +377,7 @@ as $d_{<1MILE}$, and walk distance (i.e., 1 mile or more) represented as $d_{>1M
 are the coefficients for the
 HBW, HBO,and NHB purposes. The MC coefficients were adapted
 from USTM and supplemented with coefficients from the RVTPO travel model where USTM had gaps in the data \citep{rvtpoversion, swimversion}. This model was
-selected as a source for these coefficients due to its simplicity and analogous data elements to the purpose of the proposed Resiliency Model. The
+selected as a source for these coefficients due to its simplicity and analogous data elements to the purpose of the presented model. The
 values for each of the coefficients are in Table \ref{tab:coeffs}. The alternative-specific constants in the model were calibrated to regional MC
 targets developed from the UTS using
 methods described by \citet{koppelman2006}.
@@ -416,7 +422,7 @@ also presented in Table \ref{tab:coeffs}.
 \end{table}
 
 The following are sample utility equations for each of the modes considered in
-the Resiliency Model, where $\alpha$ denotes mode choice constants, $\beta$ denotes
+the model, where $\alpha$ denotes mode choice constants, $\beta$ denotes
 mode choice coefficients, $\gamma$ denotes destination choice parameters, and
 $C$ will denote other variables which are typically zonally related. Additionally,
 the equation used to calculate the MCLS are shown:
@@ -430,7 +436,7 @@ Logsum_{ijm} &= \ln(\sum_K \exp (U_{ijmk})) \label{eqn:lsum}
 From the equations above, several aspects between the three MC utility equations are
 apparent. First, the transit and $NMOT$ utility equations both have a constant, denoted by a $\alpha$,
 included. The $AUTO$ equation does not have a constant because auto serves as the reference
-variable in the Resiliency Model. Second, both the $AUTO$ and $NMOT$ equations account for a
+variable in the presented model. Second, both the $AUTO$ and $NMOT$ equations account for a
 distance variable. Finally, each of the three utility equations account for travel time, either in the
 form of an in-vehicle travel time coefficient, or another modified factor. The $NMOT$ utility
 equation is not calculated using a specific coefficient for time. Instead, the $NMOT$ distances are
@@ -448,7 +454,7 @@ up to 1. The equation used determine the probability in an MNL is shown:
 	\label{eqn:prob}
 \end{equation}
 
-\subsection{Destination Choice Model}
+\section{Destination Choice Model}
 \label{sec:dc}
 The DC module
 includes the highway skim, the socioeconomic data extracted
@@ -523,7 +529,7 @@ a zone based on a user’s ability to choose a mode and destination.
 
 \section{Model Calibration and Validation}
 
-To ensure the Resiliency Model is accurately reflecting the distribution
+To ensure the model is accurately reflecting the distribution
 of trips and MC in the USTM model, it must be
 calibrated accordingly. To do this, target values were extracted from the
 USTM for each trip purpose.
@@ -562,13 +568,13 @@ The utility functions in Equations \ref{eqn:dc} and \ref{eqn:sizeterm} contain
 calibration constants which are necessary to calibrate the model. Model
 calibration is completed by iteratively adjusting the MC
 constants and DC constants to ensure accurate output estimation. The nature
-of the Resiliency Model causes the MC and DC portions to interact. As such,
+of the presented model causes the MC and DC portions to interact. As such,
 the best method for calibration was to iteratively run the model, changing
 the MC constants and DC parameters after each new iteration was complete.
 
 To calibrate the MC constants, the alternative specific constants must be
 adjusted so that the mode split target extracted from USTM closely matches the
-Resiliency Model mode split values. A multinomial logit model will use alternative-
+model mode split values. A multinomial logit model will use alternative-
 specific constants to match a particular sample share. By adjusting these
 constants, it is possible to match a mode choice model to target values.
 Figure \ref{fig:nhbmc} shows the target values for each mode represented as a dotted line, and shows the change of the mode choice calibration constants
@@ -610,13 +616,13 @@ values from USTM. The final calibration values are presented in Table
 \subsection{Calibration Results}
 
 To ensure that calibration efforts were successful, it was necessary to
-compare the TLFD results from USTM and the Resiliency Model. A
+compare the TLFD results from USTM and the presented model. A
 TLFD script that could divide trips
 into distance bins was created. Dividing the trips into distance bins allows for the
 breakdown of resiliency trip frequencies by destination, which can then be
 compared to the original USTM values. Initial target values for total
 trips by purpose were extracted from USTM to ensure that trips in
-the Resiliency Model were being conserved. Trip totals were compared using
+the presented model were being conserved. Trip totals were compared using
 the TLFD outputs to ensure trips of similar lengths were being estimated,
 and to the total trips by purpose and mode to ensure trip conservation.
 
@@ -639,11 +645,11 @@ there is some variation present between each trip purpose considered.
 \section{Method to Calculate Costs for Non-model Purposes}
 
 Some trip purposes contained in USTM did not have enough available data to
-include in the logsum portion of the Resiliency Model or did not have
+include in the logsum portion of the model or did not have
 significant impacts and were left out of the logit-based model
 calculation. This section will discuss other methods by which costs
 associated with each link could be calculated, especially for those
-purposes not primarily included in the Resiliency Model and for comparison purposes.
+purposes not primarily included in the presented model and for comparison purposes.
 
 Purposes including freight, recreation (REC), and home-based college
 (HBC) trips were evaluated using overall travel time change. These
@@ -718,6 +724,6 @@ The creation of a logit-based model, which is sensitive to mode and destination
 choice, allows for more sensitive and robust estimations of accessibility because
 of the ease with which additional data types can be incorporated into the model. The
 model also accounts for modes that are not flexible in the case of link
-closure. The Resiliency Model is capable of analyzing the effects of
+closure. The presented model is capable of analyzing the effects of
 road closure on mode and destination choice, and it can estimate overall
 dis-benefit (in dollars) experienced by road users per day.
