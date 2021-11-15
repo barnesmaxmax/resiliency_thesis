@@ -14,37 +14,39 @@
 \BOOKMARK [1][-]{section.2.3}{2.3 Lessons Learned from Crisis Events}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 I-35W Bridge Collapse}{section.2.3}% 15
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 I-85/Piedmont Road Bridge Fire}{section.2.3}% 16
-\BOOKMARK [1][-]{section.2.4}{2.4 Attempts to Evaluate Systemic Resiliency}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Network Connectivity}{section.2.4}% 18
-\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Changes in Travel Time}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Changes in Accessibility}{section.2.4}% 20
-\BOOKMARK [1][-]{section.2.5}{2.5 Summary}{chapter.2}% 21
-\BOOKMARK [0][-]{chapter.3}{Chapter 3 \040 Model Design and Implementation}{}% 22
-\BOOKMARK [1][-]{section.3.1}{3.1 Overview}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.2}{3.2 Utah Statewide Travel Model}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.3}{3.3 Model Design}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.4}{3.4 Model Inputs}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Transportation Network}{section.3.4}% 27
-\BOOKMARK [2][-]{subsection.3.4.2}{3.4.2 Transit Network}{section.3.4}% 28
-\BOOKMARK [1][-]{section.3.5}{3.5 Mode Choice Model}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.6}{3.6 Destination Choice Model}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.7}{3.7 Model Calibration and Validation}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.7.1}{3.7.1 Trips by Purpose and Mode}{section.3.7}% 32
-\BOOKMARK [2][-]{subsection.3.7.2}{3.7.2 Calibrating Choice Constants}{section.3.7}% 33
-\BOOKMARK [2][-]{subsection.3.7.3}{3.7.3 Calibration Results}{section.3.7}% 34
-\BOOKMARK [1][-]{section.3.8}{3.8 Method to Calculate Costs for Non-model Purposes}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.9}{3.9 Summary}{chapter.3}% 36
-\BOOKMARK [0][-]{chapter.4}{Chapter 4 \040 Model Application}{}% 37
-\BOOKMARK [1][-]{section.4.1}{4.1 Overview}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.2}{4.2 Vulnerable Link Identification}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.3}{4.3 Analysis of I-80 at Tooele / Salt Lake County Line}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.4}{4.4 Model Results}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Scenario Comparison}{section.4.4}% 42
-\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Positive Benefit Scenarios}{section.4.4}% 43
-\BOOKMARK [1][-]{section.4.5}{4.5 Summary}{chapter.4}% 44
-\BOOKMARK [0][-]{chapter.5}{Chapter 5 \040 Conclusions and Recommendations}{}% 45
-\BOOKMARK [1][-]{section.5.1}{5.1 Overview}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.2}{5.2 Problem and Objective}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.3}{5.3 Recommendations}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.4}{5.4 Limitations and Next Steps}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.5}{5.5 Summary}{chapter.5}% 50
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Observations: Change in Route, Mode, and Destination}{section.2.3}% 17
+\BOOKMARK [1][-]{section.2.4}{2.4 Attempts to Evaluate Systemic Resiliency}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Network Connectivity}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Changes in Travel Time}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Changes in Accessibility}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{2.5 Summary}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Chapter 3 \040 Model Design and Implementation}{}% 23
+\BOOKMARK [1][-]{section.3.1}{3.1 Overview}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{3.2 Utah Statewide Travel Model}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{3.3 Model Design}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{3.4 Model Inputs}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Transportation Network}{section.3.4}% 28
+\BOOKMARK [2][-]{subsection.3.4.2}{3.4.2 Transit Network}{section.3.4}% 29
+\BOOKMARK [2][-]{subsection.3.4.3}{3.4.3 Socioeconomic Data}{section.3.4}% 30
+\BOOKMARK [1][-]{section.3.5}{3.5 Mode Choice Model}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.6}{3.6 Destination Choice Model}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.7}{3.7 Model Calibration and Validation}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.7.1}{3.7.1 Trips by Purpose and Mode}{section.3.7}% 34
+\BOOKMARK [2][-]{subsection.3.7.2}{3.7.2 Calibrating Choice Constants}{section.3.7}% 35
+\BOOKMARK [2][-]{subsection.3.7.3}{3.7.3 Calibration Results}{section.3.7}% 36
+\BOOKMARK [1][-]{section.3.8}{3.8 Method to Calculate Costs for Non-model Purposes}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.9}{3.9 Summary}{chapter.3}% 38
+\BOOKMARK [0][-]{chapter.4}{Chapter 4 \040 Model Application}{}% 39
+\BOOKMARK [1][-]{section.4.1}{4.1 Overview}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.2}{4.2 Vulnerable Link Identification}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.3}{4.3 Analysis of I-80 at Tooele / Salt Lake County Line}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.4}{4.4 Model Results}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Scenario Comparison}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Positive Benefit Scenarios}{section.4.4}% 45
+\BOOKMARK [1][-]{section.4.5}{4.5 Summary}{chapter.4}% 46
+\BOOKMARK [0][-]{chapter.5}{Chapter 5 \040 Conclusions and Recommendations}{}% 47
+\BOOKMARK [1][-]{section.5.1}{5.1 Overview}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.2}{5.2 Problem and Objective}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.3}{5.3 Recommendations}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.4}{5.4 Limitations and Next Steps}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.5}{5.5 Summary}{chapter.5}% 52

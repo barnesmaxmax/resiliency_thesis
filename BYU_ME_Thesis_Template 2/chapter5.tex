@@ -20,81 +20,83 @@ criticality of highway links on a statewide network using a logit-based model
 sensitive to changes in route path, destination choice, and mode choice.
 
 The development of the presented model directly addresses the objective of
-this study. The mdoel is logit-based, and incorporates a users
-ability to choose a mode and destination, while still being sensitive to route
+this study. The model is logit-based, incorporating a user's
+ability to choose a new mode and destination, while still being sensitive to route
 path in terms of time and distance. Using the logsum, which captures the total
 value of the available choice set, different estimates were provided compared to
-other traditional methods such as the travel time method. The ability that the
+the travel time method, which is more traditional than the logsum method. The ability that the
 presented model gives UDOT to quickly analyze any highway link on USTM, and return a
 cost estimate, is highly advantageous. The model allows UDOT to determine
 the relative systemic criticality of highway links on the network.
 
 \section{Recommendations}
 
-The USTM model is a gravity-based travel demand model, while the Resiliency
-Model is logit-based. The logit-based nature of the model allows
+The USTM model is a gravity-based travel demand model, while the presented model
+is logit-based. The logit-based nature of the model allows
 greater sensitivity towards user mode and destination choice to exist, which causes
-the estimated costs associated with link closure to be different using the presented model. The Resiliency
-Model's incorporation of both the logsum for HBW, HBO, and NHB purposes, as
+the estimated costs associated with link closure to be different using the presented model.
+The model's incorporation of both the logsum for HBW, HBO, and NHB purposes, as
 well as the travel time calculation for the other purposes included in USTM,
 provide important functionality towards estimating more realistic, conservative costs
 associated with long term highway closure.
 
-Logit-based modeling returns more conservative, different,
-estimations of the criticality of a link to a network. This is a highly
-important adaptation to USTM because alternative estimation methods which produce
-different estimations allow
-UDOT to better understand the monetary and systemic importance of highway links
-throughout Utah. Additionally, the model’s design allows for further
+Logit-based modeling returns more conservative
+estimations of the criticality of a link to a network than the travel time method.
+Adapting USTM to use a logsum is important because UDOT can better estimate and therefore understand
+the monetary and thus systemic importance of individual highway links.
+Additionally, the model’s design allows for further
 analysis of additional link closure, eased identification of critical
 points on Utah's highway network, and even multi-link closure in the
-future. Thus, it is recommended that USTM have a logit-based mode and destination
-choice model in the future. Logit-based mode and destination choice models have
-become standard practice in other states, and enables better understanding of
+future. Thus, it is recommended that USTM include a logit-based mode and destination
+choice model in the future. This is standard practice in other states, and enables better understanding of
 human behavior. Additionally, UDOT should consider behavior in its resiliency
 analysis. Road users do change modes, destinations, and routes when a network
-suddenly becomes altered. These decisions do result in different criticality
+suddenly becomes altered, as has been observed in both the I-35W and I-85 disasters.
+These decisions do result in different criticality
 priority rankings as shown through the logsum and travel time rankings in this study.
 UDOT should also consider development of a better regional freight model.
 
 \section{Limitations and Next Steps}
 
-Implementation of a logit-based travel demand model is highly important for
-resource allocation moving into the future. Updating USTM to include a
-logit-based trip distribution model instead of a gravity-based model would
-improve the flexibility of travel demand estimates moving forward.
-
-The decision to not include a feedback loop, which iteratively runs the model
-until the specifications of a convergence factor are met. Incorporating a
-feedback loop would have allowed for more accurate estimation of increased
-travel times and more accurate route choices between OD pairs in the final
-iteration of the model compared with the first iteration.
-This decision introduces limitations on the
+%feedback loop
+Trip forecasting and estimation, such as that done in USTM and in the logsum model
+can be prone to over or underestimation. Equilibrium feedback loops are used to
+iterate through the trip distribution, mode and destination choice modules until the
+impedance value, which is a measure largely based on congestion, stabilizes.
+Trip assignment and a subsequent feedback loop was not included in the development
+of the logsum model. Incorporating a
+feedback loop would have allowed more accurate estimation network impedance and increased
+travel times to be made. Accurate estimations would have allowed for more precise
+route changes between OD pairs to be made considering congestion levels on the model
+network. The decision to not include a feedback loop introduces limitations to the
 ability of the model to accurately estimate the effects of link closure on
-travel time. This limits the ability of the model to estimate accurate changes in
-response to increased travel time due to congestion because cannot be
-accurately measured after one iteration.
+travel time and route choice due to congestion.
 
-Adding a congestion feedback loop to the model would allow more
-accurate cost estimations to be made. A feedback loop would cause the
+Inclusion of a feedback loop would cause the
 travel time and logsum information to be fed back into the beginning of the
 model and rerun continuously until the specifications of a convergence
-parameter were met. The loop would allow for better estimates of the change
-in travel time due to both route change and resulting congestion. The loop
+parameter were met. The feedback loop
 also allows for more accurate route choice, mode choice, and destination
 choice to be made when the true effects of congestion are accounted for.
 In June 2020, the UDOT Technical Advisory Committee decided to not include a
-feedback loop to save time
+feedback loop to in order to save time
 on model development for this study. A feedback loop and sensitivity analysis
 should be included as part of future work.
 
-Another limitation in the presented model is that all HBW trips are flexible in
-destination choice, meaning that a user could choose to work in a different
-TAZ than that in which their actual place of employment is located. This is
-not entirely logical, considering that most workplace locations are fixed. Additionally,
-with the recent turn towards telecommuting, workplace location flexibility is
-likely more common. A method for estimating HBW trips and the associated dis-benefit
-while accounting for both flexibility and inflexibility should be developed.
+%HBW flexibility
+Another limitation in the logsum model is that all HBW trips are flexible in
+destination choice. This implies that a user could choose to work in a different
+TAZ than that in which their actual place of employment is located.
+This might not be entirely logical for short-term highway closures, considering that
+most workplace locations are fixed. With the recent turn towards telecommuting,
+workplace location flexibility is likely more prevalent now than it has been in
+the past. This increased flexibility would likely have a large impact on how HBW
+trips are estimated in travel demand modeling. Thus, a more nuanced method for estimating
+HBW trips that accounts
+for both flexibility and inflexibility of workplace location should be developed.
+Additional data could be collected in future travel
+studies about workplace location could be gathered
+and analyzed into a HBW model designed to model different types of trip -- both flexible and inflexible.
 
 It is not unreasonable to assume that in the event of an earthquake or
 similar widespread disaster event, that multiple links could become
@@ -103,8 +105,7 @@ to analyze the results of simultaneous multiple link
 loss. This will allow for
 greater understanding of the effects that adverse events can have on Utah’s
 highway network, and help UDOT to better prepare for the development and
-maintenance needs of the future. Developing a fully functioning transit oriented logit model
-would be highly advantageous to the Utah Transit Authority as well. The capability
+maintenance needs of the future. The capability
 is already incorporated into the structure of the model, however, a few modifications
 need to be made in order for it to become fully functioning.
 Additionally, the development of logsum calculations for trips with fixed
@@ -113,7 +114,8 @@ would be very different than the presented model because freight trips
 do not typically have a mode or destination choice option, so it would be
 more prudent to incorporate a method to account for other choices such as travel time,
 distance or even elevation change on a given route. Driver awareness of physical
-conditions of the highway n network would also play a role in how a Freight trip
+conditions of the highway network -- including knowledge about current weather conditions,
+road construction, or existing road closure -- would also play a role in how a freight trip
 is routed on a highway network. One option to overcome this limitation, is to use the national
 freight network, which would allow freight trips to divert through other Interstate
 facilites.
@@ -127,33 +129,42 @@ to make estimations that reflect all trips on the network. Additionally
 \section{Summary}
 
 The development of a logit-based travel demand model can improve the way UDOT
-estimates costs associated with link loss experienced by Utahns when compared
-with traditional modeling methods. The presented model provides a different cost
-estimate than does the travel time methodology created as a method of comparison
-in this thesis. Logit-based models possess unique properties which allow modelers
-to incorporate multiple types of data. With this ability in mind, the Resiliency
-Model includes several types of available data deemed pertinent to
-constructing a working logit-based model in Utah. The presented model's
-logsum estimations, which account for user choice were calculated, and can help
-professionals better evaluate risk to Utah's infrastructure by identifying
-critical facilities. User choice is a highly important consideration in modern modeling practice because it accounts for user choice while estimating
-network trips. The model generates valuable results that should
-be used to prioritize link importance to the overall functionality of Utah's
-highway network. There are several important implications that follow the
-results.
+estimates costs associated with link loss when compared
+with traditional modeling methods. The presented logsum model provides a different cost
+estimate than the travel time method. This is due to the ability of the logsum
+model to account for user mode and destination choice. Additionally,
+logit-based models possess unique properties which allow modelers
+to incorporate multiple types of data. With this ability in mind, the presented logsum model
+includes several types of available data deemed pertinent to
+constructing a working logit-based model in Utah.
 
-First, purely
-using change in travel time or travel time delay as the main dis-benefit measure may not
-be entirely accurate in most situations. This is due to the difficulty of finding
-available data for all trip purposes included in USTM. Second, allowing users in the model
-to choose both a mode and destination increases the resemblance of a real life
-decision making process, especially given adverse circumstance on Utah's
-highway network. Importantly, the presented model is able to provide results measured
-using two different methods of cost estimation, first the logsum and second the travel time difference,
-allowing different priorities to be evaluated from the model's results.
+The logsum cost estimations account for user behavior which can help professionals
+better evaluate systemic criticality of Utah's infrastructure. Logsums are becoming an increasingly
+important consideration in modern modeling practice because of their unique
+ability to account for user choice while estimating
+network trips. The presented logsum model generates valuable results that should
+be used to prioritize link criticality to the overall functionality of Utah's
+highway network. There are several important implications that follow the
+results. First, consideration of only the change in travel time as the main measure
+of dis-benefit may not accurately represent some situations. HBW, NHB, and HBO trips,
+can be better estimated using the logsum because these trip purposes have more flexible
+mode and destination choices than REC or freight trips do. However, both REC and
+freight trips were only considered by the travel time method because they typically
+have fixed OD pairs. Availability of data which could be used to better determine how
+REC or freight trips might change mode or destination choice could be used to better
+estimate costs for these purposes. Second, allowing users in the model
+to choose both a new mode and destination increases the resemblance of a real life
+decision making process. Incorporating a method to better represent human behavior
+can only help a model to more accurately reflect what researchers have observed
+after the I-35W and I-85 incidents. Importantly, the presented model is able to provide results produced
+using two different methods of cost estimation, which can help UDOT to understand
+how different modeling methods provide more or less conservative estimates of criticality.
+However, combining estimation methods into a single model may be effective because trip purposes which
+are flexible or inflexible can be estimated at the same time.
+
 It is evident that the presented model brings several
-modeling estimation advantages to the forefront, something which must be
-explored further in future research. The biggest contribution of this study to
+modeling estimation advantages to the forefront of current research, something which must be
+explored in the future. The biggest contribution of this thesis to
 the field of transportation modeling is the incorporation of a logit-based model
 into a statewide highway network. Applying a logsum to a network as large as USTM, and
 estimating the dis-benefit associated with link closure, provide the basis for both
