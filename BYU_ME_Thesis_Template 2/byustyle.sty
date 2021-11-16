@@ -139,6 +139,8 @@
   %\vspace*{0.3875in}   %for a 2" spacing from the top of the page
   % Add a pdf bookmark so that it will show up in the PDF
   \pdfbookmark[0]{Title Page}{titlepage}
+  \addcontentsline{toc}{chapter}{TITLE PAGE}
+
   % Put the title centered on the page
   \begin{center}
     \expandafter{\@title}
@@ -323,6 +325,7 @@
 \newcommand{\@abstractpage}[1]{
   % Add a pdf bookmark so that it will show up in the PDF
   \pdfbookmark[0]{Abstract}{Abstract}
+  \addcontentsline{toc}{chapter}{ABSTRACT}
   % Put the abstract header centered on the page
   \begin{center}
  % \vspace*{0.7375in}%for a 2" spacing from the top of the page
@@ -358,7 +361,7 @@
   % Put in a phantom section, so that hyperref doesn't whine about no place for an anchor
   \phantomsection
   % Add the acknowledgement to the Table of Contents
- % \addcontentsline{toc}{chapter}{Acknowledgements}
+  \addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
   % Put the header centered on the page
   \begin{center}
  % \vspace*{0.6375in}%for a 2" spacing from the top of the page
