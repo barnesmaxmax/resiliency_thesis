@@ -31,30 +31,27 @@ the relative systemic criticality of highway links on the network.
 
 \section{Recommendations}
 
-The USTM model is a gravity-based travel demand model, while the presented model
-is logit-based. The logit-based nature of the model allows
-greater sensitivity towards user mode and destination choice to exist, which causes
+USTM is a trip-based model with a gravity trip distribution model and no mode
+choice component. Using logit-based choice frameworks for trip distribution
+and mode choice allows the model to incorporate greater sensitivity towards these
+choicses, which in turn causes
 the estimated costs associated with link closure to be different using the presented model.
-The model's incorporation of both the logsum for HBW, HBO, and NHB purposes, as
-well as the travel time calculation for the other purposes included in USTM,
-provide important functionality towards estimating more realistic, conservative costs
-associated with long term highway closure.
+Rather than forcing agents to travel long distances to their destinations after the
+primary route becomes unavailable, the model
+allows people to choose a new destination or mode if available.
+Logit-based modeling returns smaller
+estimations of the criticality of a link to a network than the travel time method
+for most links.
 
-Logit-based modeling returns more conservative
-estimations of the criticality of a link to a network than the travel time method.
-Adapting USTM to use a logsum is important because UDOT can better estimate and therefore understand
-the monetary and thus systemic importance of individual highway links.
-Additionally, the model’s design allows for further
-analysis of additional link closure, eased identification of critical
-points on Utah's highway network, and even multi-link closure in the
-future. Thus, it is recommended that USTM include a logit-based mode and destination
-choice model in the future. This is standard practice in other states, and enables better understanding of
+It is recommended that USTM include a logit-based mode and destination
+choice model in the future. This is standard practice in other states, and enables
+more realistic modeling of
 human behavior. Additionally, UDOT should consider behavior in its resiliency
 analysis. Road users do change modes, destinations, and routes when a network
 suddenly becomes altered, as has been observed in both the I-35W and I-85 disasters.
-These decisions do result in different criticality
+These decisions result in different criticality
 priority rankings as shown through the logsum and travel time rankings in this study.
-UDOT should also consider development of a better regional freight model.
+UDOT should also consider development of a more robust and detailed regional freight model.
 
 \section{Limitations and Next Steps}
 
