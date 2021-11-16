@@ -92,7 +92,7 @@ I-80, which cause the cost estimate to increase greatly when the travel time met
 is used.
 
 In order to better visualize the change in DCLS experienced in Toole and Salt Lake
-Counties, several choropleth maps were generated. Each of the three maps depicts
+Counties, several choropleth maps were generated as shown in Figure \ref{fig:three_charts}. Each of the three maps depicts
 the change in DCLS using a different method of analysis. First, the total change in DCLS is calculated using,
 \begin{equation}
   DCLS_{{HBW}_{Original}} - DCLS_{{HBW}_{Broken}}
@@ -109,40 +109,36 @@ number of households located within a TAZ is calculated using,
 \end{equation}
 is shown in Figure \ref{fig:hhmap}. In each of these choropleths,
 darker red zones represent zones with greater change when compared with lighter zones.
-\begin{figure}[H]
-\begin{center}
-{\centering \includegraphics[width=0.50\linewidth]{figures/chapter4/totalchangechoropleth.png}}
 
-\caption{Total change in DCLS by TAZ in Tooele and Salt Lake Counties.}
-\label{fig:totchangemap}
-\end{center}
+\begin{landscape}
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/chapter4/totalchangechoropleth.png}
+         \caption{Total change.}
+         \label{fig:totchangemap}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/chapter4/percentchangechoropleth.png}
+         \caption{Percent change.}
+         \label{fig:percentchangemap}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.44\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figures/chapter4/populationweightedchangechoropleth.png}
+         \caption{Change weighted by households.}
+         \label{fig:hhmap}
+     \end{subfigure}
+        \caption{Choropleths of change in DCLS by TAZ for Scenario 50, located at I-80 on the Tooele / Salt Lake County line}
+        \label{fig:three_charts}
 \end{figure}
+\end{landscape}
 
-\begin{figure}[H]
-\begin{center}
-{\centering \includegraphics[width=0.50\linewidth]{figures/chapter4/percentchangechoropleth.png}}
 
-\caption{Percent change in DCLS by TAZ in Tooele and Salt Lake Counties.}
-\label{fig:percentchangemap}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-  \squeezeup
-\begin{center}
-{\centering \includegraphics[width=0.50\linewidth]{figures/chapter4/populationweightedchangechoropleth.png}}
-
-\caption{Change in DCLS by TAZ in Tooele and Salt Lake Counties, weighted by households.}
-\label{fig:hhmap}
-\end{center}
-\end{figure}
-
-\squeezeup
-\squeezeup
-\squeezeup
-\squeezeup
-\squeezeup
-\pagebreak
 Overall, two key findings are drawn from this localized analysis of the changes caused by linkn loss at the Tooele/Salt Lake County Line:
 \begin{itemize}
   \item {Cost estimates are different by trip purpose and overall depending on
