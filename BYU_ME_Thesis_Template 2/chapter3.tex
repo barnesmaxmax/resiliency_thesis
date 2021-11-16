@@ -106,9 +106,8 @@ following equations:
 
 \noindent where $\mathcal{P}_{ij}$ represents the probability of trips made between an
 origin \(i\) and a destination \(j\) among all destinations $J$, and \(u\) represents the utility.
-Next, the logsum calculation is used. The logsum is similar to the denominator of the
-probability function, however the logsum captures the total value of the choice set, and is interpreted as the
-benefit --- or dis-benefit --- experienced by users in a choice model,
+The log of the sum in the denominator of this probability --- called the logsum --- captures the total value of the all options in the choice set, and can be interpreted as the
+benefit --- or dis-benefit --- experienced by users in a choice model \citep{williams1974},
 \begin{equation}
  Logsum_{i} = \ln\sum_{j\in J}\exp(f(\beta, u_{ij}, A_j, \gamma, t_{ij}))
   \label{eqn:logsum}
@@ -153,10 +152,16 @@ standalone model must be developed to examine choice-based resiliency in Utah.
 
 \section{Model Design} \label{Model Design}
 
+  \begin{figure}
+    \centering
+  {\includegraphics[width=0.75\linewidth]{figures/chapter3/framework.png}}
+  \caption{Model framework.}\label{fig:framework}
+
+  \end{figure}
+
 An initial framework was developed to model the impact of link loss on the
 USTM network. The model framework used to create the presented model
 consists of the following steps:
-
 \begin{description}
 	\item [Skim Network] {In this step, the model determines the shortest
   path by AM peak travel time on the USTM network between each origin and
@@ -175,20 +180,12 @@ consists of the following steps:
   evaluation metric of the model. The attraction size term is determined
   using socioeconomic data for each destination zone given by USTM.}
 \end{description}
-
-  \begin{figure}
-    \centering
-  {\includegraphics[width=0.75\linewidth]{figures/chapter3/framework.png}}
-  \caption{Model framework.}\label{fig:framework}
-
-  \end{figure}
-
 The model framework as used is presented in Figure \ref{fig:framework}, where
 inputs are denoted with red ovals, and functions are denoted with purple rectangles.
 The model framework is designed to capture the utility-based accessibility for
 a particular origin zone \(i\) and trip purpose \(m\). The trip purposes considered
-in the presented model include Home-based work (HBW), Home-based other (HBO),
-and non-home based (NHB) trips are primarily considered. Other trips purposes, such as recreation (REC) trips and
+in the model include Home-based work (HBW), Home-based other (HBO),
+and non-home based (NHB) trips. Other trips purposes, such as recreation (REC) trips and
 Freight trips were not included because they either have fixed OD pairs, or do not generate a significant number of trips.
 The model begins with a
 travel time skim procedure, to determine the congested travel time from zone
@@ -496,16 +493,10 @@ equation can be seen below:
 \noindent where each different zonal socioeconomic element in the UTS data influences
 utility through a corresponding $\gamma$ parameter.
 
-The DC logsums are calculated by summing the exponentiated values in each row in the DC utility matrix,
+The DC logsums are calculated by summing the exponentiated values in each row in the DC utility matrix
 together. The process used to accomplish this can be seen
-in Equation \ref{eqn:dc}.
-The purpose of taking the log of the entire row is to measure the logsum
-between a zone and all
-the other zones at the same time. By doing this, we can determine the overall
-change in accessibility
-between scenarios by TAZ, which is the measurement of interest. The logsum
-tells us the value of
-a zone based on a user’s ability to choose a mode and destination.
+in Equation \ref{eqn:dc}. The value of the DC logsum is the accessibility of
+a zone based on the zone's size and distance by multi-modal travel impedance.
 
 
 \section{Model Calibration and Validation}
@@ -567,12 +558,9 @@ the first iterations moved the calibration the most, with some adjustment
 over the following iterations. Overall the fit is fairly good.
 
   \begin{figure}
-
   {\centering \includegraphics[width=0.75\linewidth]{figures/chapter3/MC_split.png}
-
   }
-
-  \caption{Mode choice splits by trip purpose.}\label{fig:nhbmc}
+  \caption{Mode choice splits by trip purpose; target given by dotten lines.}\label{fig:nhbmc}
   \end{figure}
 
 The DC parameters were also calibrated, however this process differed slightly
@@ -587,9 +575,8 @@ cubic polynomial  is included as the destination choice calibration term seen be
   f(d_{ij}) = \kappa_1 d_{ij} + \kappa_2 d_{ij}^2 + \kappa_3 d_{ij}^3
 	\label{eqn:poly}
 \end{equation}
-
-\noindent where $d_{ij}$ represents the distance from $i$ to $j$
-and each of the  '$\kappa_1,\kappa_2,\kappa_3$, are calibrated to minimize the
+where $d_{ij}$ represents the distance from $i$ to $j$
+and each of the  $\kappa_1,\kappa_2,\kappa_3$, are calibrated to minimize the
 difference between the model and target trip length frequency distribution. The target
 values for calibration are derived from USTM. The cubic polynomial in
 Equation \ref{eqn:poly} --- which is part of the DC utility in
@@ -657,7 +644,6 @@ differences in travel time were calculated:
 	\Delta tt_{ij} = ScenarioTime_{ij} - BaseTime_{ij}
 	\label{eqn:time}
 \end{equation}
-
 Finding the difference in travel time for each scenario allows for
 additional costs to be incorporated that are not included in the logsum
 calculation performed on the HBW, HBO, and NHB purposes.
