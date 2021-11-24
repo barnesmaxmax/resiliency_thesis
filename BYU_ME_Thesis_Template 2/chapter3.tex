@@ -34,7 +34,7 @@ Planning Organizations (MPOs). USTM incorporates these other models as inputs an
 the rural areas lying outside of the MPO model regions. Consequently, USTM covers the
 highway facilities across the entire state, and incorporates the MPO models
 developed by the Wasatch Front Regional Council (WFRC), Mountainland
-Association of Governments (MAG), Cache Metropolitan Planning Organization, and the Dixie Metropolitan Planning Organization. Additionally,
+Association of Governments (MAG), Cache MPO, and the Dixie MPO. Additionally,
 the Summit/Wasatch Travel Demand Model is incorporated into USTM \citep{udot2021}.
 USTM as currently
 constituted can be used for infrastructure planning purposes, but would be
@@ -42,18 +42,17 @@ inadequate to evaluate the systemic resiliency of the highway network given
 the disparate methodologies of the MPO models incorporated. USTM can, however, provide the
 following data elements:
 
-\begin{description}
-\def\labelenumi{\arabic{enumi}.}
+\begin{itemize}
 \item
-  [Highway Network] {including free flow and congested travel speeds,
-  link length, link capacity estimates, etc.}
+  \textbf{Highway Network}: including free flow and congested travel speeds,
+  link length, link capacity estimates, etc.
 \item
-  [Zonal Productions] {available for all zones by purpose,
-  including those in the MPO region areas}
+  \textbf{Zonal Productions}: available for all zones by purpose,
+  including those in the MPO region areas
 \item
-  [Calibration Targets] {USTM base scenario estimates of mode split and
-  trip length that could be used to calibrate the utility coefficients of a new model}
-\end{description}
+  \textbf{Calibration Targets}: USTM base scenario estimates of mode split and
+  trip length that could be used to calibrate the utility coefficients of a new model
+\end{itemize}
 
 Each of the local travel demand models and USTM employ a gravity-based trip
 distribution model. The gravity model assumes that trips between OD
@@ -106,8 +105,8 @@ following equations:
 
 \noindent where $\mathcal{P}_{ij}$ represents the probability of trips made between an
 origin \(i\) and a destination \(j\) among all destinations $J$, and \(u\) represents the utility.
-The log of the sum in the denominator of this probability --- called the logsum --- captures the total value of the all options in the choice set, and can be interpreted as the
-benefit --- or dis-benefit --- experienced by users in a choice model \citep{williams1974},
+The log of the sum in the denominator of this probability---called the logsum---captures the total value of the all options in the choice set, and can be interpreted as the
+benefit---or dis-benefit---experienced by users in a choice model \citep{williams1974},
 \begin{equation}
  Logsum_{i} = \ln\sum_{j\in J}\exp(f(\beta, u_{ij}, A_j, \gamma, t_{ij}))
   \label{eqn:logsum}
@@ -128,22 +127,22 @@ Destination choice models explicitly consider multimodal accessibility, such as 
 non-motorized trip, or transit. The ability to consider accessibility from a
 multimodal perspective gives a user the ability to choose the location of
 their destination based on a variety of factors including mode accessibility
-(i.e. ease of access to a mode of transport). The information
+(i.e., ease of access to a mode of transport). The information
 derived from the socioeconomic data primarily comprises the size term, which
 is a measure of the appeal or attractiveness of one destination when compared with
 another destination. The DC size term is discussed in further detail in
 Section \ref{sec:dc}.
 
-A critical feature of logit-based choice models – described briefly in Section
-\ref{sec:cacc} – is that they are more versatile than traditional modeling
-methods, with the ability to incorporate different types of data --- \textit{and}
+A critical feature of logit-based choice models-–-described briefly in Section
+\ref{sec:cacc}---is that they are more versatile than traditional modeling
+methods, with the ability to incorporate different types of data---\textit{and}
 account for user choice. Additionally, logit-based choice models are better
 able to measure the changes in accessibility of a destination due to network
 changes than other models because of their adaptive nature. As such, logit-based
 models are typically used in new or more advanced travel models.
 
-Logit-based destination choice models are becoming increasingly common in four-
-step and other modern travel models. However, no logit-based destination
+Logit-based destination choice models are becoming increasingly common in
+four-step and other modern travel models. However, no logit-based destination
 choice models have been implemented within an MPO model in Utah or within
 USTM except for some home-based work trips in the WFRC/MAG model. As a result,
 the local MPO models, and therefore USTM, are not sufficient to analyze
@@ -151,36 +150,35 @@ accessibility on their own as proposed by this thesis. Therefore, a new
 standalone model must be developed to examine choice-based resiliency in Utah.
 
 \section{Model Design} \label{Model Design}
-\begin{figure}
-  \centering
-{\includegraphics[width=0.75\linewidth]{figures/chapter3/framework.png}}
-\caption{Model framework.}\label{fig:framework}
-
-\end{figure}
 
 An initial framework was developed to model the impact of link loss on the
 USTM network. The model framework used to create the presented model
 consists of the following steps:
-\begin{description}
-	\item [Skim Network] {In this step, the model determines the shortest
+\begin{itemize}
+	\item \textbf{Skim Network}: In this step, the model determines the shortest
   path by AM peak travel time on the USTM network between each origin and
   destination. The model also determines the distance of the shortest time
-  path. Transit times are given by an external data source.}
-	\item [Mode Choice (MC) Logsum] {The MC logsum is a function of
+  path. Transit times are given by an external data source.
+	\item \textbf{Mode Choice (MC) Logsum}: The MC logsum is a function of
   the travel impedances and serves as an impedance term in the destination
   choice model. The MC logsum contains utility functions that
   determine the probability and logsum associated with travel between each OD
   pair. The MC model also contains constants and coefficients that can
   be used to calibrate and adjust the utility equations, determining the mode
-  choice probabilities.}
-	\item [Destination Choice (DC) Logsum] {The destination choice logsum
+  choice probabilities.
+	\item \textbf{Destination Choice (DC) Logsum}: The destination choice logsum
   is a function of the travel impedances (represented by the MC logsum)
   and the attraction size term of each destination zone. This is the key
   evaluation metric of the model. The attraction size term is determined
-  using socioeconomic data for each destination zone given by USTM.}
-\end{description}
+  using socioeconomic data for each destination zone given by USTM.
+\end{itemize}
+\begin{figure}[h]
+  \centering
+{\includegraphics[width=0.75\linewidth]{figures/chapter3/framework.png}}
+\caption{Model framework.}\label{fig:framework}
+\end{figure}
 The model framework as used is presented in Figure \ref{fig:framework}, where
-inputs are denoted with red ovals, and functions are denoted with purple rectangles.
+inputs are denoted with ovals, and functions are denoted with rectangles.
 The model framework is designed to capture the utility-based accessibility for
 a particular origin zone \(i\) and trip purpose \(m\). The trip purposes considered
 in the model include Home-based work (HBW), Home-based other (HBO),
@@ -212,15 +210,15 @@ Table \ref{tab:coeffs}.
 The \(MCLS\) is then used as a travel impedance term in the multinomial
 logit
 destination choice model, where the probability of a person at origin \(i\)
-choosing destination \(j \in J\) is
+choosing destination \(j \in J\) is:
 \begin{equation}
 \mathcal{P}_{im}(j) = \frac{\exp(f(\gamma_m, MCLS_{ijm}, A_{jm}))}
 {\sum_{J}\exp(f(\gamma, MCLS_{ijm}, A_j))}
   \label{eq:dcp}
 \end{equation}
 
-\noindent where \(A_j\) is the attractiveness --- represented in terms of
-socioeconomic activity --- of zone \(j\). As with MC, the log of the
+\noindent where \(A_j\) is the attractiveness---represented in terms of
+socioeconomic activity---of zone \(j\). As with MC, the log of the
 denominator of this model is the
 destination choice logsum, \(DCLS_{im}\) or \(DCLS\). This quantity represents the value of access to
 all destinations
@@ -257,7 +255,7 @@ time by the number of trips in USTM. This is converted to a cost by a value of
 time directly from USTM and UDOT \citep{UtahDepartmentofTransportation2020}. These
 values can be seen in Table \ref{tab:VOT} at the end of this chapter. Converting to
 a cost gives an estimate with units in
-dollars per day. This conversion is accomplished with
+dollars per day. This conversion is accomplished with:
 \begin{equation}
 \mathrm{Cost}' =  \sum_I \sum_J \sum_K VOT_{m} * T_{ijmk} t_{ijk}
   \label{eq:ttmethod}
@@ -279,7 +277,7 @@ further analysis of the model results.
 Several inputs derived from various sources are needed for the presented model
 to properly function. First, a highway network is needed which contains attribute
 data needed to extract information about travel times and distances between
-transportation analysis zones (TAZ). Additionally, a transit network is needed
+TAZ. Additionally, a transit network is needed
 because USTM does not explicitly consider transit. Non-motorized distances are
 considered in the following sections.
 
@@ -305,8 +303,8 @@ the shortest OD pair based on AM travel time.
 The highway skim module creates an output matrix (i.e., the highway skim) of travel
 times and distances between OD pairs and must be created
 before automobile (AUTO) and non-motorized (NMOT) trips can be incorporated
-into the model. We used the \(AM\_TIME\) and \(DISTANCE\) variables available in
-the highway network file to create a matrix of distances and shortest travel
+into the model. The \(AM\_TIME\) and \(DISTANCE\) variables available in
+the highway network file are used to create a matrix of distances and shortest travel
 times between all OD pairs in the USTM network. The output matrix forms the
 basis for further analysis by providing the needed automobile and non-motorized
 information for the other modules in the model.
@@ -332,7 +330,7 @@ trips constant was made for several reasons, mainly because pedestrians can usua
 access routes that are not available to vehicles, such as neighborhood walkways/bikeways
 or other shortcuts available only to pedestrians and cyclists. Additionally,
 pedestrians are often also able to cut through or traverse the perimeter of an
-area where a highway may be degraded or damaged. non-motorized trips also typically have
+area where a highway may be degraded or damaged. Non-motorized trips also typically have
 higher accessibility to smaller roads or side-streets that would not be included
 with the USTM network.
 
@@ -354,7 +352,7 @@ the transit skim, and the MC coefficients and constants as inputs.
 
 The MC constants and coefficients used in the model were extracted
 from USTM where possible, or adapted from the Roanoke (Virginia)
-Valley Transportation Planning Organization (RVTPO) or SWIM models. The travel time represented with $t_{ij}$, travel cost
+Valley Transportation Planning Organization model (RVTPO) or the Oregon Statewide Integration Model (SWIM). The travel time represented with $t_{ij}$, travel cost
 represented as a variable $C_{ij}$, walk distance (i.e., less than 1 mile) represented
 as $d_{<1MILE}$, and walk distance (i.e., 1 mile or more) represented as $d_{>1MILE}$
 are the coefficients for the
@@ -420,7 +418,7 @@ alternative in the presented model. Second, both the $AUTO$ and $NMOT$ equations
 distance variable. Finally, each of the three utility equations account for travel time, either in the
 form of an in-vehicle travel time coefficient, or another modified factor. The $NMOT$ utility
 equation is not calculated using a specific coefficient for time. Instead, the $NMOT$ distances are
-multiplied by an assumed walking speed of 20 minutes per mile. This is common practice in other
+multiplied by an assumed walking speed of 20 minutes per mile (3 mph, or 4.4ft/s). This is common practice in other
 choice models for $NMOT$ trips. After the MC utilities were calculated, it was necessary to calculate the logsum for
 each trip purpose \(m\), as seen in Equation \ref{eqn:lsum}.
 
@@ -445,11 +443,11 @@ previously, however, \(d_{ij}\) is used to represent the distance variable in th
 \noindent where $f(d_{ij})$ is a calibration function discussed later in this section.
 
 Coefficients for the
-size term and travel impedance terms were adapted from SWIM \citet{swimversion}
+size term and travel impedance terms were adapted from SWIM \citep{swimversion}
 for all purposes except HBW. Instead, these coefficients were
-adapted from the RVTPO model \citet{rvtpoversion}. This was done because SWIM
-does not account for work trips in the same way as it does other trip purposes.
-The distance polynomial coefficients were
+adapted from the RVTPO model \citep{rvtpoversion}. This was done because SWIM
+does not account for work trips in the same way it does other trip purposes.
+The distance polynomial coefficients for the presented model were
 calibrated to targets developed from UTS.
 
 The MCLS value is applied to the DC model utility equation as the impedance
@@ -476,11 +474,11 @@ a destination in the model. The size term is made up of statistical
 data about a zone. The size term is
 created using various DC parameters combined with corresponding socioeconomic data
 to determine the size or attractiveness of a zone. The size term equation was partially
-adapted from the Oregon Statewide Integration Model (SWIM) \citep{swimversion}.
+adapted from SWIM \citep{swimversion}.
 
 This data was published in 2013 as part of the UTS and made available via
 UDOT \citep{uts2013}.  The size term
-equation can be seen below:
+equation is:
 \begin{equation}
 \begin{aligned}
 	A_{jm} = \gamma_{m_{off}} * \mathrm{office}_j + \gamma_{m_{oth}} * \mathrm{other}_j + \gamma_{m_{hh}} * \mathrm{hh}_j + \gamma_{m_{ret}} * \mathrm{retail}_j
@@ -512,9 +510,8 @@ In order to calibrate the model, trip totals needed to be calculated by purpose
 (\(T_{ijm}\)) and by mode (\(T_{ijmk}\)). To find the trips by purpose
 (\(T_{ijm}\)), the probability of a trip occurring between an OD pair needed to
 be determined. Likewise, to find the trips by purpose and mode (\(T_{ijkm}\)),
-we multiplied the \(T_{ijm}\) by the MC probabilities calculated during the MC
-module. A mathematical representation of this can be seen in the equations
-below:
+the \(T_{ijm}\) and MC probabilities calculated during the MC
+module were multiplied together. A mathematical representation of this can be in the following equations:
 
 \begin{equation}
 	T_{ijm} = P_{im} * \mathcal{P}_{ijm}
@@ -546,8 +543,8 @@ the MC constants and DC parameters after each new iteration was complete.
 
 To calibrate the MC constants, the alternative specific constants must be
 adjusted so that the mode split target extracted from USTM closely matches the
-model mode split values. A multinomial logit model will use alternative-
-specific constants to match a particular sample share. By adjusting these
+model mode split values. A multinomial logit model will use alternative-specific
+constants to match a particular sample share. By adjusting these
 constants, it is possible to match a MC model to target values.
 Figure \ref{fig:nhbmc} shows the target values for each mode represented as a
 dotted line, and shows the change of the MC calibration constants
@@ -569,7 +566,7 @@ constants because of the high numbers of alternatives (one alternative for
 every zone). Instead, the destination choice utility equation can include a
 calibration polynomial that adjusts the implied utility to match a trip length
 frequency distribution (TLFD) extracted from USTM. In this model, a
-cubic polynomial  is included as the destination choice calibration term seen below:
+cubic polynomial  is included as the destination choice calibration terms:
 \begin{equation}
   f(d_{ij}) = \kappa_1 d_{ij} + \kappa_2 d_{ij}^2 + \kappa_3 d_{ij}^3
 	\label{eqn:poly}
@@ -578,8 +575,8 @@ where $d_{ij}$ represents the distance from $i$ to $j$
 and each of the $\kappa_1,\kappa_2,\kappa_3$, are calibrated to minimize the
 difference between the model and target trip length frequency distribution. The target
 values for calibration are derived from USTM. The cubic polynomial in
-Equation \ref{eqn:poly} --- which is part of the DC utility in
-Equation \ref{eqn:dc} --- was applied and calibrated to match the target TLFD
+Equation \ref{eqn:poly}---which is part of the DC utility in
+Equation \ref{eqn:dc}---was applied and calibrated to match the target TLFD
 values from USTM. The final calibration values are presented in Table
 \ref{tab:coeffs}.
 
@@ -618,7 +615,7 @@ calculation. This section will discuss other methods by which costs
 associated with each link could be calculated, especially for those
 purposes not primarily included in the presented model and for comparison purposes.
 
-Purposes including freight, recreation (REC), and home-based college
+Purposes including freight, REC, and home-based college
 (HBC) trips were evaluated using overall travel time change. These
 purposes are either rigid in their origins and destinations, as is the
 case with most freight trips, or have much smaller frequencies than do the
@@ -634,8 +631,7 @@ scenario highway skim module chooses a route between an OD pair based on
 the shortest travel time, not the shortest distance. Thus, the difference
 in travel times always remained the same, or increased. The distances, however,
 could become shorter, as the shortest distance between an OD pair was not
-always the fastest by time. Equation \ref{eqn:time} shows a representation of how
-differences in travel time were calculated:
+always the fastest by time. The differences in travel time were calculated using:
 \begin{equation}
 	\Delta tt_{ij} = ScenarioTime_{ij} - BaseTime_{ij}
 	\label{eqn:time}
@@ -653,10 +649,18 @@ trips, a VOT of \$17.67 was used, while for freight trips, a VOT of
 \$94.04 per hour was used. These values were extracted from USTM and
 verified by UDOT's Asset Risk Management Guide \citep{UtahDepartmentofTransportation2020}.
 Additionally, the VOT for the logsum method equates to \$16.87 per hour as seen in
-Table \ref{tab:VOT}. The method for deriving this value is shown in Equation \ref{eq:totalcost}.
-The auto VOT for the logsum and travel time methods are similar, with a difference
-of about \$0.80. The difference in these values would not make an appreciable difference
-in the cost estimates between the two methods.
+Table \ref{tab:VOT}. The method for deriving this value is:
+\begin{equation}
+  Logsum VOT = \frac{\beta_{time}}{\beta_{cost}} \times \frac{60}{100}
+  \label{eqn:cost}
+\end{equation}
+Where the $\beta_{time}$ and $\beta_{cost}$ coefficients are the same as those
+shown in Table \ref{tab:coeffs}. The calculated auto VOT for the logsum and
+travel time methods are similar, with a difference
+of about \$0.80. The difference in these values would not have an appreciable effect
+on the cost estimates between the logsum and travel time methods. This conversion,
+multiplied by the total change in DCLS, or dis-benefit, for a scenario returns the cost
+associated with link closure accross the entire state as a result of the closure of a single link.
 
 \begin{table}
 \caption{\label{tab:VOT}Values of Time for Time Difference Calculations}
@@ -666,17 +670,10 @@ in the cost estimates between the two methods.
 Freight & Auto & Logsum\\
 \midrule
 94.04 & 17.67 & 16.87 & Dollars/Hr\\
-156.73 & 29.45 & 28.11 & Cents/Min\\
+156.73 & 29.45 & 28.12 & Cents/Min\\
 \bottomrule
 \end{tabular}
 \end{table}
-
-The conversion between the measured DCLS and the actual cost for the logsum method differs from the conversion for the travel time method.
-In Table \ref{tab:coeffs}, the coefficient \(\beta_{cost}\) is equal to -0.0016.
-To convert between the change in DCLS, or dis-benefit, and the monetary cost to a
-single user for each purpose, Equation \ref{eq:ttmethod} must be used.
-This gives an estimate of the cost experienced by the whole network as a result
-of the closure of a single link.
 
 \section{Summary}
 

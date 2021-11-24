@@ -3,7 +3,7 @@
 \graphicspath{{figures/}{figures/chapter4/}}
 
 \section{Overview}
-In this chapter, model described in Chapter 3 is applied to evaluate the relative systemic
+In this chapter, the model described in Chapter 3 is applied to evaluate the relative systemic
 criticality of highway links on a statewide network using a logit-based model
 sensitive to changes in route path, destination choice, and mode choice. To do this, the model is applied to scenarios
 where critical highway links have been removed from the USTM network. This
@@ -15,7 +15,7 @@ applied to 41 individual scenarios, with 40 of those scenarios involving link
 closure scenarios throughout the state.
 
 \section{Vulnerable Link Identification}
-In order to determine which links on the USTM network might be most critical,
+To determine which links on the USTM network might be most critical,
 a method must be developed to identify links of interest for analysis. Currently, UDOT uses
 an online Risk Priority Analysis GIS toolkit created by both BIO-WEST and UDOT,
 which grades highway links based on several criteria, including:
@@ -25,7 +25,7 @@ which grades highway links based on several criteria, including:
    \item {Cost to replace}
    \item {User Costs (e.g., AADT and Truck Volume)}
 \end{itemize}
-This tool, combined with information gathered from the research team and UDOT
+Using this tool, combined with information gathered from the research team and UDOT
 officials, 40 locations of interest were identified for analysis. Each link was
 identified due to its location in relation to
 population centers, remote geographic location, and proximity to other highway
@@ -35,7 +35,7 @@ because it was a suspected choke point in the network.
 After identifying locations of interest on the network, the model is applied to
 each of the selected scenarios. In each scenario, an individual highway
 link is removed from the model highway network. Some of the links identified
-by \citeauthor{aem2017}, the \citeauthor{riskanalysis}, or the research team are
+by \citeauthor{aem2017}, UDOT, or the research team are
 also examined. The locations of each of the 40
 selected links are shown in Figure \ref{fig:linksmap}, and are then analyzed one by one. The
 final results of each scenario are presented in the following sections. First, a detailed analysis of a single
@@ -44,17 +44,15 @@ scenario are presented, however.
 \section{Analysis of I-80 at Tooele / Salt Lake County Line}
 
 This section outlines an in-depth analysis that was conducted to ensure
-the presented model was accurately describing trips likely behavior with OD pairs in the
+the presented model was accurately describing user choice and reflecting trips with OD pairs in the
 targeted area around a severed link. This analysis was done on a link between
 Tooele and Salt Lake City, Utah, which is located close to the county line. A map, with the approximate
 location of road closure can be seen in Figure \ref{fig:tooelemapwithcone}.
 
 \begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{figures/chapter4/tooelemapwithcone.png}
-
+  \centering
+{\centering \includegraphics[width=0.65\linewidth]{figures/chapter4/tooelemapwithcone.png}
 }
-
 \caption{Approximate location of the I-80 closure on the Tooele/SL County line.}\label{fig:tooelemapwithcone}
 \end{figure}
 
@@ -84,30 +82,72 @@ The data supports the conclusion that the model is effectively
 capturing trips originating in Tooele based on the amount of cost captured,
 shown in Table \ref{tab:tooeletable2} as a percent capture rate. Additionally, when the
 travel time method of analysis is examined, it can be seen that the cost estimated
-is equatl to \$11,377,504.92 for the whole network, and \$781,015.04 for only
-those trips originating in Tooele County. These two estimates include Freight
+is equal to \$11,377,504.92 for the whole network, and \$781,015.04 for only
+those trips originating in Tooele County. These two estimates include freight
 trips, which have much higher cost estimates than do any of the other trip purposes.
-Though some Freight trips do originate in Tooele County, many more Freight trips traverse
+Though some freight trips do originate in Tooele County, many more freight trips traverse
 I-80, which cause the cost estimate to increase greatly when the travel time method
 is used.
+\begin{table}[h]
+
+\caption{\label{tab:tooeletable2}Localized Analysis Cost Capture Percentage Rates}
+\centering
+\begin{tabular}{ccc}
+\toprule
+ & Logsum & Travel Time\\
+\midrule
+HBW & 98.32\% & 98.32\% \\
+HBO & 93.86\% & 94.73\% \\
+NHB & 98.43\% & 90.93\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}
+\caption{\label{tab:tooeletable}Localized Analysis Results}
+
+\centering
+%\begin{adjustbox}{width=0.9\textwidth}
+\begin{tabular}{lrrrr}
+\toprule
+Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele Cost \\(Dollars per Day)}}\\
+\midrule
+ & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method}\\
+\midrule
+HBW & \$65,655.13 & \$244,275.72 & \$64,555.39 & \$240,181.80\\
+HBO & \$49,851.54 & \$108,412.94 & \$46,793.14 & \$102,699.90\\
+NHB & \$7,535.78 & \$84,712.36 & \$7,417.66 & \$77,025.58\\
+\midrule
+\addlinespace
+REC & \$ -  & \$398.72 & \$ -  & \$208.74\\
+XXP & \$ -  & \$55,870.17 & \$ - & \$ - \\
+Freight & \$ -  & \$10,883,835.01 & \$ -  & \$360,899.92\\
+\midrule
+HBW, HBO, NHB Total & \$123,042.44 & \$437,401.02 & \$118,776.19 & \$419,907.28\\
+Total &  & \$11,377,504.92 &  & \$781,015.04\\
+\bottomrule
+\end{tabular}
+%\end{adjustbox}
+\end{table}
 
 In order to better visualize the change in DCLS experienced in Toole and Salt Lake
 Counties, several choropleth maps were generated as shown in Figure \ref{fig:three_charts}. Each of the three maps depicts
-the change in DCLS using a different method of analysis. First, the total change in DCLS is calculated using,
+the change in DCLS using a different method of analysis. First, the total change in DCLS is calculated using:
 \begin{equation}
   DCLS_{{HBW}_{Original}} - DCLS_{{HBW}_{Broken}}
 \end{equation}
-is shown in Figure \ref{fig:totchangemap}.
-Second, the percent change in DCLS is calculated using,
+and is shown in Figure \ref{fig:totchangemap}.
+Second, the percent change in DCLS is calculated using:
 \begin{equation}
   \frac{DCLS_{{HBW}_{Original}} - DCLS_{{HBW}_{Broken}}}{{DCLS_{{HBW}_{Original}}}}
 \end{equation}
-is shown in Figure \ref{fig:percentchangemap}. Finally, The total change in DCLS weighted by the
-number of households located within a TAZ is calculated using,
+and is shown in Figure \ref{fig:percentchangemap}. Finally, The total change in DCLS weighted by the
+number of households located within a TAZ is calculated using:
 \begin{equation}
   HH * DCLS_{{HBW}_{Original}} - DCLS_{{HBW}_{Broken}}
 \end{equation}
-is shown in Figure \ref{fig:hhmap}. In each of these choropleths,
+and is shown in Figure \ref{fig:hhmap}. In each of these choropleths,
 darker red zones represent zones with greater change when compared with lighter zones.
 
 \begin{landscape}
@@ -138,61 +178,17 @@ darker red zones represent zones with greater change when compared with lighter 
 \end{figure}
 \end{landscape}
 
-
-Overall, two key findings are drawn from this localized analysis of the changes caused by linkn loss at the Tooele/Salt Lake County Line:
+Overall, two key findings are drawn from this localized analysis of the changes caused by link loss at the Tooele/Salt Lake County Line:
 \begin{itemize}
   \item {Cost estimates are different by trip purpose and overall depending on
-  which estimation method is used}
-  \item {The majority of cost for this link is generated by freight trips}
+  which estimation method is used, and}
+  \item {The majority of cost for this link is generated by freight trips.}
 \end{itemize}
 The logsum and travel time methods can be broken down into the overall costs and the
 comparable costs. The comparable costs are made up of those purposes which are
 included in both the presented model and in the travel time method for determining
 cost. HBW, HBO, and NHB trip purposes can be compared because all three trip purposes
 are represented by each method of cost estimation.
-
-\begin{table}
-\caption{\label{tab:tooeletable}Localized Analysis Results}
-
-\centering
-%\begin{adjustbox}{width=0.9\textwidth}
-\begin{tabular}{lrrrr}
-\toprule
-Trip Purpose & \multicolumn{2}{c}{ \makecell{Whole Network Cost\\ (Dollars per Day)}} & \multicolumn{2}{c}{\makecell{Tooele Cost \\(Dollars per Day)}}\\
-\midrule
- & \makecell{Logsum\\ Method} & \makecell{Travel Time\\ Method} & \makecell{Logsum \\Method} & \makecell{Travel Time\\ Method}\\
-\midrule
-HBW & \$65,655.13 & \$244,275.72 & \$64,555.39 & \$240,181.80\\
-HBO & \$49,851.54 & \$108,412.94 & \$46,793.14 & \$102,699.90\\
-NHB & \$7,535.78 & \$84,712.36 & \$7,417.66 & \$77,025.58\\
-\midrule
-\addlinespace
-REC & \$ -  & \$398.72 & \$ -  & \$208.74\\
-XXP & \$ -  & \$55,870.17 & \$ - & \$ - \\
-Freight & \$ -  & \$10,883,835.01 & \$ -  & \$360,899.92\\
-\midrule
-HBW, HBO, NHB Total & \$123,042.44 & \$437,401.02 & \$118,776.19 & \$419,907.28\\
-Total &  & \$11,377,504.92 &  & \$781,015.04\\
-\bottomrule
-\end{tabular}
-%\end{adjustbox}
-\end{table}
-
-
-\begin{table}
-
-\caption{\label{tab:tooeletable2}Localized Analysis Cost Capture Percentage Rates}
-\centering
-\begin{tabular}{ccc}
-\toprule
- & Logsum & Travel Time\\
-\midrule
-HBW & 98.32\% & 98.32\% \\
-HBO & 93.86\% & 94.73\% \\
-NHB & 98.43\% & 90.93\% \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 The travel time method measures the difference in travel time between the base
 scenario and any other scenario caused by link closure, and then multiplies that
@@ -344,8 +340,8 @@ with freight trips.
 
 Some other interesting findings are that in the top 10 most critical scenarios of each analysis
 method, three scenarios appear in each of the rankings or comparison rankings. Scenario 18, which is located on
-I-15 between Payson and Nephi, Scenario 27 which corresponds to I-
-84 in Weber Canyon, and Scenario 37 which corresponds to I-80 in Parley’s Canyon,
+I-15 between Payson and Nephi, Scenario 27 which corresponds to I-84 in Weber
+Canyon, and Scenario 37 which corresponds to I-80 in Parley’s Canyon,
 are included in the
 top 10 scenarios for each of the comparison methods of analysis. This is likely due to the
 number of passenger trips along these routes, combined with the number of freight
@@ -354,7 +350,7 @@ the only way through mountain ranges in Utah.
 
 One scenario, Scenario 10, which corresponds to SR-95 near Hite, shows a
 dis-benefit equal to \$0.00. This link is located in a remote part of Utah and likely
-does not carry a significant amount of traffic belonging any of the trip purposes
+does not carry a significant amount of traffic belonging to any of the trip purposes
 considered in the logsum model. When the results of the travel time method are examined,
 however, a cost equal to \$1,126.41 is estimated. This indicates that either freight,
 REC, or external passenger trips occur on the link. There is wide variation present between
@@ -432,12 +428,13 @@ shortest path by time is always longer than in the base scenario with the broken
 available. However, the new path may actually be shorter by distance. This
 causes an increase in the utility of accessing destinations by non-
 motorized modes, potentially overwhelming the decrease in automobile
-utility. It also results in increased auto costs, which are measured per mile of distance travelled. The automobile accessibility is determined by the AM congested
+utility. It also results in increased auto costs, which are measured per
+mile of distance travelled. The automobile accessibility is determined by the AM congested
 travel time in USTM. The travel distance
 – used to determine the accessibility of destinations by driving or
 walking – is the distance of that path, and not the actual shortest
 distance path. Additionally,
-supporting evidence of this theory was found when it was discovered that for
+supporting evidence of this theory was found when it was discovered that
 the alternative route between Grouse Creek, Utah, and Salt Lake City,
 was nearly twice as long in the case where I-80 was closed between
 Tooele and Salt Lake Counties. This discovery led to the understanding that not all
@@ -449,8 +446,8 @@ This occurrence is only observed in heavily urbanized regions for two reasons:
 	\item The presence of high-speed expressways and parallel local roads
   means that alternate paths with shorter distances but longer vehicle
   times are more likely.
-	\item The increased availability of destinations within the non-
-  motorized distance threshold (2.5 miles) means that alternative
+	\item The increased availability of destinations within the non-motorized
+  distance threshold (2.5 miles) means that alternative
   destinations exist.
 \end{itemize}
 
