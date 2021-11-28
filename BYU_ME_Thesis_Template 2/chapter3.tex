@@ -65,7 +65,6 @@ pair. A mathematical representation of the gravity model is given by:
 T_{ij}= \frac{P_i*(A_j F_{ij})}{\sum_{j\in J}(A_j F_{ij})}
  \label{eqn:gravity}
 \end{equation}
-
 \noindent where $T_{ij}$ represents the trips made between an origin $i$ and a
   destination $j$ among all destinations $J$, $P_i$ represents the productions at origin $i$, $A_j$ represents the attractions and destination $j$, and $F_{ij}$ is the impedance factor between an $OD$ pair.
 The friction factor (also known as the impedance, or resistance to movement) between two
@@ -75,7 +74,6 @@ exponential function:
 	F_{ij} = \alpha \exp(-\beta * d_{ij})
   \label{eqn:fricfac}
 \end{equation}
-
 \noindent where $d_{ij}$ is the distance or cost between zones $i$ and $j$, and $\alpha$
 and $\beta$ are calibrated parameters. In the gravity model, as the distance
 between an OD pair increases, users become less likely to make trips between
@@ -97,16 +95,14 @@ they possess an increased ability to introduce additional variables and reflect
 other statistical assumptions into a model \citep{tfr2021}. A typical choice
 model is made up of a combination of utility and probability values in the
 following equations:
-
 \begin{equation}
 \mathcal{P}_{ij} = \frac{e^{u_{ij}}}{\sum_{j\in J}e^{u_{ij}}}
   \label{eqn:probability}
 \end{equation}
-
 \noindent where $\mathcal{P}_{ij}$ represents the probability of trips made between an
 origin \(i\) and a destination \(j\) among all destinations $J$, and \(u\) represents the utility.
 The log of the sum in the denominator of this probability---called the logsum---captures the total value of the all options in the choice set, and can be interpreted as the
-benefit---or dis-benefit---experienced by users in a choice model \citep{williams1974},
+benefit---or dis-benefit---experienced by users in a choice model \citep{williams1974}:
 \begin{equation}
  Logsum_{i} = \ln\sum_{j\in J}\exp(f(\beta, u_{ij}, A_j, \gamma, t_{ij}))
   \label{eqn:logsum}
@@ -377,7 +373,7 @@ methods described by \citet{koppelman2006}.
 \hspace{1em} & $\gamma_{off}$ Office Employment & 0.4568 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{oth}$ Other Employment & 1.6827 & 0.4032 & 0.2816\\
 \hspace{1em} & $\gamma_{ret}$ Retail Employment & 0.6087 & 3.8138 & 5.1186\\
-\hspace{1em} & $\gamma_{MCLS}$ Mode Choice Logsum & 1 & 1 & 1\\
+\hspace{1em} & $\gamma_{MCLS}$ Mode Choice Logsum & 1.0000 & 1.0000 & 1.0000\\
 \hspace{1em} & $\kappa_1$ Distance & -0.0801 & -0.1728 & -0.1157\\
 \hspace{1em} & $\kappa_2$ Distance squared & 0.0026 & 0.0034 & 0.0035\\
 \hspace{1em} & $\kappa_3$ Distance cubed & 0.0000 & 0.0000 & 0.0000\\
@@ -512,19 +508,15 @@ In order to calibrate the model, trip totals needed to be calculated by purpose
 be determined. Likewise, to find the trips by purpose and mode (\(T_{ijkm}\)),
 the \(T_{ijm}\) and MC probabilities calculated during the MC
 module were multiplied together. A mathematical representation of this can be in the following equations:
-
 \begin{equation}
 	T_{ijm} = P_{im} * \mathcal{P}_{ijm}
 	\label{eqn:ij}
 \end{equation}
-
-\noindent Where $P_i$ is the productions at zone i, and,
-
+\noindent Where $P_i$ is the productions at zone $i$, and,
 \begin{equation}
 	T_{ijkm} = T_{ijm} * \mathcal{P}_{ijk}
 	\label{eqn:ijk}
 \end{equation}
-
 \noindent The ability to account for trips by purpose and by mode allows us to
 determine information about how well the model is calibrated, and the utility
 values can also be used to determine the logsum calculations, which are capable
@@ -641,10 +633,10 @@ additional costs to be incorporated that are not included in the logsum
 calculation performed on the HBW, HBO, and NHB purposes.
 
 Applying a VOT evaluation, the cost associated with link
-closure per day can be measured for each of the purposes not included in
-the main logsum analysis. Freight trips and auto trips have different
-values of time in USTM, thus the calculated travel time change was
-multiplied by different VOTs for each purpose. For passenger vehicle
+closure per day can be measured for each purpose not included in
+the main logsum analysis, including trips which have different VOTs. Auto and freight trips have different
+VOTs in USTM, thus the calculated travel time change was
+multiplied by different VOT values for each purpose. For passenger vehicle
 trips, a VOT of \$17.67 was used, while for freight trips, a VOT of
 \$94.04 per hour was used. These values were extracted from USTM and
 verified by UDOT's Asset Risk Management Guide \citep{UtahDepartmentofTransportation2020}.
@@ -659,7 +651,7 @@ shown in Table \ref{tab:coeffs}. The calculated auto VOT for the logsum and
 travel time methods are similar, with a difference
 of about \$0.80. The difference in these values would not have an appreciable effect
 on the cost estimates between the logsum and travel time methods. This conversion,
-multiplied by the total change in DCLS, or dis-benefit, for a scenario returns the cost
+multiplied by the total change in DCLS---or dis-benefit---for a scenario returns the cost
 associated with link closure accross the entire state as a result of the closure of a single link.
 
 \begin{table}

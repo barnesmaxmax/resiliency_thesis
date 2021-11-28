@@ -25,7 +25,7 @@ could be classified into three categories:
 	networks are able to operate effectively with damaged or unusable links
 	\citep{berdica2002, ip2011}.
 \end{itemize}
-It is the final definition that is most relevant in the context of this study.
+It is the final definition of resilience that is most relevant in the context of this study.
 
 These definitions are not entirely mutually exclusive, and many
 researchers apply more than one
@@ -131,14 +131,13 @@ the majority of that AADT, which would show that there is a very low to low impa
 however, if the majority of traffic on that road were truck traffic, then that road almost
 immediately has a moderate to high impact. Other nuances such as the one proposed in this
 example exist. Another interesting situation to consider, is the case where a minor arterial becomes inundated with traffic or other hazard, however, a redundant arterial just a few blocks or miles away is able to handle much of the diverted traffic. Situations such as this one likely occur often, due to the way highway networks are traditionally built. One other observation made from Table
-\ref{tab:aemscore} is that \citeauthor{aem2017} does not take alternate routes into account.
+\ref{tab:aemscore}, is that \citeauthor{aem2017} does not take alternate routes into account.
 Additionally, \citeauthor{aem2017} does not include a way for their risk analysis methodology
 to anticipate what a user would actually do if faced with a real disaster
 scenario. The work of \citeauthor{aem2017} does not answer simple questions such as how many valid
 alternative routes exist? Or what is the new travel time or distance?
-Identifying the systemic resiliency of highway facilities
-– as implied by the third definition of resiliency, resilience through
-operability in crisis in Section \ref{sec:ch2overview} – requires considering these alternate routes \citep{aem2017}.
+Identifying the systemic resiliency of highway facilities---as implied by the third definition of resiliency, resilience through
+operability in crisis in Section \ref{sec:ch2overview}---requires considering these alternate routes \citep{aem2017}.
 
 \begin{table}
 
@@ -172,7 +171,7 @@ to observe and study what happens to transportation networks and user behavior w
 suddenly disabled for an
 extended period of time. These events are the I-35W bridge
 collapse in
-Minneapolis, Minnesota, and the I-85 / Piedmont Road fire and bridge
+Minneapolis, Minnesota, and the I-85/Piedmont Road fire and bridge
 collapse in Atlanta, Georgia. Both of these events were studied post-disaster,
 when the highway network was already operating in crisis, allowing researchers
 to examine how networks and road users operate or behave on a damaged network.
@@ -274,7 +273,7 @@ traffic in from the suburbs of northern Fulton and Gwinnett Counties.
 \begin{figure}
 \begin{center}
 
-{\centering \includegraphics[width=0.75\linewidth]{figures/chapter2/I-85.png}}
+{\centering \includegraphics[width=0.65\linewidth]{figures/chapter2/I-85.png}}
 
 \caption{Approximate location of the I-85/Piedmont Road bridge fire.}\label{fig:i85}
 
@@ -288,8 +287,7 @@ As a result, the Georgia Department of Transportation (GDOT) along with
 the Governor created a
 \$3.1 million incentive program to help motivate project completion ahead
 of schedule. The bridge
-was originally scheduled to be closed for a period of 10 weeks, however, it re-
-opened after just 6
+was originally scheduled to be closed for a period of 10 weeks, however, it re-opened after just 6
 weeks, with construction being completed a month ahead of schedule. The
 accelerated finishing
 date was estimated to have saved approximately \$27 million in user and
@@ -383,7 +381,7 @@ The following sections discuss relevant studies in each group; Table
 with
 an applicable group.
 
-\begin{table}
+\begin{table}[h]
 
 \caption{\label{tab:authortable}Attempts to Evaluate Systemic Resiliency}
 \centering
@@ -441,8 +439,7 @@ substation,
 and consequentially the percent of travel paths that would experience
 diminished
 levels of service. The research highlighted the degree to which interrelated
-infrastructure systems -- power, telecommunications, and transportation --
-depend on each other, though the researchers did not attempt to look at the
+infrastructure systems---power, telecommunications, and transportation---depend on each other, though the researchers did not attempt to look at the
 connective resiliency of the transportation network directly.
 
 \citet{agarwal2011} presented a method to represent a transportation network
@@ -537,12 +534,12 @@ down in efficiency or connectivity as networks become larger. Real-world
 networks are typically extremely large, with nodes and links numbering in the
 hundreds, if not thousands. Thus, the connectivity of a node may be high, but may
 not be an accurate representation of a node's importance. Lack of node importance
-can be due to several factors, including network efficiency \citet{osei2014}, network topology \citet{zhang2015},
-friability \citet{ip2011}, or other factors.
+can be due to several factors, including network efficiency \citep{osei2014}, network topology \citep{zhang2015},
+friability \citep{ip2011}, or other factors.
 
 \subsection{Changes in Travel Time}
 
-Highway system network failures --- in most imaginable cases --- degrade
+Highway system network failures---in most imaginable cases---degrade
 the
 shortest or least cost path, but typically do not eliminate all paths.
 The degree
@@ -663,7 +660,6 @@ This measure is often represented as a count (e.g., the number
 of jobs
 reachable from a particular location within 30 minutes travel time by a
 particular mode). Mathematically, accessibility is defined as:
-
 \begin{equation}
 A_i = \sum_{j} X_j I_{ij}; I_{ij} = \begin{cases}  1 \text{ if } d_{ij}
 \leq D\\
@@ -679,7 +675,6 @@ threshold (e.g., 30 minutes of travel time). By relaxing the
 assumption of a
 binary isochrone and instead using the distance directly, we can derive the
 so-called gravity accessibility model as:
-
 \begin{equation}
 A_i = \sum_{j} X_j f(d_{ij})
   \label{eqn::gravity}
@@ -691,7 +686,6 @@ impedance coefficient. This gravity accessibility term is included in the
 gravity trip distribution model (i.e., the gravity model). An extension of the gravity model is to use the
 logsum
 term of a multinomial logit destination choice model:
-
 \begin{equation}
 A_i = ln\sum_{j} \beta_d(d_{ij}) + X_j\beta
   \label{eqn:logsum1}
@@ -745,7 +739,6 @@ but could easily be applied on a larger scale.
 
 In the Adelaide model, Taylor breaks one link and
 then calculates the difference in IV and CS values using:
-
 	\begin{equation}
 		I_n=\log \sum_{r \in R} \exp(){V_{rn})}
 	\end{equation}
@@ -776,7 +769,7 @@ Several other authors employed various types of logit models in their research,
 or attempted to develop a methodology specifically for use in analyzing disrupted networks.
 \citet{geurs2010} compared the benefits attributed to various climate
 change-mitigation land use and transport policies under two different
-evaluation metrics. The authors directly compared a “rule of half (RoH)”
+evaluation metrics. The authors directly compared a “rule of half”
 calculation where the travel time reduction is distributed between existing
 and new travelers on a route with a mode choice logsum derived from utility
 theory. The authors argued that because the logsum is more comprehensive and
@@ -792,9 +785,8 @@ of transportation networks including average delay and transport cost,
 adjusting interactions,
 and increasing metric transparency. The authors employed a methodology
 capable of quantifying
-resiliency using a fuzzy interference approach – an approach meant to analyze
-imprecise or vague data
-– that relates both physical and performance characteristics. The employed approach
+resiliency using a fuzzy interference approach---an approach meant to analyze
+imprecise or vague data---that relates both physical and performance characteristics. The employed approach
 is able to determine a
 resiliency index that supports comparative and sensitivity analyses.
 Accessibility data, including
@@ -816,7 +808,7 @@ experienced long (1 week to 2 months or more) closures in the past in Southern E
 methods to evaluate transportation network redundancy. This methodology used
 two dimensions in the analysis: travel alternative diversity and network spare
 capacity, meaning the number of effective connections available for each OD
-pair and the congestion effect/choice behavior of travelers. To create the
+pair and the congestion effect or choice behavior of travelers. To create the
 analysis, the authors first constructed a sub-network which only looks at
 efficient routes. Next, the method counted the number of efficient routes
 from the origin to all nodes, and then estimates the multi-modal network
