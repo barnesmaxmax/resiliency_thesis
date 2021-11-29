@@ -138,7 +138,7 @@
 \newcommand{\@titlepage}{
   %\vspace*{0.3875in}   %for a 2" spacing from the top of the page
   % Add a pdf bookmark so that it will show up in the PDF
-  \pdfbookmark[0]{Title Page}{titlepage}
+  \phantomsection
   \addcontentsline{toc}{chapter}{TITLE PAGE}
 
   % Put the title centered on the page
@@ -324,7 +324,7 @@
 % Abstract page
 \newcommand{\@abstractpage}[1]{
   % Add a pdf bookmark so that it will show up in the PDF
-  \pdfbookmark[0]{Abstract}{Abstract}
+  \phantomsection
   \addcontentsline{toc}{chapter}{ABSTRACT}
   % Put the abstract header centered on the page
   \begin{center}
@@ -674,7 +674,7 @@
      {\def\cleardoubleevenpage{\clearpage\if@twoside \ifodd\c@page%\else%
 \hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}}
 
-      \pdfbookmark[0]{Table of Contents}{toc}
+    \phantomsection
     \addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
      %\setcounter{page}{5} %You should manually change this page number if you need the TOC to start with a different page number!
 
